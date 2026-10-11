@@ -235,7 +235,8 @@ kbd {
   color: #fff;
 }
 .hero .logo {
-  width: 140px;
+  width: min(220px, 60vw);
+  height: auto;
   margin: 0 auto 6px;
   filter: drop-shadow(5px 5px 0 var(--ink));
   animation: glide 4s ease-in-out infinite;
@@ -277,28 +278,26 @@ kbd {
   max-width: 640px;
   background: var(--paper);
   color: var(--ink);
-  border: 3px solid var(--ink);
   border-radius: 18px;
-  padding: 14px 20px;
-  box-shadow: 6px 6px 0 var(--ink);
+  padding: 17px 23px;
   font-size: 19px;
   position: relative;
   transform: rotate(0.8deg);
+  /* Bubble + tail are one unbordered white shape; these shadows trace a single
+     continuous ink outline around the pair, then add the hard comic shadow. */
+  filter: drop-shadow(3px 0 0 var(--ink)) drop-shadow(-3px 0 0 var(--ink)) drop-shadow(0 3px 0 var(--ink))
+    drop-shadow(0 -3px 0 var(--ink)) drop-shadow(6px 6px 0 var(--ink));
 }
 .tagline::after {
-  /* speech-bubble tail */
+  /* speech-bubble tail, overlapping the body so the two merge */
   content: "";
   position: absolute;
-  left: 50%;
-  top: -21px;
-  width: 26px;
-  height: 22px;
+  left: 46%;
+  top: -24px;
+  width: 34px;
+  height: 28px;
   background: var(--paper);
-  border: 3px solid var(--ink);
-  border-bottom: 0;
-  border-right: 0;
-  transform: translateX(-50%) skewX(-30deg) rotate(10deg);
-  clip-path: polygon(0 0, 100% 100%, 0 100%);
+  clip-path: polygon(30% 0, 100% 100%, 0 100%);
 }
 
 /* ---------- section headings ---------- */
