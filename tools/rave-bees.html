@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rave Bee Chat · Ixitxachitl's Stream Tools</title>
+    <meta
+      name="description"
+      content="Set up Rave Bee Chat: an OBS browser-source overlay that turns your Twitch, Kick, YouTube and TikTok chatters into dancing glowstick bees."
+    />
+    <meta property="og:image" content="../assets/img/rave-bees.webp" />
+    <meta name="theme-color" content="#1a0f33" />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/comic.css" />
+  </head>
+  <body>
+    <a class="skip btn sun" href="#main">Skip to content</a>
+
+    <header class="topbar">
+      <div class="wrap">
+        <a class="brand" href="../"><img src="../assets/icons/manta.svg" alt="" />Ixitxachitl's Stream Tools</a>
+        <nav class="nav" aria-label="Tools">
+          <a href="rave-cats.html">Rave Cats</a>
+          <a href="rave-bees.html" aria-current="page">Rave Bees</a>
+          <a href="game-wheel.html">Game Wheel</a>
+          <a href="../#obs">OBS Setup</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="wrap">
+      <section class="tool-hero">
+        <div class="panel">
+          <div class="panel-body">
+            <img class="big-icon" src="../assets/icons/bee.svg" alt="" />
+            <div>
+              <h1>Rave Bee Chat</h1>
+              <p class="lead">
+                Every chatter becomes a dancing bee (some in headphones, some in shades) waving glowsticks to the beat, with their message popping up in a
+                comic speech bubble. Shouting in ALL CAPS gets a shaky yellow bubble, and the bees sometimes break
+                out a synchronized spin. BZZZ! KAPOW!
+              </p>
+              <div class="url-box">
+                <label class="sr-only" for="url">Overlay URL</label>
+                <input id="url" type="text" readonly value="https://rave.ixitxachitl.com/bees.html" />
+                <button class="btn sun" type="button" data-copy-from="#url">Copy link</button>
+              </div>
+              <div class="btn-row">
+                <a class="btn go" href="https://rave.ixitxachitl.com/bees.html?demo=1" target="_blank" rel="noopener"
+                  >Try the demo ↗</a
+                >
+                <a class="btn" href="#setup">Setup guide</a>
+                <a class="btn" href="#settings">All settings</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="panel">
+          <div class="preview">
+            <span class="live">Live demo</span>
+            <iframe
+              src="https://rave.ixitxachitl.com/bees.html?demo=1&amp;size=100"
+              title="Rave Bee Chat running with demo chatters"
+              loading="lazy"
+              tabindex="-1"
+            ></iframe>
+          </div>
+          <p class="caption">
+            This is the real overlay running with fake demo chat. On stream the background is transparent, so the
+            bees dance over your game or camera.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="setup" aria-labelledby="setup-title">
+        <h2 class="burst-title" id="setup-title">Setup guide</h2>
+        <div class="grid-2">
+          <div class="panel">
+            <div class="panel-head"><h3>Get it on stream</h3></div>
+            <div class="panel-body">
+              <ol class="steps">
+                <li>
+                  <strong>Add a Browser source</strong>
+                  In OBS click <kbd>+</kbd> under <em>Sources</em> → <em>Browser</em>. Paste
+                  <code>https://rave.ixitxachitl.com/bees.html</code> as the URL and set it to <code>1920</code> ×
+                  <code>1080</code>. The background is transparent automatically.
+                </li>
+                <li>
+                  <strong>Open the settings</strong>
+                  Right-click the source → <em>Interact</em>. Move your mouse over the overlay and click the yellow
+                  <b>gear</b> in the bottom-right corner.
+                </li>
+                <li>
+                  <strong>Connect your chat</strong>
+                  Under <em>Chat sources</em>, type your Twitch and/or Kick channel name. Add TikTok or YouTube too
+                  if you stream there (see below).
+                </li>
+                <li>
+                  <strong>Save &amp; apply</strong>
+                  Press <em>Save &amp; apply</em> and close the Interact window. Your settings are saved inside
+                  this browser source.
+                </li>
+                <li>
+                  <strong>Say hi in chat!</strong>
+                  Send a message and watch your bee pop up. Until a chat source is set, demo bees run so you can see
+                  it working.
+                </li>
+              </ol>
+              <div class="callout warn">
+                The settings window <b>shows on stream while it's open</b>. Set things up before you go live, or
+                hide the source while you tweak.
+              </div>
+            </div>
+          </div>
+
+          <div class="stack">
+            <div class="panel pink">
+              <div class="panel-head"><h3>Chat sources</h3></div>
+              <div class="panel-body">
+                <details open>
+                  <summary>Twitch &amp; Kick</summary>
+                  <div>
+                    <p>
+                      Just type the channel name. Chat is read anonymously, so there's no login and no bot account
+                      needed.
+                    </p>
+                  </div>
+                </details>
+                <details>
+                  <summary>TikTok</summary>
+                  <div>
+                    <p>
+                      TikTok needs a bridge app running on your PC. If you use <b>TikFinity</b>, just type
+                      <code>1</code> in the TikTok box. Otherwise, paste your bridge's <code>ws://…</code> address.
+                    </p>
+                  </div>
+                </details>
+                <details>
+                  <summary>YouTube</summary>
+                  <div>
+                    <p>
+                      Paste your live stream's video ID or link, plus a <b>YouTube Data API v3 key</b> from the
+                      Google Cloud Console. You can also give a bridge <code>ws://…</code> address instead.
+                    </p>
+                    <p>
+                      <em>Check every (s)</em> controls how often it looks for new messages. Lower is snappier but
+                      uses up your daily API quota faster. The default of 6 seconds is a good start.
+                    </p>
+                  </div>
+                </details>
+                <details>
+                  <summary>Several platforms at once</summary>
+                  <div>
+                    <p>Fill in as many as you like. Everyone ends up on the same dance floor.</p>
+                  </div>
+                </details>
+              </div>
+            </div>
+
+            <div class="panel green">
+              <div class="panel-head"><h3>Tips</h3></div>
+              <div class="panel-body">
+                <ul class="feature-list">
+                  <li>
+                    Keep bees out from under your facecam with <em>Stage left / right edge (%)</em>.
+                  </li>
+                  <li>
+                    Match the dance to your music with <em>Dance tempo (BPM)</em>. The default is 126.
+                  </li>
+                  <li>Chat bots like Nightbot and StreamElements are hidden by default. Add more in the filter.</li>
+                  <li>
+                    <code>!commands</code> and first-time chatters (often spam bots) are hidden unless you turn them
+                    on.
+                  </li>
+                  <li>BTTV, FFZ and 7TV emotes, badges and pronouns all show up in the bubbles.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="link" aria-labelledby="link-title">
+        <h2 class="burst-title" id="link-title">Build a setup link</h2>
+        <div class="panel violet">
+          <div class="panel-head"><h3>Settings in the URL</h3></div>
+          <div class="panel-body">
+            <p>
+              Every setting can also go in the URL, and it overrides what's saved. That's handy for running two
+              copies with different setups, or for setting up without the Interact window. (The overlay's own
+              <em>Copy setup link</em> button does the same thing.) Fill in what you need and paste the link into
+              your browser source:
+            </p>
+            <form data-builder data-base="https://rave.ixitxachitl.com/bees.html" class="builder">
+              <div class="fields">
+                <label>Twitch channel <input name="channel" type="text" placeholder="yourchannel" /></label>
+                <label>Kick channel <input name="kick" type="text" placeholder="yourchannel" /></label>
+                <label>TikTok bridge <input name="tiktok" type="text" placeholder="1 = TikFinity" /></label>
+                <label>YouTube live <input name="youtube" type="text" placeholder="video ID or link" /></label>
+                <label>Bee size (px) <input name="size" type="number" min="50" max="300" step="5" value="120" /></label>
+                <label>Tempo (BPM) <input name="bpm" type="number" min="40" max="220" value="126" /></label>
+                <label>Max bees <input name="max" type="number" min="1" max="40" value="12" /></label>
+                <label>Left edge (%) <input name="xmin" type="number" min="0" max="100" value="0" /></label>
+                <label>Right edge (%) <input name="xmax" type="number" min="0" max="100" value="100" /></label>
+                <label>From bottom (px) <input name="ground" type="number" min="-40" max="600" value="6" /></label>
+              </div>
+              <div class="toggles">
+                <label><input name="demo" type="checkbox" /> Demo chat</label>
+                <label><input name="ambient" type="checkbox" checked /> Glowing dance floor</label>
+                <label><input name="sfx" type="checkbox" checked /> Comic POW! bursts</label>
+                <label><input name="sparks" type="checkbox" checked /> Glowstick sparkles</label>
+                <label><input name="cmds" type="checkbox" /> Show !commands</label>
+              </div>
+              <div class="url-box">
+                <label class="sr-only" for="built-url">Your setup link</label>
+                <input id="built-url" type="text" readonly data-builder-out />
+                <button class="btn sun" type="button" data-copy-from="#built-url">Copy link</button>
+                <button class="btn" type="reset">Reset</button>
+              </div>
+            </form>
+            <div class="callout">
+              Using YouTube with an API key? Add it in the overlay's own settings rather than in a link, so the key
+              doesn't end up somewhere it could be shared. (<code>ytkey</code> works as a URL parameter too.)
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="settings" aria-labelledby="settings-title">
+        <h2 class="burst-title" id="settings-title">All settings</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Setting</th>
+                <th scope="col">URL parameter</th>
+                <th scope="col">Default</th>
+                <th scope="col">What it does</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="group" colspan="4">Chat sources</td></tr>
+              <tr><td>Twitch channel</td><td><code>channel</code></td><td>—</td><td>Read anonymously, no login needed.</td></tr>
+              <tr><td>Kick channel</td><td><code>kick</code></td><td>—</td><td>Read anonymously, no login needed.</td></tr>
+              <tr><td>TikTok bridge</td><td><code>tiktok</code></td><td>—</td><td><code>1</code> uses TikFinity on this PC, or give a <code>ws://…</code> bridge address.</td></tr>
+              <tr><td>YouTube live</td><td><code>youtube</code></td><td>—</td><td>Live video ID or link (needs the API key), or a bridge address.</td></tr>
+              <tr><td>YouTube API key</td><td><code>ytkey</code></td><td>—</td><td>YouTube Data API v3 key from Google Cloud Console.</td></tr>
+              <tr><td>YouTube check every (s)</td><td><code>ytpoll</code></td><td>6</td><td>2–60. Lower is snappier but uses the daily API quota faster.</td></tr>
+              <tr><td>Demo chat</td><td><code>demo</code></td><td>off</td><td>Fake chatters. Also runs on its own when no source is set.</td></tr>
+              <tr><td class="group" colspan="4">Bees</td></tr>
+              <tr><td>Bee size (px)</td><td><code>size</code></td><td>120</td><td>50–300.</td></tr>
+              <tr><td>Dance tempo (BPM)</td><td><code>bpm</code></td><td>126</td><td>40–220.</td></tr>
+              <tr><td>Max bees on screen</td><td><code>max</code></td><td>12</td><td>1–40. Also limited by how many fit across.</td></tr>
+              <tr><td>Stay after talking (s)</td><td><code>linger</code></td><td>0.6</td><td>How long a bee hangs around after its bubble goes.</td></tr>
+              <tr><td>Stage left edge (%)</td><td><code>xmin</code></td><td>0</td><td rowspan="2">Limit where bees can stand, e.g. to keep them out from under a facecam.</td></tr>
+              <tr><td>Stage right edge (%)</td><td><code>xmax</code></td><td>100</td></tr>
+              <tr><td>Distance from bottom (px)</td><td><code>ground</code></td><td>6</td><td>-40–600. Raise the dance floor.</td></tr>
+              <tr><td class="group" colspan="4">Speech bubbles</td></tr>
+              <tr><td>Bubble time ×</td><td><code>hold</code></td><td>1</td><td>0.3–5. Multiplier for how long messages stay up.</td></tr>
+              <tr><td>Max message length</td><td><code>maxchars</code></td><td>150</td><td>20–500 characters.</td></tr>
+              <tr><td>Show badges</td><td><code>badges</code></td><td>on</td><td>Twitch and Kick badges; owner / mod / member / sub / follower on YouTube and TikTok.</td></tr>
+              <tr><td>Show pronouns</td><td><code>pronouns</code></td><td>on</td><td>Twitch chatters who set them on pronouns.alejo.io.</td></tr>
+              <tr><td>BTTV / FFZ / 7TV emotes</td><td><code>extemotes</code></td><td>on</td><td>Third-party emotes in bubbles.</td></tr>
+              <tr><td class="group" colspan="4">Filtering</td></tr>
+              <tr><td>Show !commands</td><td><code>cmds</code></td><td>off</td><td>Show messages that start with <code>!</code>.</td></tr>
+              <tr><td>Show first-time chatters</td><td><code>firsttime</code></td><td>off</td><td>Twitch flags these; spam bots usually show up this way.</td></tr>
+              <tr><td>Hide known bots</td><td><code>botlist</code></td><td>on</td><td>Uses the public TwitchInsights bot list.</td></tr>
+              <tr><td>Always hide these users</td><td><code>ignore</code></td><td>nightbot, streamelements, streamlabs, moobot, fossabot, wizebot</td><td>Comma or line separated.</td></tr>
+              <tr><td class="group" colspan="4">Effects</td></tr>
+              <tr><td>Glowing dance floor</td><td><code>ambient</code></td><td>on</td><td>Rainbow floor glow while bees are on stage.</td></tr>
+              <tr><td>Comic POW! bursts</td><td><code>sfx</code></td><td>on</td><td>BZZZ! BUZZ! STING! KAPOW! pop-ups.</td></tr>
+              <tr><td>Glowstick sparkles</td><td><code>sparks</code></td><td>on</td><td>Sparkles flying off the glowsticks.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="color: #cfc8ef">Switches take <code>1</code> (on) or <code>0</code> (off) in the URL.</p>
+      </section>
+
+      <section class="section" id="advanced" aria-labelledby="adv-title">
+        <h2 class="burst-title" id="adv-title">For tinkerers</h2>
+        <div class="grid-2">
+          <div class="panel cyan">
+            <div class="panel-head"><h3>Custom integrations</h3></div>
+            <div class="panel-body">
+              <p>
+                Streamer.bot or your own scripts can make a bee say something by calling this inside the browser
+                source:
+              </p>
+              <pre><code>window.raveBees.say("name", "message", {
+  color: "#ff00aa",
+  platform: "twitch",
+});</code></pre>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><h3>Questions</h3></div>
+            <div class="panel-body">
+              <details>
+                <summary>I only see demo bees</summary>
+                <div><p>No chat source is set yet. Add your channel in the settings (or the URL) and they'll stop.</p></div>
+              </details>
+              <details>
+                <summary>My settings disappeared</summary>
+                <div>
+                  <p>
+                    Settings live in that browser source's storage. If your setup can't save them, the panel will
+                    tell you — use a setup link from <a href="#link">the builder above</a> instead.
+                  </p>
+                </div>
+              </details>
+              <details>
+                <summary>Can I run two copies?</summary>
+                <div><p>Yes. Give each browser source its own setup link and the URL settings win.</p></div>
+              </details>
+              <details>
+                <summary>Prefer cats?</summary>
+                <div><p>Check out <a href="rave-cats.html">Rave Cat Chat</a>. Same settings, more meows.</p></div>
+              </details>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <a class="brand" href="../"><img src="../assets/icons/manta.svg" alt="" />Ixitxachitl's Stream Tools</a>
+        <span>Made with glowsticks · © <span data-year>2026</span> Ixitxachitl</span>
+      </div>
+    </footer>
+    <script src="../assets/js/site.js" defer></script>
+  </body>
+</html>

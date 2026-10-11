@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ixitxachitl's Stream Tools</title>
+    <meta
+      name="description"
+      content="Free, no-login stream overlays and widgets: Rave Cat Chat, Rave Bee Chat and the Game Wheel. Drop them into OBS as a browser source."
+    />
+    <meta property="og:title" content="Ixitxachitl's Stream Tools" />
+    <meta
+      property="og:description"
+      content="Free overlays and widgets for streamers — dancing chat cats, dancing chat bees and a game-picking wheel."
+    />
+    <meta property="og:image" content="assets/img/rave-cats.webp" />
+    <meta name="theme-color" content="#1a0f33" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/comic.css" />
+  </head>
+  <body>
+    <a class="skip btn sun" href="#tools">Skip to the tools</a>
+
+    <header class="topbar">
+      <div class="wrap">
+        <a class="brand" href="./"><img src="assets/icons/manta.svg" alt="" />Ixitxachitl's Stream Tools</a>
+        <nav class="nav" aria-label="Tools">
+          <a href="tools/rave-cats.html">Rave Cats</a>
+          <a href="tools/rave-bees.html">Rave Bees</a>
+          <a href="tools/game-wheel.html">Game Wheel</a>
+          <a href="#obs">OBS Setup</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero wrap">
+        <img class="logo" src="assets/icons/manta.svg" alt="" width="140" height="140" />
+        <h1 class="title"><small>Ixitxachitl's</small>Stream Tools!</h1>
+        <p class="tagline">
+          Free overlays &amp; widgets for your stream. No accounts, no downloads — paste a link into OBS and
+          your chat starts dancing.
+        </p>
+      </section>
+
+      <section class="section wrap" id="tools" aria-labelledby="tools-title">
+        <h2 class="burst-title" id="tools-title">Pick a tool</h2>
+
+        <div class="tools">
+          <!-- Rave Cat Chat -->
+          <article class="tool" style="--accent: var(--pink)">
+            <div class="shot">
+              <img
+                src="assets/img/rave-cats-card.webp"
+                alt="A green cat and an orange cat with glowsticks dance on a glowing floor; one shouts WHAT A SET in a yellow comic bubble"
+                width="760"
+                height="380"
+                loading="lazy"
+              />
+              <img class="badge-icon" src="assets/icons/cat.svg" alt="" />
+              <span class="kind">Chat overlay</span>
+            </div>
+            <div class="body">
+              <h3>Rave Cat Chat</h3>
+              <p>
+                Every chatter becomes a glowstick-waving cat that dances to the beat and says their message in a
+                comic speech bubble.
+              </p>
+              <ul class="chips" aria-label="Works with">
+                <li class="chip">Twitch</li>
+                <li class="chip">Kick</li>
+                <li class="chip">YouTube</li>
+                <li class="chip">TikTok</li>
+              </ul>
+              <div class="btn-row">
+                <a class="btn hot" href="tools/rave-cats.html">How to set up</a>
+                <a class="btn" href="https://rave.ixitxachitl.com/" target="_blank" rel="noopener">Open ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Rave Bee Chat -->
+          <article class="tool" style="--accent: var(--sun)">
+            <div class="shot">
+              <img
+                src="assets/img/rave-bees-card.webp"
+                alt="Three cartoon bees with glowsticks and party hats dance on a glowing floor; one says turn it UP in a speech bubble"
+                width="760"
+                height="380"
+                loading="lazy"
+              />
+              <img class="badge-icon" src="assets/icons/bee.svg" alt="" />
+              <span class="kind" style="color: var(--ink); text-shadow: none">Chat overlay</span>
+            </div>
+            <div class="body">
+              <h3>Rave Bee Chat</h3>
+              <p>
+                The same party, but buzzier. Chatters show up as dancing bees with headphones, shades and
+                glowsticks. BZZZ! KAPOW!
+              </p>
+              <ul class="chips" aria-label="Works with">
+                <li class="chip">Twitch</li>
+                <li class="chip">Kick</li>
+                <li class="chip">YouTube</li>
+                <li class="chip">TikTok</li>
+              </ul>
+              <div class="btn-row">
+                <a class="btn hot" href="tools/rave-bees.html">How to set up</a>
+                <a class="btn" href="https://rave.ixitxachitl.com/bees.html" target="_blank" rel="noopener"
+                  >Open ↗</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Game Wheel -->
+          <article class="tool" style="--accent: var(--cyan)">
+            <div class="shot">
+              <img
+                src="assets/img/game-wheel.webp"
+                alt="A colorful spinning prize wheel on a starry night background with a games list beside it"
+                width="1280"
+                height="720"
+                loading="lazy"
+              />
+              <img class="badge-icon" src="assets/icons/wheel.svg" alt="" />
+              <span class="kind" style="color: var(--ink); text-shadow: none">Widget</span>
+            </div>
+            <div class="body">
+              <h3>Game Wheel</h3>
+              <p>
+                "What are we playing?" Fill the wheel with your games, give it a spin on stream, and let fate
+                decide. Surprise visitors included.
+              </p>
+              <ul class="chips" aria-label="Features">
+                <li class="chip">Transparent background</li>
+                <li class="chip">Stream view</li>
+                <li class="chip">Pick history</li>
+              </ul>
+              <div class="btn-row">
+                <a class="btn hot" href="tools/game-wheel.html">How to set up</a>
+                <a class="btn" href="https://wheel.ixitxachitl.com/" target="_blank" rel="noopener">Open ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Placeholder for future tools -->
+          <article class="tool soon" aria-label="More tools coming soon">
+            <div class="shot"><span class="pow" aria-hidden="true">Soon!</span></div>
+            <div class="body">
+              <h3>More on the way…</h3>
+              <p>New overlays and widgets get added here as they're built. Check back soon!</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section wrap" id="obs" aria-labelledby="obs-title">
+        <h2 class="burst-title" id="obs-title">Adding a tool to OBS</h2>
+        <div class="grid-2">
+          <div class="panel">
+            <div class="panel-head"><h3>Browser source in 4 steps</h3></div>
+            <div class="panel-body">
+              <ol class="steps">
+                <li>
+                  <strong>Add a Browser source</strong>
+                  In your scene's <em>Sources</em> list, click <kbd>+</kbd> → <em>Browser</em>, give it a name and
+                  press OK.
+                </li>
+                <li>
+                  <strong>Paste the tool's link</strong>
+                  Put the tool's URL in the <em>URL</em> box. Set Width <code>1920</code> and Height
+                  <code>1080</code> (or your canvas size).
+                </li>
+                <li>
+                  <strong>Set it up from inside OBS</strong>
+                  Right-click the source → <em>Interact</em>. That opens a window where you can click the tool's
+                  settings, just like a normal web page.
+                </li>
+                <li>
+                  <strong>Go live!</strong>
+                  Settings are saved inside that browser source, so they'll still be there next stream.
+                </li>
+              </ol>
+            </div>
+          </div>
+          <div class="stack">
+            <div class="panel cyan">
+              <div class="panel-head"><h3>Good to know</h3></div>
+              <div class="panel-body">
+                <ul class="feature-list">
+                  <li>Everything runs in the browser source — nothing to install, no login.</li>
+                  <li>
+                    OBS keeps its own browser storage, so settings you make in Chrome or Firefox don't carry over.
+                    Use <em>Interact</em> to set up the copy in OBS (or use a setup link, for the rave overlays).
+                  </li>
+                  <li>
+                    Using Streamlabs Desktop, Meld or XSplit? They all have a browser / web-page source that works
+                    the same way.
+                  </li>
+                  <li>
+                    If a source gets stuck, open its properties and press <em>Refresh cache of current page</em>.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <a class="brand" href="./"><img src="assets/icons/manta.svg" alt="" />Ixitxachitl's Stream Tools</a>
+        <span>Made with glowsticks · © <span data-year>2026</span> Ixitxachitl</span>
+      </div>
+    </footer>
+    <script src="assets/js/site.js" defer></script>
+  </body>
+</html>

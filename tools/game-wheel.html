@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Game Wheel · Ixitxachitl's Stream Tools</title>
+    <meta
+      name="description"
+      content="Set up the Game Wheel: a spin-to-pick wheel for deciding what to play on stream, with a transparent background for OBS."
+    />
+    <meta property="og:image" content="../assets/img/game-wheel.webp" />
+    <meta name="theme-color" content="#1a0f33" />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/comic.css" />
+  </head>
+  <body>
+    <a class="skip btn sun" href="#main">Skip to content</a>
+
+    <header class="topbar">
+      <div class="wrap">
+        <a class="brand" href="../"><img src="../assets/icons/manta.svg" alt="" />Ixitxachitl's Stream Tools</a>
+        <nav class="nav" aria-label="Tools">
+          <a href="rave-cats.html">Rave Cats</a>
+          <a href="rave-bees.html">Rave Bees</a>
+          <a href="game-wheel.html" aria-current="page">Game Wheel</a>
+          <a href="../#obs">OBS Setup</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="wrap">
+      <section class="tool-hero">
+        <div class="panel">
+          <div class="panel-body">
+            <img class="big-icon" src="../assets/icons/wheel.svg" alt="" />
+            <div>
+              <h1>Game Wheel</h1>
+              <p class="lead">
+                Can't decide what to play? Load the wheel with your games, give it a spin in front of chat, and let
+                fate pick. "Tonight we're playing…" — no take-backs. Watch out for surprise visitors drifting past.
+              </p>
+              <div class="url-box">
+                <label class="sr-only" for="url">Wheel URL</label>
+                <input id="url" type="text" readonly value="https://wheel.ixitxachitl.com/" />
+                <button class="btn sun" type="button" data-copy-from="#url">Copy link</button>
+              </div>
+              <div class="btn-row">
+                <a class="btn go" href="https://wheel.ixitxachitl.com/" target="_blank" rel="noopener"
+                  >Spin it now ↗</a
+                >
+                <a class="btn" href="#setup">Setup guide</a>
+                <a class="btn" href="#keys">Shortcuts</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="panel">
+          <img
+            src="../assets/img/game-wheel.webp"
+            alt="The Game Wheel: a gold-rimmed wheel with colored slices on a starry night sky, and a control panel with a Spin button, options and the list of games"
+            width="1280"
+            height="720"
+            loading="lazy"
+          />
+          <p class="caption">
+            The wheel with its control panel open. On stream you can hide the panel and make the background
+            transparent so only the wheel shows.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="setup" aria-labelledby="setup-title">
+        <h2 class="burst-title" id="setup-title">Setup guide</h2>
+        <div class="grid-2">
+          <div class="panel">
+            <div class="panel-head"><h3>Put it on stream</h3></div>
+            <div class="panel-body">
+              <ol class="steps">
+                <li>
+                  <strong>Add a Browser source</strong>
+                  In OBS click <kbd>+</kbd> under <em>Sources</em> → <em>Browser</em>. Paste
+                  <code>https://wheel.ixitxachitl.com/</code> and set it to <code>1920</code> × <code>1080</code>.
+                </li>
+                <li>
+                  <strong>Open it with Interact</strong>
+                  Right-click the source → <em>Interact</em>. You'll see the wheel and its control panel.
+                </li>
+                <li>
+                  <strong>Add your games</strong>
+                  Type your games into <em>Games on the wheel</em>, one per line, and press
+                  <em>Update wheel</em>.
+                </li>
+                <li>
+                  <strong>Make it stream-ready</strong>
+                  Tick <em>Transparent background</em> (or press <kbd>T</kbd>) and
+                  <em>Hide controls</em> (or press <kbd>H</kbd>). Now only the wheel shows on stream.
+                </li>
+                <li>
+                  <strong>Spin!</strong>
+                  In the Interact window, click or drag the wheel, or press <kbd>Space</kbd>. When it stops you get
+                  a "Tonight we're playing…" card.
+                </li>
+              </ol>
+              <div class="callout tip">
+                Your games list, options and recent picks are saved in that browser source, so they're still there
+                next time you open OBS.
+              </div>
+            </div>
+          </div>
+
+          <div class="stack">
+            <div class="panel cyan" id="keys">
+              <div class="panel-head"><h3>Keyboard shortcuts</h3></div>
+              <div class="panel-body">
+                <div class="table-wrap">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th scope="col">Key</th>
+                        <th scope="col">Does</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr><td><kbd>Space</kbd></td><td>Spin the wheel</td></tr>
+                      <tr><td><kbd>H</kbd></td><td>Hide / show the control panel (stream view)</td></tr>
+                      <tr><td><kbd>T</kbd></td><td>Transparent background on / off</td></tr>
+                      <tr><td><kbd>E</kbd></td><td>Send a surprise visitor across the screen now</td></tr>
+                      <tr><td><kbd>Esc</kbd></td><td>Close the winner card</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p style="margin: 12px 0 0; font-size: 15px">
+                  Shortcuts work while the wheel's window has focus. In OBS that means inside the Interact window.
+                </p>
+              </div>
+            </div>
+
+            <div class="panel pink">
+              <div class="panel-head"><h3>After the spin</h3></div>
+              <div class="panel-body">
+                <ul class="feature-list">
+                  <li><b>Remove and close</b> takes the winner off the wheel, so it can't come up again.</li>
+                  <li><b>Spin again</b> if chat demands a re-roll.</li>
+                  <li><b>Close</b> keeps the game on the wheel for next time.</li>
+                  <li>Every pick is saved under <em>Recent picks</em> in the control panel.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="more-title">
+        <h2 class="burst-title" id="more-title">More tricks</h2>
+        <div class="grid-2">
+          <div class="panel green">
+            <div class="panel-head"><h3>Control panel extras</h3></div>
+            <div class="panel-body">
+              <ul class="feature-list">
+                <li><b>Tick sounds</b> play while the wheel spins. Untick it for a silent wheel.</li>
+                <li><b>Shuffle order</b> mixes up where the games sit on the wheel.</li>
+                <li><b>Reset to full list</b> puts the starting list back (it asks first).</li>
+                <li>
+                  Hid the controls and can't find them? Press <kbd>H</kbd>, or click the <em>Show controls</em>
+                  button.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="panel violet">
+            <div class="panel-head"><h3>Questions</h3></div>
+            <div class="panel-body">
+              <details>
+                <summary>What are the surprise visitors?</summary>
+                <div>
+                  <p>
+                    Every so often a little friend (an astronaut cat, a UFO and more) drifts across the screen.
+                    Click one for hearts, or press <kbd>E</kbd> to call one in right away.
+                  </p>
+                </div>
+              </details>
+              <details>
+                <summary>Can I spin it from my normal browser instead?</summary>
+                <div>
+                  <p>
+                    Yes. Open the wheel in your browser and add it to OBS with a <em>Window Capture</em>. The
+                    transparent background only works as a browser source, though, so you'll see the starry sky.
+                  </p>
+                </div>
+              </details>
+              <details>
+                <summary>My games list is different in OBS and in my browser</summary>
+                <div>
+                  <p>
+                    That's expected. Each browser keeps its own saved list, and OBS counts as its own browser. Set
+                    up the copy you actually show on stream.
+                  </p>
+                </div>
+              </details>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <a class="brand" href="../"><img src="../assets/icons/manta.svg" alt="" />Ixitxachitl's Stream Tools</a>
+        <span>Made with glowsticks · © <span data-year>2026</span> Ixitxachitl</span>
+      </div>
+    </footer>
+    <script src="../assets/js/site.js" defer></script>
+  </body>
+</html>
