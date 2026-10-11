@@ -1009,8 +1009,7 @@ details > div > :last-child {
   min-width: 0;
 }
 p code,
-li code,
-td code {
+li code {
   white-space: normal;
   overflow-wrap: anywhere;
 }

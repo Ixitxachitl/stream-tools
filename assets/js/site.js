@@ -49,8 +49,12 @@
       for (const el of form.elements) {
         if (!el.name) continue;
         if (el.type === "checkbox") {
-          // only write switches that differ from the overlay's default
-          if (el.checked !== el.defaultChecked) url.searchParams.set(el.name, el.checked ? "1" : "0");
+          // data-on="true": a flag the tool only understands as name=true, written when ticked
+          if (el.dataset.on) {
+            if (el.checked) url.searchParams.set(el.name, el.dataset.on);
+          }
+          // otherwise only write switches that differ from the overlay's default
+          else if (el.checked !== el.defaultChecked) url.searchParams.set(el.name, el.checked ? "1" : "0");
         } else if (el.value.trim() !== "" && el.value.trim() !== el.defaultValue) {
           url.searchParams.set(el.name, el.value.trim());
         }

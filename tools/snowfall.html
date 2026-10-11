@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Snowfall · Ixitxachitl's Stream Tools</title>
+    <meta
+      name="description"
+      content="Set up Snowfall: a transparent OBS overlay where snow drifts up along the bottom of your stream and snowmen build themselves."
+    />
+    <meta property="og:image" content="../assets/img/snowfall-card.webp" />
+    <meta name="theme-color" content="#1a0f33" />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/comic.css" />
+  </head>
+  <body>
+    <a class="skip btn sun" href="#main">Skip to content</a>
+
+    <header class="topbar">
+      <div class="wrap">
+        <a class="brand" href="../"><img src="../assets/icons/manta-mark.svg" alt="" />Ixitxachitl's Stream Tools</a>
+        <nav class="nav" aria-label="Tools">
+          <a href="rave-cats.html">Rave Cats</a>
+          <a href="rave-bees.html">Rave Bees</a>
+          <a href="rave-pumpkins.html">Rave Pumpkins</a>
+          <a href="game-wheel.html">Game Wheel</a>
+          <a href="snowfall.html" aria-current="page">Snowfall</a>
+          <a href="../#obs">OBS Setup</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="wrap">
+      <section class="tool-hero">
+        <div class="panel">
+          <div class="panel-body">
+            <img class="big-icon" src="../assets/icons/snowman.svg" alt="" />
+            <div>
+              <h1>Snowfall</h1>
+              <p class="lead">
+                Let it snow on your stream! Flakes drift down over everything, wind gusts swirl them around, and the
+                snow piles up along the bottom. When a drift gets deep enough a snowman builds itself, waves at
+                chat for a while, then melts into a puddle.
+              </p>
+              <div class="url-box">
+                <label class="sr-only" for="url">Overlay URL</label>
+                <input id="url" type="text" readonly value="https://snow.ixitxachitl.com/" />
+                <button class="btn sun" type="button" data-copy-from="#url">Copy link</button>
+              </div>
+              <div class="btn-row">
+                <a class="btn go" href="https://snow.ixitxachitl.com/?background=true" target="_blank" rel="noopener"
+                  >Watch it snow ↗</a
+                >
+                <a class="btn" href="#setup">Setup guide</a>
+                <a class="btn" href="#link">Options</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="panel">
+          <div class="preview">
+            <span class="live">Live demo</span>
+            <iframe
+              src="https://snow.ixitxachitl.com/"
+              title="Snowfall overlay running live"
+              loading="lazy"
+              tabindex="-1"
+            ></iframe>
+          </div>
+          <p class="caption">
+            This is the real overlay, live. Give it a minute or two: the snow needs to pile up before the first
+            snowmen appear.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="setup" aria-labelledby="setup-title">
+        <h2 class="burst-title" id="setup-title">Setup guide</h2>
+        <div class="grid-2">
+          <div class="panel">
+            <div class="panel-head"><h3>Get it on stream</h3></div>
+            <div class="panel-body">
+              <ol class="steps">
+                <li>
+                  <strong>Add a Browser source</strong>
+                  In OBS click <kbd>+</kbd> under <em>Sources</em> → <em>Browser</em>. Paste
+                  <code>https://snow.ixitxachitl.com/</code> as the URL.
+                </li>
+                <li>
+                  <strong>Make it full screen</strong>
+                  Set Width and Height to your canvas size, like <code>1920</code> × <code>1080</code>. The snow fills
+                  the whole source and piles up along its bottom edge.
+                </li>
+                <li>
+                  <strong>Put it on top</strong>
+                  Drag the source to the top of your scene's list so the snow falls in front of your game and camera.
+                  The background is already transparent.
+                </li>
+                <li>
+                  <strong>Enjoy the weather</strong>
+                  That's it. There's nothing to log in to and no settings panel. Change the speed with
+                  <a href="#link">a setup link</a> if you like.
+                </li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="stack">
+            <div class="panel cyan">
+              <div class="panel-head"><h3>What you'll see</h3></div>
+              <div class="panel-body">
+                <ul class="feature-list">
+                  <li>The snow comes and goes, from light flurries to heavy snowfall.</li>
+                  <li>Every so often a wind gust swirls a patch of flakes around.</li>
+                  <li>Snow builds up along the bottom into a bumpy drift.</li>
+                  <li>
+                    Deep drifts turn into snowmen with top hats, carrot noses and stick arms. They bounce and wave,
+                    then melt away after a while.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="panel green">
+              <div class="panel-head"><h3>Tips</h3></div>
+              <div class="panel-body">
+                <ul class="feature-list">
+                  <li>
+                    Want the drift somewhere other than the bottom of the screen? Make the source shorter and move it.
+                    The snow always piles at the source's bottom edge.
+                  </li>
+                  <li>
+                    To start fresh with no snow on the ground, open the source's properties and press
+                    <em>Refresh cache of current page</em>.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="link" aria-labelledby="link-title">
+        <h2 class="burst-title" id="link-title">Options</h2>
+        <div class="grid-2">
+          <div class="panel violet">
+            <div class="panel-head"><h3>Build a setup link</h3></div>
+            <div class="panel-body">
+              <form data-builder data-base="https://snow.ixitxachitl.com/" class="builder">
+                <div class="fields">
+                  <label
+                    >Snow speed (×)
+                    <input name="speed" type="number" min="0.1" max="5" step="0.1" value="1" />
+                  </label>
+                </div>
+                <div class="toggles">
+                  <label><input name="background" type="checkbox" data-on="true" /> Black background</label>
+                </div>
+                <div class="url-box">
+                  <label class="sr-only" for="built-url">Your setup link</label>
+                  <input id="built-url" type="text" readonly data-builder-out />
+                  <button class="btn sun" type="button" data-copy-from="#built-url">Copy link</button>
+                  <button class="btn" type="reset">Reset</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><h3>URL parameters</h3></div>
+            <div class="panel-body">
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th scope="col">Parameter</th>
+                      <th scope="col">Default</th>
+                      <th scope="col">What it does</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><code>speed</code></td>
+                      <td>1</td>
+                      <td>Multiplies how fast the snow falls. <code>0.5</code> is half speed, <code>2</code> is double.</td>
+                    </tr>
+                    <tr>
+                      <td><code>background</code></td>
+                      <td>off</td>
+                      <td>
+                        <code>background=true</code> paints the background black instead of transparent. Handy for
+                        previewing the snow in a normal browser.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <a class="brand" href="../"><img src="../assets/icons/manta-mark.svg" alt="" />Ixitxachitl's Stream Tools</a>
+        <span>Made with glowsticks · © <span data-year>2026</span> Ixitxachitl</span>
+      </div>
+    </footer>
+    <script src="../assets/js/site.js" defer></script>
+  </body>
+</html>

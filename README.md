@@ -4,11 +4,13 @@ A small static site that collects Ixitxachitl's free stream overlays and widgets
 gets a card, a screenshot, and a setup guide. The site uses the same comic look as the Rave overlays
 (Bangers + Comic Neue, thick ink outlines, hard shadows, halftone dots, neon rave colors).
 
-| Tool          | Lives at                                 | Guide                                            |
-| ------------- | ---------------------------------------- | ------------------------------------------------ |
-| Rave Cat Chat | <https://rave.ixitxachitl.com/>          | [tools/rave-cats.html](tools/rave-cats.html)     |
-| Rave Bee Chat | <https://rave.ixitxachitl.com/bees.html> | [tools/rave-bees.html](tools/rave-bees.html)     |
-| Game Wheel    | <https://wheel.ixitxachitl.com/>         | [tools/game-wheel.html](tools/game-wheel.html)   |
+| Tool              | Lives at                                     | Guide                                                |
+| ----------------- | -------------------------------------------- | ---------------------------------------------------- |
+| Rave Cat Chat     | <https://rave.ixitxachitl.com/>              | [tools/rave-cats.html](tools/rave-cats.html)         |
+| Rave Bee Chat     | <https://rave.ixitxachitl.com/bees.html>     | [tools/rave-bees.html](tools/rave-bees.html)         |
+| Rave Pumpkin Chat | <https://rave.ixitxachitl.com/pumpkins.html> | [tools/rave-pumpkins.html](tools/rave-pumpkins.html) |
+| Game Wheel        | <https://wheel.ixitxachitl.com/>             | [tools/game-wheel.html](tools/game-wheel.html)       |
+| Snowfall          | <https://snow.ixitxachitl.com/>              | [tools/snowfall.html](tools/snowfall.html)           |
 
 ## Layout
 
