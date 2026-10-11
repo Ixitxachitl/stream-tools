@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Countdown Timer · Ixitxachitl's Stream Tools</title>
+    <meta
+      name="description"
+      content="Set up the Countdown Timer: design a stream countdown with your own fonts, colors and effects, then drop the link into OBS."
+    />
+    <meta property="og:image" content="../assets/img/countdown-card.webp" />
+    <meta name="theme-color" content="#1a0f33" />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/comic.css" />
+  </head>
+  <body>
+    <a class="skip btn sun" href="#main">Skip to content</a>
+
+    <header class="topbar">
+      <div class="wrap">
+        <a class="brand" href="../"><img src="../assets/icons/manta-mark.svg" alt="" />Ixitxachitl's Stream Tools</a>
+        <nav class="nav" aria-label="Tools">
+          <a href="rave-cats.html">Rave Cats</a>
+          <a href="rave-bees.html">Rave Bees</a>
+          <a href="rave-pumpkins.html">Rave Pumpkins</a>
+          <a href="game-wheel.html">Game Wheel</a>
+          <a href="snowfall.html">Snowfall</a>
+          <a href="countdown.html" aria-current="page">Countdown</a>
+          <a href="../#obs">OBS Setup</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="wrap">
+      <section class="tool-hero">
+        <div class="panel">
+          <div class="panel-body">
+            <img class="big-icon" src="../assets/icons/stopwatch.svg" alt="" />
+            <div>
+              <h1>Countdown Timer</h1>
+              <p class="lead">
+                "Stream starts in…", "New Year in…", "Subathon ends in…" Design a countdown that matches your stream,
+                with your own font, colors and effects, then paste the link into OBS. Viewers anywhere count down to
+                the same moment.
+              </p>
+              <div class="url-box">
+                <label class="sr-only" for="url">Configurator URL</label>
+                <input id="url" type="text" readonly value="https://countdown.ixitxachitl.com/" />
+                <button class="btn sun" type="button" data-copy-from="#url">Copy link</button>
+              </div>
+              <div class="btn-row">
+                <a class="btn go" href="https://countdown.ixitxachitl.com/" target="_blank" rel="noopener"
+                  >Design a timer ↗</a
+                >
+                <a class="btn" href="#setup">Setup guide</a>
+                <a class="btn" href="#link">Link settings</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="panel">
+          <div class="preview">
+            <span class="live">Live demo</span>
+            <iframe id="demo" title="A live countdown timer" loading="lazy" tabindex="-1"></iframe>
+          </div>
+          <p class="caption">
+            A real timer counting down to your next New Year: blocks format, Bungee font, neon glow, transparent
+            background.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="setup" aria-labelledby="setup-title">
+        <h2 class="burst-title" id="setup-title">Setup guide</h2>
+        <div class="grid-2">
+          <div class="panel">
+            <div class="panel-head"><h3>Make your timer</h3></div>
+            <div class="panel-body">
+              <ol class="steps">
+                <li>
+                  <strong>Open the configurator</strong>
+                  Go to <a href="https://countdown.ixitxachitl.com/" target="_blank" rel="noopener">countdown.ixitxachitl.com</a>.
+                  Its live demo updates as you change things.
+                </li>
+                <li>
+                  <strong>Pick the moment</strong>
+                  Set the date, time and timezone you're counting down to. The quick buttons (<em>+5 min</em>,
+                  <em>+1 hour</em>, <em>+1 day</em>, <em>New Year</em>) fill it in for you.
+                </li>
+                <li>
+                  <strong>Style it</strong>
+                  Add a title and the text to show at the end, then choose the format, font, colors and effects.
+                  Tick <em>Transparent</em> under <em>Style</em> so only the timer shows over your scene.
+                </li>
+                <li>
+                  <strong>Copy the link</strong>
+                  Press <em>Copy link</em>. Every setting lives in the link, so you can bookmark it and come back to
+                  edit it later.
+                </li>
+                <li>
+                  <strong>Add it to OBS</strong>
+                  Add a <em>Browser</em> source and paste the link into its <em>URL</em> field (not the
+                  <em>Local file</em> option). Set it to <code>1920</code> × <code>1080</code>. The timer scales to
+                  fit.
+                </li>
+              </ol>
+              <div class="callout tip">
+                Press <em>Test: 10 s</em> in the configurator to see exactly what happens when the timer runs out.
+              </div>
+            </div>
+          </div>
+
+          <div class="stack">
+            <div class="panel">
+              <img
+                src="../assets/img/countdown.webp"
+                alt="The Countdown Timer Configurator: settings for date, timezone, title and format on the left, and a live demo of the timer on the right"
+                width="1280"
+                height="720"
+                loading="lazy"
+              />
+              <p class="caption">The configurator: settings on the left, live demo and your link on the right.</p>
+            </div>
+            <div class="panel cyan">
+              <div class="panel-head"><h3>Make it yours</h3></div>
+              <div class="panel-body">
+                <ul class="feature-list">
+                  <li>
+                    Four formats: digital <code>01:02:03:04</code>, short labels <code>1d 02h</code>, blocks with
+                    unit names, or written out in words.
+                  </li>
+                  <li>Show only the units you want. Hidden ones roll into the next, so without days you get 50:00:00.</li>
+                  <li>
+                    Dozens of fonts, from pixel and digital to neon display fonts, or type in any Google Font name.
+                  </li>
+                  <li>Effects: shine, glitch, neon glow, and a pulse in the last 10 seconds.</li>
+                  <li>Keep counting up after the end, blink the colons, or show the target date underneath.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="link" aria-labelledby="link-title">
+        <h2 class="burst-title" id="link-title">Link settings</h2>
+        <div class="panel violet">
+          <div class="panel-head"><h3>Editing the link by hand</h3></div>
+          <div class="panel-body">
+            <p>
+              The configurator builds the link for you, but you can also tweak it yourself. Every setting is optional
+              and missing ones use the defaults. The timer lives at
+              <code>https://countdown.ixitxachitl.com/timer.html</code>.
+            </p>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">Setting</th>
+                    <th scope="col">Values</th>
+                    <th scope="col">Default</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td><code>target</code></td><td>The end moment as an ISO date, e.g. <code>2027-01-01T05:00:00.000Z</code></td><td>none</td></tr>
+                  <tr><td><code>timezone</code></td><td>An IANA timezone for the date line, e.g. <code>America/New_York</code></td><td>viewer's timezone</td></tr>
+                  <tr><td><code>title</code>, <code>endText</code></td><td>Any text</td><td>empty, TIME'S UP!</td></tr>
+                  <tr><td><code>format</code></td><td><code>colon</code>, <code>labels</code>, <code>blocks</code>, <code>words</code></td><td><code>colon</code></td></tr>
+                  <tr><td><code>units</code></td><td>Any of <code>d h m s</code>, e.g. <code>hms</code></td><td><code>dhms</code></td></tr>
+                  <tr><td><code>font</code></td><td>A Google Font or system font name</td><td>Space Mono</td></tr>
+                  <tr><td><code>size</code></td><td>2 to 40 (timer height as a share of the width)</td><td>12</td></tr>
+                  <tr><td><code>fontColor</code>, <code>titleColor</code></td><td>Hex color, e.g. <code>#FFA500</code></td><td>#FFA500, same as timer</td></tr>
+                  <tr><td><code>bg</code></td><td>Hex color or <code>transparent</code></td><td>#1e1e1e</td></tr>
+                  <tr><td><code>pad</code>, <code>hideZero</code>, <code>overtime</code>, <code>blink</code>, <code>showDate</code></td><td><code>true</code> or <code>false</code></td><td>pad on, others off</td></tr>
+                  <tr><td><code>shineEffect</code>, <code>glitchEffect</code>, <code>glow</code>, <code>pulse</code></td><td><code>true</code> or <code>false</code></td><td>off</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="callout">
+              The timer runs on each viewer's own device clock, so a computer with the wrong time shows the wrong
+              countdown. Fonts load from Google Fonts and need an internet connection; the system fonts work offline.
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <a class="brand" href="../"><img src="../assets/icons/manta-mark.svg" alt="" />Ixitxachitl's Stream Tools</a>
+        <span>Made with glowsticks · © <span data-year>2026</span> Ixitxachitl</span>
+      </div>
+    </footer>
+    <script>
+      // Live demo: always count down to the visitor's next New Year
+      (() => {
+        const next = new Date(new Date().getFullYear() + 1, 0, 1);
+        const q = new URLSearchParams({
+          target: next.toISOString(),
+          title: "NEW YEAR",
+          format: "blocks",
+          font: "Bungee",
+          size: "11",
+          fontColor: "#FF2BD6",
+          titleColor: "#FFE600",
+          bg: "transparent",
+          glow: "true",
+        });
+        document.getElementById("demo").src = "https://countdown.ixitxachitl.com/timer.html?" + q;
+      })();
+    </script>
+    <script src="../assets/js/site.js" defer></script>
+  </body>
+</html>

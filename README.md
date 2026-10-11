@@ -11,6 +11,7 @@ gets a card, a screenshot, and a setup guide. The site uses the same comic look 
 | Rave Pumpkin Chat | <https://rave.ixitxachitl.com/pumpkins.html> | [tools/rave-pumpkins.html](tools/rave-pumpkins.html) |
 | Game Wheel        | <https://wheel.ixitxachitl.com/>             | [tools/game-wheel.html](tools/game-wheel.html)       |
 | Snowfall          | <https://snow.ixitxachitl.com/>              | [tools/snowfall.html](tools/snowfall.html)           |
+| Countdown Timer   | <https://countdown.ixitxachitl.com/>         | [tools/countdown.html](tools/countdown.html)         |
 
 ## Layout
 
