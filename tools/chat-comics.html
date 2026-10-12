@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chat Comics · Ixitxachitl's Stream Tools</title>
+    <meta
+      name="description"
+      content="Set up Chat Comics: an OBS browser-source overlay that turns your Twitch, Kick, YouTube and TikTok chat into a live comic strip, with a fuzzy monster for every chatter."
+    />
+    <meta property="og:image" content="../assets/img/chat-comics.webp" />
+    <meta name="theme-color" content="#1a0f33" />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/comic.css" />
+  </head>
+  <body>
+    <a class="skip btn sun" href="#main">Skip to content</a>
+
+    <header class="topbar">
+      <div class="wrap">
+        <a class="brand" href="../"><img src="../assets/icons/manta-mark.svg" alt="" />Ixitxachitl's Stream Tools</a>
+        <nav class="nav" aria-label="Tools">
+          <a href="rave-cats.html">Rave Cats</a>
+          <a href="rave-bees.html">Rave Bees</a>
+          <a href="rave-pumpkins.html">Rave Pumpkins</a>
+          <a href="chat-comics.html" aria-current="page">Chat Comics</a>
+          <a href="game-wheel.html">Game Wheel</a>
+          <a href="snowfall.html">Snowfall</a>
+          <a href="countdown.html">Countdown</a>
+          <a href="../#obs">OBS Setup</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="wrap">
+      <section class="tool-hero">
+        <div class="panel">
+          <div class="panel-body">
+            <img class="big-icon" src="../assets/icons/comic.svg" alt="" />
+            <div>
+              <h1>Chat Comics</h1>
+              <p class="lead">
+                Your chat becomes a live comic strip starring a cast of fuzzy little monsters. Every chatter gets
+                their own, in their chat color, and it's the same one every time they show up. Replies put both
+                monsters in the same panel, facing each other. Faces change with the mood: laughing at "lol", crying
+                at "rip", jaw on the floor for "no way". Meanwhile… KAPOW!
+              </p>
+              <div class="url-box">
+                <label class="sr-only" for="url">Overlay URL</label>
+                <input id="url" type="text" readonly value="https://comics.ixitxachitl.com/" />
+                <button class="btn sun" type="button" data-copy-from="#url">Copy link</button>
+              </div>
+              <div class="btn-row">
+                <a class="btn go" href="https://comics.ixitxachitl.com/?demo=1" target="_blank" rel="noopener"
+                  >Try the demo ↗</a
+                >
+                <a class="btn" href="#setup">Setup guide</a>
+                <a class="btn" href="#settings">All settings</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="panel">
+          <div class="preview">
+            <span class="live">Live demo</span>
+            <iframe
+              src="https://comics.ixitxachitl.com/?demo=1&amp;panels=3&amp;pw=250&amp;ph=250&amp;align=center&amp;my=20"
+              title="Chat Comics running with demo chatters"
+              loading="lazy"
+              tabindex="-1"
+            ></iframe>
+          </div>
+          <p class="caption">
+            This is the real overlay running with fake demo chat. On stream the background is transparent, so the
+            strip sits over your game or camera.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="how-title">
+        <h2 class="burst-title" id="how-title">How the story works</h2>
+        <div class="grid-2">
+          <div class="panel cyan">
+            <div class="panel-head"><h3>Panels</h3></div>
+            <div class="panel-body">
+              <ul class="feature-list">
+                <li>
+                  A panel fits two monsters and two bubbles. When there's room, a new message joins the newest
+                  panel. If not, a fresh panel slides in and the oldest one slides out.
+                </li>
+                <li>
+                  Panels come in different widths, and the gutters between them lean at different angles, so the
+                  strip looks like a real comic page.
+                </li>
+                <li>
+                  Every panel gets an ink-and-screentone manga background that fits the mood: speed lines for
+                  shouting, a sunburst for laughing, sparkles and bubbles for love, gloom lines for sad, a flaming
+                  aura for angry, a spiral for confused. Everyday chat gets a little scenery: a city skyline, a
+                  room, a street with power lines or a cloudy sky.
+                </li>
+                <li>
+                  <b>Replies and @mentions</b> bring in the person being answered, so the two face each other.
+                  Twitch's reply button and Kick replies both work.
+                </li>
+                <li>
+                  Whoever spoke last also shows up as a <b>listener</b> next to the new speaker, so panels read
+                  like a conversation. You can turn this off.
+                </li>
+                <li>
+                  Captions like <em>"Our story begins…"</em>, <em>"Later…"</em> and <em>"Meanwhile, in chat…"</em>
+                  appear when the story picks back up.
+                </li>
+                <li>When chat goes quiet, the strip falls away. It comes back with the next message.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="panel pink">
+            <div class="panel-head"><h3>Bubbles &amp; faces</h3></div>
+            <div class="panel-body">
+              <ul class="feature-list">
+                <li><b>ALL CAPS</b> gets a jagged yellow shout bubble, a wide-open mouth and speed lines.</li>
+                <li>Messages ending in <b>…</b> (or starting with "hmm") become thought clouds.</li>
+                <li><code>/me</code> actions become narration boxes: <em>"NeonWhiskers does a little victory dance"</em>.</li>
+                <li>
+                  Faces follow the mood of the message: laughing, heart eyes, crying, angry, shocked, confused. Emotes
+                  count too, so <code>KEKW</code>, <code>Sadge</code> and <code>PogChamp</code> all work.
+                </li>
+                <li>
+                  Monsters get one, two or three eyes, horns, antennae, bunny or cat ears, fangs, party hats and
+                  more. Their fur is their chat name color. The streamer wears a crown. 👑
+                </li>
+                <li>
+                  When a mod deletes a message or bans someone, their bubble gets blacked out with a red
+                  <b>REDACTED</b> stamp.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="setup" aria-labelledby="setup-title">
+        <h2 class="burst-title" id="setup-title">Setup guide</h2>
+        <div class="grid-2">
+          <div class="panel">
+            <div class="panel-head"><h3>Get it on stream</h3></div>
+            <div class="panel-body">
+              <ol class="steps">
+                <li>
+                  <strong>Add a Browser source</strong>
+                  In OBS click <kbd>+</kbd> under <em>Sources</em> → <em>Browser</em>. Paste
+                  <code>https://comics.ixitxachitl.com/</code> as the URL and set it to <code>1920</code> ×
+                  <code>1080</code>. The background is transparent automatically.
+                </li>
+                <li>
+                  <strong>Open the settings</strong>
+                  Right-click the source → <em>Interact</em>. Move your mouse over the overlay and click the yellow
+                  <b>gear</b> in the bottom-right corner.
+                </li>
+                <li>
+                  <strong>Connect your chat</strong>
+                  Under <em>Chat sources</em>, type your Twitch and/or Kick channel name. Add TikTok or YouTube too
+                  if you stream there (see below).
+                </li>
+                <li>
+                  <strong>Place the strip</strong>
+                  Under <em>Comic strip</em>, pick how many panels, how big they are, and which corner they sit in.
+                  You can also give the strip a title, like <em>The {channel} Chronicles</em>.
+                </li>
+                <li>
+                  <strong>Save &amp; apply</strong>
+                  Press <em>Save &amp; apply</em> and close the Interact window. Your settings are saved inside
+                  this browser source.
+                </li>
+              </ol>
+              <div class="callout warn">
+                The settings window <b>shows on stream while it's open</b>. Set things up before you go live, or
+                hide the source while you tweak.
+              </div>
+            </div>
+          </div>
+
+          <div class="stack">
+            <div class="panel violet">
+              <div class="panel-head"><h3>Chat sources</h3></div>
+              <div class="panel-body">
+                <details open>
+                  <summary>Twitch &amp; Kick</summary>
+                  <div>
+                    <p>
+                      Just type the channel name. Chat is read anonymously, so there's no login and no bot account
+                      needed. On Twitch, subs, resubs, gift subs, raids and bits each get their own splash panel.
+                    </p>
+                  </div>
+                </details>
+                <details>
+                  <summary>TikTok</summary>
+                  <div>
+                    <p>
+                      TikTok needs a bridge app running on your PC. If you use <b>TikFinity</b>, just type
+                      <code>1</code> in the TikTok box. Otherwise, paste your bridge's <code>ws://…</code> address.
+                    </p>
+                  </div>
+                </details>
+                <details>
+                  <summary>YouTube</summary>
+                  <div>
+                    <p>
+                      Paste your live stream's video ID or link, plus a <b>YouTube Data API v3 key</b> from the
+                      Google Cloud Console. You can also give a bridge <code>ws://…</code> address instead.
+                    </p>
+                  </div>
+                </details>
+                <details>
+                  <summary>Several platforms at once</summary>
+                  <div>
+                    <p>
+                      Fill in as many as you like. A chatter's monster comes from their name, so someone with the
+                      same name on two platforms looks the same on both.
+                    </p>
+                  </div>
+                </details>
+              </div>
+            </div>
+
+            <div class="panel green">
+              <div class="panel-head"><h3>Tips</h3></div>
+              <div class="panel-body">
+                <ul class="feature-list">
+                  <li>
+                    A strip of 3–4 panels along the bottom works well at 1080p. For a sidebar, set the strip to 1
+                    panel and make it tall.
+                  </li>
+                  <li>
+                    Busy chat? Messages land one at a time so each gets a moment on screen. In a very fast chat the
+                    oldest waiting messages are skipped so it never falls behind. <em>Pace ×</em> speeds it up.
+                  </li>
+                  <li>Long messages shrink to fit. <em>Text size</em> sets the size they start at.</li>
+                  <li>Chat bots like Nightbot and StreamElements are hidden by default. Add more in the filter.</li>
+                  <li>BTTV, FFZ and 7TV emotes, badges and pronouns all show up.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="link" aria-labelledby="link-title">
+        <h2 class="burst-title" id="link-title">Build a setup link</h2>
+        <div class="panel violet">
+          <div class="panel-head"><h3>Settings in the URL</h3></div>
+          <div class="panel-body">
+            <p>
+              Every setting can also go in the URL, and it overrides what's saved. That's handy for running two
+              copies with different setups, or for setting up without the Interact window. (The overlay's own
+              <em>Copy setup link</em> button does the same thing.) Fill in what you need and paste the link into
+              your browser source:
+            </p>
+            <form data-builder data-base="https://comics.ixitxachitl.com/" class="builder">
+              <div class="fields">
+                <label>Twitch channel <input name="channel" type="text" placeholder="yourchannel" /></label>
+                <label>Kick channel <input name="kick" type="text" placeholder="yourchannel" /></label>
+                <label>TikTok bridge <input name="tiktok" type="text" placeholder="1 = TikFinity" /></label>
+                <label>YouTube live <input name="youtube" type="text" placeholder="video ID or link" /></label>
+                <label>Panels <input name="panels" type="number" min="1" max="8" value="3" /></label>
+                <label>Panel width (px) <input name="pw" type="number" min="140" max="900" step="5" value="300" /></label>
+                <label>Panel height (px) <input name="ph" type="number" min="140" max="900" step="5" value="300" /></label>
+                <label
+                  >Strip position
+                  <select name="align">
+                    <option value="left" selected>Left</option>
+                    <option value="center">Center</option>
+                    <option value="right">Right</option>
+                  </select>
+                </label>
+                <label
+                  >Strip edge
+                  <select name="vpos">
+                    <option value="bottom" selected>Bottom</option>
+                    <option value="top">Top</option>
+                  </select>
+                </label>
+                <label>Strip title <input name="title" type="text" placeholder="The {channel} Chronicles" /></label>
+                <label>Clear when quiet (s) <input name="idle" type="number" min="0" max="3600" step="5" value="60" /></label>
+                <label>Text size (px) <input name="fs" type="number" min="11" max="48" value="19" /></label>
+              </div>
+              <div class="toggles">
+                <label><input name="demo" type="checkbox" /> Demo chat</label>
+                <label><input name="listeners" type="checkbox" checked /> Bring in a listener</label>
+                <label><input name="captions" type="checkbox" checked /> "Meanwhile…" captions</label>
+                <label><input name="crown" type="checkbox" checked /> Crown for the streamer</label>
+                <label><input name="events" type="checkbox" checked /> Sub &amp; raid panels</label>
+                <label><input name="cmds" type="checkbox" /> Show !commands</label>
+              </div>
+              <div class="url-box">
+                <label class="sr-only" for="built-url">Your setup link</label>
+                <input id="built-url" type="text" readonly data-builder-out />
+                <button class="btn sun" type="button" data-copy-from="#built-url">Copy link</button>
+                <button class="btn" type="reset">Reset</button>
+              </div>
+            </form>
+            <div class="callout">
+              Using YouTube with an API key? Add it in the overlay's own settings rather than in a link, so the key
+              doesn't end up somewhere it could be shared. (<code>ytkey</code> works as a URL parameter too.)
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="settings" aria-labelledby="settings-title">
+        <h2 class="burst-title" id="settings-title">All settings</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Setting</th>
+                <th scope="col">URL parameter</th>
+                <th scope="col">Default</th>
+                <th scope="col">What it does</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="group" colspan="4">Chat sources</td></tr>
+              <tr><td>Twitch channel</td><td><code>channel</code></td><td>—</td><td>Read anonymously, no login needed.</td></tr>
+              <tr><td>Kick channel</td><td><code>kick</code></td><td>—</td><td>Read anonymously, no login needed.</td></tr>
+              <tr><td>TikTok bridge</td><td><code>tiktok</code></td><td>—</td><td><code>1</code> uses TikFinity on this PC, or give a <code>ws://…</code> bridge address.</td></tr>
+              <tr><td>YouTube live</td><td><code>youtube</code></td><td>—</td><td>Live video ID or link (needs the API key), or a bridge address.</td></tr>
+              <tr><td>YouTube API key</td><td><code>ytkey</code></td><td>—</td><td>YouTube Data API v3 key from Google Cloud Console.</td></tr>
+              <tr><td>YouTube check every (s)</td><td><code>ytpoll</code></td><td>6</td><td>2–60. Lower is snappier but uses the daily API quota faster.</td></tr>
+              <tr><td>Demo chat</td><td><code>demo</code></td><td>off</td><td>Fake chatters. Also runs on its own when no source is set.</td></tr>
+              <tr><td class="group" colspan="4">Comic strip</td></tr>
+              <tr><td>Panels in the strip</td><td><code>panels</code></td><td>3</td><td>1–8.</td></tr>
+              <tr><td>Panel width (px)</td><td><code>pw</code></td><td>300</td><td>140–900.</td></tr>
+              <tr><td>Panel height (px)</td><td><code>ph</code></td><td>300</td><td>140–900.</td></tr>
+              <tr><td>Space between panels (px)</td><td><code>gap</code></td><td>16</td><td>0–80.</td></tr>
+              <tr><td>Strip position</td><td><code>align</code></td><td>left</td><td><code>left</code>, <code>center</code> or <code>right</code>.</td></tr>
+              <tr><td>Strip edge</td><td><code>vpos</code></td><td>bottom</td><td><code>bottom</code> or <code>top</code>.</td></tr>
+              <tr><td>Distance from the side (px)</td><td><code>mx</code></td><td>30</td><td>How far the strip sits from the left or right edge.</td></tr>
+              <tr><td>Distance from the top/bottom (px)</td><td><code>my</code></td><td>30</td><td>How far the strip sits from the top or bottom edge.</td></tr>
+              <tr><td>Strip title</td><td><code>title</code></td><td>—</td><td>Shown above the strip. <code>{channel}</code> becomes your channel name.</td></tr>
+              <tr><td>Clear after a quiet spell (s)</td><td><code>idle</code></td><td>60</td><td>The strip falls away when chat goes quiet. <code>0</code> = never.</td></tr>
+              <tr><td class="group" colspan="4">Story</td></tr>
+              <tr><td>Pace ×</td><td><code>speed</code></td><td>1</td><td>0.3–4. Higher = messages land faster.</td></tr>
+              <tr><td>Text size (px)</td><td><code>fs</code></td><td>19</td><td>11–48. Long messages shrink to fit their panel.</td></tr>
+              <tr><td>Bring in a listener</td><td><code>listeners</code></td><td>on</td><td>Whoever just spoke appears next to the new speaker.</td></tr>
+              <tr><td>"Meanwhile…" captions</td><td><code>captions</code></td><td>on</td><td>Narration boxes when the story starts or picks back up.</td></tr>
+              <tr><td>Crown for the streamer</td><td><code>crown</code></td><td>on</td><td>The broadcaster's monster wears a crown.</td></tr>
+              <tr><td>Max message length</td><td><code>maxchars</code></td><td>140</td><td>20–500 characters.</td></tr>
+              <tr><td>Show badges</td><td><code>badges</code></td><td>on</td><td>Twitch and Kick badges; owner / mod / member / sub / follower on YouTube and TikTok.</td></tr>
+              <tr><td>Show pronouns</td><td><code>pronouns</code></td><td>on</td><td>Twitch chatters who set them on pronouns.alejo.io.</td></tr>
+              <tr><td>BTTV / FFZ / 7TV emotes</td><td><code>extemotes</code></td><td>on</td><td>Third-party emotes in bubbles.</td></tr>
+              <tr><td>Splash panels for subs, gifts, raids &amp; bits</td><td><code>events</code></td><td>on</td><td>Twitch only.</td></tr>
+              <tr><td class="group" colspan="4">Filtering</td></tr>
+              <tr><td>Show !commands</td><td><code>cmds</code></td><td>off</td><td>Show messages that start with <code>!</code>.</td></tr>
+              <tr><td>Show first-time chatters</td><td><code>firsttime</code></td><td>off</td><td>Twitch flags these; spam bots usually show up this way.</td></tr>
+              <tr><td>Hide known bots</td><td><code>botlist</code></td><td>on</td><td>Uses the public TwitchInsights bot list.</td></tr>
+              <tr><td>Always hide these users</td><td><code>ignore</code></td><td>nightbot, streamelements, streamlabs, moobot, fossabot, wizebot</td><td>Comma or line separated.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="color: #cfc8ef">Switches take <code>1</code> (on) or <code>0</code> (off) in the URL.</p>
+      </section>
+
+      <section class="section" id="advanced" aria-labelledby="adv-title">
+        <h2 class="burst-title" id="adv-title">For tinkerers</h2>
+        <div class="grid-2">
+          <div class="panel cyan">
+            <div class="panel-head"><h3>Custom integrations</h3></div>
+            <div class="panel-body">
+              <p>Streamer.bot or your own scripts can add a line to the comic by calling this inside the browser source:</p>
+              <pre><code>window.chatComics.say("name", "message", {
+  color: "#ff00aa",
+  platform: "twitch",
+  replyTo: "othername", // optional
+});</code></pre>
+              <p><code>window.chatComics.clear()</code> clears the strip.</p>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><h3>Questions</h3></div>
+            <div class="panel-body">
+              <details>
+                <summary>I only see demo chatters</summary>
+                <div><p>No chat source is set yet. Add your channel in the settings (or the URL) and they'll stop.</p></div>
+              </details>
+              <details>
+                <summary>Can a chatter pick their monster?</summary>
+                <div>
+                  <p>
+                    Not yet. The look comes from their name, so it's always the same. Their fur matches their
+                    chat name color.
+                  </p>
+                </div>
+              </details>
+              <details>
+                <summary>My settings disappeared</summary>
+                <div>
+                  <p>
+                    Settings live in that browser source's storage. If your setup can't save them, the panel will
+                    tell you — use a setup link from <a href="#link">the builder above</a> instead.
+                  </p>
+                </div>
+              </details>
+              <details>
+                <summary>Can I run two copies?</summary>
+                <div><p>Yes. Give each browser source its own setup link and the URL settings win.</p></div>
+              </details>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <a class="brand" href="../"><img src="../assets/icons/manta-mark.svg" alt="" />Ixitxachitl's Stream Tools</a>
+        <span>Made with <a href="https://claude.com/claude-code" target="_blank" rel="noopener" title="Claude">glowsticks</a> · © <span data-year>2026</span> Ixitxachitl</span>
+      </div>
+    </footer>
+    <script src="../assets/js/site.js" defer></script>
+  </body>
+</html>

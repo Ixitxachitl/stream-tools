@@ -974,7 +974,8 @@ details > div > :last-child {
   gap: 4px;
   font-size: 15px;
 }
-.builder .fields input {
+.builder .fields input,
+.builder .fields select {
   width: 100%;
   font: 700 15px "Comic Neue", system-ui, sans-serif;
   padding: 7px 9px;

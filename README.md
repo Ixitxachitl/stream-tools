@@ -9,6 +9,7 @@ gets a card, a screenshot, and a setup guide. The site uses the same comic look 
 | Rave Cat Chat     | <https://rave.ixitxachitl.com/>              | [tools/rave-cats.html](tools/rave-cats.html)         |
 | Rave Bee Chat     | <https://rave.ixitxachitl.com/bees.html>     | [tools/rave-bees.html](tools/rave-bees.html)         |
 | Rave Pumpkin Chat | <https://rave.ixitxachitl.com/pumpkins.html> | [tools/rave-pumpkins.html](tools/rave-pumpkins.html) |
+| Chat Comics       | <https://comics.ixitxachitl.com/>            | [tools/chat-comics.html](tools/chat-comics.html)     |
 | Game Wheel        | <https://wheel.ixitxachitl.com/>             | [tools/game-wheel.html](tools/game-wheel.html)       |
 | Snowfall          | <https://snow.ixitxachitl.com/>              | [tools/snowfall.html](tools/snowfall.html)           |
 | Countdown Timer   | <https://countdown.ixitxachitl.com/>         | [tools/countdown.html](tools/countdown.html)         |

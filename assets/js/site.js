@@ -55,8 +55,12 @@
           }
           // otherwise only write switches that differ from the overlay's default
           else if (el.checked !== el.defaultChecked) url.searchParams.set(el.name, el.checked ? "1" : "0");
-        } else if (el.value.trim() !== "" && el.value.trim() !== el.defaultValue) {
-          url.searchParams.set(el.name, el.value.trim());
+        } else {
+          // a <select>'s default is its initially selected option
+          const def = el.tagName === "SELECT"
+            ? ([...el.options].find((o) => o.defaultSelected) || el.options[0] || {}).value
+            : el.defaultValue;
+          if (el.value.trim() !== "" && el.value.trim() !== def) url.searchParams.set(el.name, el.value.trim());
         }
       }
       out.value = url.toString();
