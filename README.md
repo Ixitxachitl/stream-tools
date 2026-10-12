@@ -6,9 +6,7 @@ gets a card, a screenshot, and a setup guide. The site uses the same comic look 
 
 | Tool              | Lives at                                     | Guide                                                |
 | ----------------- | -------------------------------------------- | ---------------------------------------------------- |
-| Rave Cat Chat     | <https://rave.ixitxachitl.com/>              | [tools/rave-cats.html](tools/rave-cats.html)         |
-| Rave Bee Chat     | <https://rave.ixitxachitl.com/bees.html>     | [tools/rave-bees.html](tools/rave-bees.html)         |
-| Rave Pumpkin Chat | <https://rave.ixitxachitl.com/pumpkins.html> | [tools/rave-pumpkins.html](tools/rave-pumpkins.html) |
+| Rave Chat         | <https://rave.ixitxachitl.com/>              | [tools/rave.html](tools/rave.html)                   |
 | Chat Comics       | <https://comics.ixitxachitl.com/>            | [tools/chat-comics.html](tools/chat-comics.html)     |
 | Game Wheel        | <https://wheel.ixitxachitl.com/>             | [tools/game-wheel.html](tools/game-wheel.html)       |
 | Snowfall          | <https://snow.ixitxachitl.com/>              | [tools/snowfall.html](tools/snowfall.html)           |
@@ -43,7 +41,7 @@ file with the domain in it.
 
 ## Adding a new tool
 
-1. Copy the closest existing page in `tools/` (`rave-cats.html` for a chat overlay, `game-wheel.html` for
+1. Copy the closest existing page in `tools/` (`rave.html` for a chat overlay, `game-wheel.html` for
    a widget) and rewrite its content.
 2. Add an icon to `assets/icons/` (64×64 viewBox, `#111` strokes about 2.6 wide, so it matches the others).
 3. Add a 760×380 card screenshot to `assets/img/` (see below).

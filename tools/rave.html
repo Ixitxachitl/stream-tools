@@ -3,12 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Rave Cat Chat · Ixitxachitl's Stream Tools</title>
+    <title>Rave Chat · Ixitxachitl's Stream Tools</title>
     <meta
       name="description"
-      content="Set up Rave Cat Chat: an OBS browser-source overlay that turns your Twitch, Kick, YouTube and TikTok chatters into dancing glowstick cats."
+      content="Set up Rave Chat: an OBS browser-source overlay that turns your Twitch, Kick, YouTube and TikTok chatters into dancing glowstick cats, dogs, bees or jack-o'-lanterns."
     />
-    <meta property="og:image" content="../assets/img/rave-cats.webp" />
+    <meta property="og:image" content="../assets/img/rave.webp" />
     <meta name="theme-color" content="#1a0f33" />
     <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -26,9 +26,7 @@
       <div class="wrap">
         <a class="brand" href="../"><img src="../assets/icons/manta-mark.svg" alt="" />Ixitxachitl's Stream Tools</a>
         <nav class="nav" aria-label="Tools">
-          <a href="rave-cats.html" aria-current="page">Rave Cats</a>
-          <a href="rave-bees.html">Rave Bees</a>
-          <a href="rave-pumpkins.html">Rave Pumpkins</a>
+          <a href="rave.html" aria-current="page">Rave Chat</a>
           <a href="chat-comics.html">Chat Comics</a>
           <a href="game-wheel.html">Game Wheel</a>
           <a href="snowfall.html">Snowfall</a>
@@ -44,11 +42,12 @@
           <div class="panel-body">
             <img class="big-icon" src="../assets/icons/cat.svg" alt="" />
             <div>
-              <h1>Rave Cat Chat</h1>
+              <h1>Rave Chat</h1>
               <p class="lead">
-                Every chatter becomes a neon cat waving glowsticks to the beat, with their message popping up in a
-                comic speech bubble. Shouting in ALL CAPS gets a shaky yellow bubble, and the cats sometimes break
-                out a synchronized spin. MEOW! KAPOW!
+                Every chatter becomes a neon dancer waving glowsticks to the beat, with their message popping up in a
+                comic speech bubble. Pick your crowd: cats, dogs &amp; wolves, bees or costumed jack-o'-lanterns.
+                Shouting in ALL CAPS gets a shaky yellow bubble, and the dancers sometimes break out a synchronized
+                spin. KAPOW!
               </p>
               <div class="url-box">
                 <label class="sr-only" for="url">Overlay URL</label>
@@ -73,14 +72,14 @@
             <span class="live">Live demo</span>
             <iframe
               src="https://rave.ixitxachitl.com/?demo=1&amp;size=100"
-              title="Rave Cat Chat running with demo chatters"
+              title="Rave Chat running with demo chatters"
               loading="lazy"
               tabindex="-1"
             ></iframe>
           </div>
           <p class="caption">
             This is the real overlay running with fake demo chat. On stream the background is transparent, so the
-            cats dance over your game or camera.
+            dancers party over your game or camera.
           </p>
         </div>
       </section>
@@ -104,6 +103,11 @@
                   <b>gear</b> in the bottom-right corner.
                 </li>
                 <li>
+                  <strong>Pick your dancers</strong>
+                  Under <em>Dancers</em>, choose a <em>Theme</em>: Cats, Dogs &amp; wolves, Bees or
+                  Jack-o'-lanterns.
+                </li>
+                <li>
                   <strong>Connect your chat</strong>
                   Under <em>Chat sources</em>, type your Twitch and/or Kick channel name. Add TikTok or YouTube too
                   if you stream there (see below).
@@ -115,7 +119,7 @@
                 </li>
                 <li>
                   <strong>Say hi in chat!</strong>
-                  Send a message and watch your cat pop up. Until a chat source is set, demo cats run so you can see
+                  Send a message and watch your dancer pop up. Until a chat source is set, demo dancers run so you can see
                   it working.
                 </li>
               </ol>
@@ -175,7 +179,7 @@
               <div class="panel-body">
                 <ul class="feature-list">
                   <li>
-                    Keep cats out from under your facecam with <em>Stage left / right edge (%)</em>.
+                    Keep dancers out from under your facecam with <em>Stage left / right edge (%)</em>.
                   </li>
                   <li>
                     Match the dance to your music with <em>Dance tempo (BPM)</em>. The default is 126.
@@ -206,13 +210,22 @@
             </p>
             <form data-builder data-base="https://rave.ixitxachitl.com/" class="builder">
               <div class="fields">
+                <label
+                  >Theme
+                  <select name="theme">
+                    <option value="cats" selected>Cats</option>
+                    <option value="dogs">Dogs &amp; wolves</option>
+                    <option value="bees">Bees</option>
+                    <option value="pumpkins">Jack-o'-lanterns</option>
+                  </select></label
+                >
                 <label>Twitch channel <input name="channel" type="text" placeholder="yourchannel" /></label>
                 <label>Kick channel <input name="kick" type="text" placeholder="yourchannel" /></label>
                 <label>TikTok bridge <input name="tiktok" type="text" placeholder="1 = TikFinity" /></label>
                 <label>YouTube live <input name="youtube" type="text" placeholder="video ID or link" /></label>
-                <label>Cat size (px) <input name="size" type="number" min="50" max="300" step="5" value="120" /></label>
+                <label>Dancer size (px) <input name="size" type="number" min="50" max="300" step="5" value="120" /></label>
                 <label>Tempo (BPM) <input name="bpm" type="number" min="40" max="220" value="126" /></label>
-                <label>Max cats <input name="max" type="number" min="1" max="40" value="12" /></label>
+                <label>Max dancers <input name="max" type="number" min="1" max="40" value="12" /></label>
                 <label>Left edge (%) <input name="xmin" type="number" min="0" max="100" value="0" /></label>
                 <label>Right edge (%) <input name="xmax" type="number" min="0" max="100" value="100" /></label>
                 <label>From bottom (px) <input name="ground" type="number" min="-40" max="600" value="6" /></label>
@@ -260,12 +273,13 @@
               <tr><td>YouTube API key</td><td><code>ytkey</code></td><td>—</td><td>YouTube Data API v3 key from Google Cloud Console.</td></tr>
               <tr><td>YouTube check every (s)</td><td><code>ytpoll</code></td><td>6</td><td>2–60. Lower is snappier but uses the daily API quota faster.</td></tr>
               <tr><td>Demo chat</td><td><code>demo</code></td><td>off</td><td>Fake chatters. Also runs on its own when no source is set.</td></tr>
-              <tr><td class="group" colspan="4">Cats</td></tr>
-              <tr><td>Cat size (px)</td><td><code>size</code></td><td>120</td><td>50–300.</td></tr>
+              <tr><td class="group" colspan="4">Dancers</td></tr>
+              <tr><td>Theme</td><td><code>theme</code></td><td>cats</td><td><code>cats</code>, <code>dogs</code> (dogs &amp; wolves), <code>bees</code> or <code>pumpkins</code> (jack-o'-lanterns in costume).</td></tr>
+              <tr><td>Dancer size (px)</td><td><code>size</code></td><td>120</td><td>50–300.</td></tr>
               <tr><td>Dance tempo (BPM)</td><td><code>bpm</code></td><td>126</td><td>40–220.</td></tr>
-              <tr><td>Max cats on screen</td><td><code>max</code></td><td>12</td><td>1–40. Also limited by how many fit across.</td></tr>
-              <tr><td>Stay after talking (s)</td><td><code>linger</code></td><td>0.6</td><td>How long a cat hangs around after its bubble goes.</td></tr>
-              <tr><td>Stage left edge (%)</td><td><code>xmin</code></td><td>0</td><td rowspan="2">Limit where cats can stand, e.g. to keep them out from under a facecam.</td></tr>
+              <tr><td>Max dancers on screen</td><td><code>max</code></td><td>12</td><td>1–40. Also limited by how many fit across.</td></tr>
+              <tr><td>Stay after talking (s)</td><td><code>linger</code></td><td>0.6</td><td>How long a dancer hangs around after its bubble goes.</td></tr>
+              <tr><td>Stage left edge (%)</td><td><code>xmin</code></td><td>0</td><td rowspan="2">Limit where dancers can stand, e.g. to keep them out from under a facecam.</td></tr>
               <tr><td>Stage right edge (%)</td><td><code>xmax</code></td><td>100</td></tr>
               <tr><td>Distance from bottom (px)</td><td><code>ground</code></td><td>6</td><td>-40–600. Raise the dance floor.</td></tr>
               <tr><td class="group" colspan="4">Speech bubbles</td></tr>
@@ -280,8 +294,8 @@
               <tr><td>Hide known bots</td><td><code>botlist</code></td><td>on</td><td>Uses the public TwitchInsights bot list.</td></tr>
               <tr><td>Always hide these users</td><td><code>ignore</code></td><td>nightbot, streamelements, streamlabs, moobot, fossabot, wizebot</td><td>Comma or line separated.</td></tr>
               <tr><td class="group" colspan="4">Effects</td></tr>
-              <tr><td>Glowing dance floor</td><td><code>ambient</code></td><td>on</td><td>Rainbow floor glow while cats are on stage.</td></tr>
-              <tr><td>Comic POW! bursts</td><td><code>sfx</code></td><td>on</td><td>MEOW! NYA! KAPOW! pop-ups.</td></tr>
+              <tr><td>Glowing dance floor</td><td><code>ambient</code></td><td>on</td><td>Rainbow floor glow while dancers are on stage.</td></tr>
+              <tr><td>Comic POW! bursts</td><td><code>sfx</code></td><td>on</td><td>KAPOW! pop-ups that match the theme: MEOW!, WOOF!, BZZZ! or BOO!</td></tr>
               <tr><td>Glowstick sparkles</td><td><code>sparks</code></td><td>on</td><td>Sparkles flying off the glowsticks.</td></tr>
             </tbody>
           </table>
@@ -296,10 +310,10 @@
             <div class="panel-head"><h3>Custom integrations</h3></div>
             <div class="panel-body">
               <p>
-                Streamer.bot or your own scripts can make a cat say something by calling this inside the browser
+                Streamer.bot or your own scripts can make a dancer say something by calling this inside the browser
                 source:
               </p>
-              <pre><code>window.raveCats.say("name", "message", {
+              <pre><code>window.rave.say("name", "message", {
   color: "#ff00aa",
   platform: "twitch",
 });</code></pre>
@@ -309,7 +323,7 @@
             <div class="panel-head"><h3>Questions</h3></div>
             <div class="panel-body">
               <details>
-                <summary>I only see demo cats</summary>
+                <summary>I only see demo dancers</summary>
                 <div><p>No chat source is set yet. Add your channel in the settings (or the URL) and they'll stop.</p></div>
               </details>
               <details>
@@ -326,8 +340,14 @@
                 <div><p>Yes. Give each browser source its own setup link and the URL settings win.</p></div>
               </details>
               <details>
-                <summary>Want bees instead?</summary>
-                <div><p>Check out <a href="rave-bees.html">Rave Bee Chat</a>. Same settings, more buzz.</p></div>
+                <summary>Can I switch animals?</summary>
+                <div>
+                  <p>
+                    Any time. Change the <em>Theme</em> in the settings, or add <code>theme=dogs</code> (or
+                    <code>cats</code>, <code>bees</code>, <code>pumpkins</code>) to the URL. Everything else stays the
+                    same.
+                  </p>
+                </div>
               </details>
             </div>
           </div>

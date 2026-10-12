@@ -26,9 +26,7 @@
       <div class="wrap">
         <a class="brand" href="../"><img src="../assets/icons/manta-mark.svg" alt="" />Ixitxachitl's Stream Tools</a>
         <nav class="nav" aria-label="Tools">
-          <a href="rave-cats.html">Rave Cats</a>
-          <a href="rave-bees.html">Rave Bees</a>
-          <a href="rave-pumpkins.html">Rave Pumpkins</a>
+          <a href="rave.html">Rave Chat</a>
           <a href="chat-comics.html" aria-current="page">Chat Comics</a>
           <a href="game-wheel.html">Game Wheel</a>
           <a href="snowfall.html">Snowfall</a>
@@ -47,9 +45,9 @@
               <h1>Chat Comics</h1>
               <p class="lead">
                 Your chat becomes a live comic strip starring a cast of fuzzy little monsters. Every chatter gets
-                their own, in their chat color, and it's the same one every time they show up. Replies put both
-                monsters in the same panel, facing each other. Faces change with the mood: laughing at "lol", crying
-                at "rip", jaw on the floor for "no way". Meanwhile… KAPOW!
+                their own, in their chat color, and it's the same one every time they show up. Only the monsters
+                who are talking are in a panel, and two chatters going back and forth share one. Faces change with
+                the mood: laughing at "lol", crying at "rip", jaw on the floor for "no way". Meanwhile… KAPOW!
               </p>
               <div class="url-box">
                 <label class="sr-only" for="url">Overlay URL</label>
@@ -94,8 +92,9 @@
             <div class="panel-body">
               <ul class="feature-list">
                 <li>
-                  A panel fits two monsters and two bubbles. When there's room, a new message joins the newest
-                  panel. If not, a fresh panel slides in and the oldest one slides out.
+                  A panel fits two monsters and two bubbles, and only monsters with something to say are in it.
+                  When there's room, a new message joins the newest panel. If not, a fresh panel slides in and the
+                  oldest one slides out.
                 </li>
                 <li>
                   Panels come in different widths, and the gutters between them lean at different angles, so the
@@ -108,12 +107,9 @@
                   room, a street with power lines or a cloudy sky.
                 </li>
                 <li>
-                  <b>Replies and @mentions</b> bring in the person being answered, so the two face each other.
-                  Twitch's reply button and Kick replies both work.
-                </li>
-                <li>
-                  Whoever spoke last also shows up as a <b>listener</b> next to the new speaker, so panels read
-                  like a conversation. You can turn this off.
+                  When two chatters talk back and forth, they share a panel and turn to face each other. The
+                  <b>@name</b> at the start of a reply or mention is dropped, since the panel already shows who's
+                  talking.
                 </li>
                 <li>
                   Captions like <em>"Our story begins…"</em>, <em>"Later…"</em> and <em>"Meanwhile, in chat…"</em>
@@ -135,8 +131,8 @@
                   count too, so <code>KEKW</code>, <code>Sadge</code> and <code>PogChamp</code> all work.
                 </li>
                 <li>
-                  No two monsters are alike: round, tall, boxy, bell-shaped or peanut-shaped bodies, fur from smooth
-                  felt to shaggy, one, two or three eyes, horns, antennae, bunny or cat ears, fangs, party hats,
+                  No two monsters are alike: big round, tall, boxy or bell-shaped heads on small bodies, fur from
+                  smooth felt to shaggy, one, two or three eyes, horns, antennae, bunny or cat ears, fangs, party hats,
                   tees, hoodies, sweaters, overalls, bow ties and scarves. Their fur is their chat name color. The
                   streamer wears a crown. 👑
                 </li>
@@ -301,7 +297,6 @@
               </div>
               <div class="toggles">
                 <label><input name="demo" type="checkbox" /> Demo chat</label>
-                <label><input name="listeners" type="checkbox" checked /> Bring in a listener</label>
                 <label><input name="captions" type="checkbox" checked /> "Meanwhile…" captions</label>
                 <label><input name="crown" type="checkbox" checked /> Crown for the streamer</label>
                 <label><input name="events" type="checkbox" checked /> Sub &amp; raid panels</label>
@@ -357,7 +352,6 @@
               <tr><td class="group" colspan="4">Story</td></tr>
               <tr><td>Pace ×</td><td><code>speed</code></td><td>1</td><td>0.3–4. Higher = messages land faster.</td></tr>
               <tr><td>Text size (px)</td><td><code>fs</code></td><td>19</td><td>11–48. Long messages shrink to fit their panel.</td></tr>
-              <tr><td>Bring in a listener</td><td><code>listeners</code></td><td>on</td><td>Whoever just spoke appears next to the new speaker.</td></tr>
               <tr><td>"Meanwhile…" captions</td><td><code>captions</code></td><td>on</td><td>Narration boxes when the story starts or picks back up.</td></tr>
               <tr><td>Crown for the streamer</td><td><code>crown</code></td><td>on</td><td>The broadcaster's monster wears a crown.</td></tr>
               <tr><td>Max message length</td><td><code>maxchars</code></td><td>140</td><td>20–500 characters.</td></tr>
@@ -386,7 +380,7 @@
               <pre><code>window.chatComics.say("name", "message", {
   color: "#ff00aa",
   platform: "twitch",
-  replyTo: "othername", // optional
+  replyTo: "othername", // optional: drops a leading "@othername"
 });</code></pre>
               <p><code>window.chatComics.clear()</code> clears the strip.</p>
             </div>
