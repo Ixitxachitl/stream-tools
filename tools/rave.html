@@ -6,7 +6,7 @@
     <title>Rave Chat · Ixitxachitl's Stream Tools</title>
     <meta
       name="description"
-      content="Set up Rave Chat: an OBS browser-source overlay that turns your Twitch, Kick, YouTube and TikTok chatters into dancing glowstick cats, dogs, bees or jack-o'-lanterns."
+      content="Set up Rave Chat: an OBS browser-source overlay that turns your Twitch, Kick, YouTube and TikTok chatters into dancing glowstick cats, dogs, bees, jack-o'-lanterns or snowmen."
     />
     <meta property="og:image" content="../assets/img/rave.webp" />
     <meta name="theme-color" content="#1a0f33" />
@@ -45,7 +45,7 @@
               <h1>Rave Chat</h1>
               <p class="lead">
                 Every chatter becomes a neon dancer waving glowsticks to the beat, with their message popping up in a
-                comic speech bubble. Pick your crowd: cats, dogs &amp; wolves, bees or costumed jack-o'-lanterns.
+                comic speech bubble. Pick your crowd: cats, dogs &amp; wolves, bees, costumed jack-o'-lanterns or snowmen.
                 Shouting in ALL CAPS gets a shaky yellow bubble, and the dancers sometimes break out a synchronized
                 spin. KAPOW!
               </p>
@@ -104,8 +104,8 @@
                 </li>
                 <li>
                   <strong>Pick your dancers</strong>
-                  Under <em>Dancers</em>, choose a <em>Theme</em>: Cats, Dogs &amp; wolves, Bees or
-                  Jack-o'-lanterns.
+                  Under <em>Dancers</em>, choose a <em>Theme</em>: Cats, Dogs &amp; wolves, Bees,
+                  Jack-o'-lanterns or Snowmen.
                 </li>
                 <li>
                   <strong>Connect your chat</strong>
@@ -217,6 +217,7 @@
                     <option value="dogs">Dogs &amp; wolves</option>
                     <option value="bees">Bees</option>
                     <option value="pumpkins">Jack-o'-lanterns</option>
+                    <option value="snowmen">Snowmen</option>
                   </select></label
                 >
                 <label>Twitch channel <input name="channel" type="text" placeholder="yourchannel" /></label>
@@ -274,7 +275,7 @@
               <tr><td>YouTube check every (s)</td><td><code>ytpoll</code></td><td>6</td><td>2–60. Lower is snappier but uses the daily API quota faster.</td></tr>
               <tr><td>Demo chat</td><td><code>demo</code></td><td>off</td><td>Fake chatters. Also runs on its own when no source is set.</td></tr>
               <tr><td class="group" colspan="4">Dancers</td></tr>
-              <tr><td>Theme</td><td><code>theme</code></td><td>cats</td><td><code>cats</code>, <code>dogs</code> (dogs &amp; wolves), <code>bees</code> or <code>pumpkins</code> (jack-o'-lanterns in costume).</td></tr>
+              <tr><td>Theme</td><td><code>theme</code></td><td>cats</td><td><code>cats</code>, <code>dogs</code> (dogs &amp; wolves), <code>bees</code>, <code>pumpkins</code> (jack-o'-lanterns in costume) or <code>snowmen</code>.</td></tr>
               <tr><td>Dancer size (px)</td><td><code>size</code></td><td>120</td><td>50–300.</td></tr>
               <tr><td>Dance tempo (BPM)</td><td><code>bpm</code></td><td>126</td><td>40–220.</td></tr>
               <tr><td>Max dancers on screen</td><td><code>max</code></td><td>12</td><td>1–40. Also limited by how many fit across.</td></tr>
@@ -344,7 +345,7 @@
                 <div>
                   <p>
                     Any time. Change the <em>Theme</em> in the settings, or add <code>theme=dogs</code> (or
-                    <code>cats</code>, <code>bees</code>, <code>pumpkins</code>) to the URL. Everything else stays the
+                    <code>cats</code>, <code>bees</code>, <code>pumpkins</code>, <code>snowmen</code>) to the URL. Everything else stays the
                     same.
                   </p>
                 </div>
