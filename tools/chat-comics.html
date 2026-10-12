@@ -138,10 +138,12 @@
                 </li>
                 <li>
                   Sometimes a chatter gets a panel to themselves with a <b>prop</b>: a TV with a game on, an
-                  arcade machine, pizza, coffee, a boombox, a birthday cake, a campfire, a cat and more. It
-                  usually fits what they said ("pizza", "lag", "happy birthday"…), and they actually use it:
-                  munching pizza, mashing a controller, typing, petting the cat, roasting marshmallows,
-                  singing into the mic, dancing to the boombox, or hiding from the ghost.
+                  arcade machine, pizza, a boombox, a campfire, a dog, a snowman, an easel, a rain cloud, a
+                  telescope and 31 in all. It usually fits what they said ("pizza", "lag", "gn", "happy
+                  birthday"…), and they actually use it: munching pizza, mashing a controller, playing fetch,
+                  strumming a guitar, painting, reading, lifting weights, holding an umbrella in the rain,
+                  roasting marshmallows, or nodding off while a sheep hops the fence. Some props can be used
+                  more than one way, so the same prop doesn't always play out the same.
                 </li>
                 <li>
                   Monsters with arms act it out: waving while they talk, hands up when shocked, fists when angry,
@@ -349,7 +351,7 @@
               <tr><td class="group" colspan="4">Comic strip</td></tr>
               <tr><td>Panels in the strip</td><td><code>panels</code></td><td>3</td><td>1–8.</td></tr>
               <tr><td>Panel width (px)</td><td><code>pw</code></td><td>300</td><td>140–900.</td></tr>
-              <tr><td>Panel height (px)</td><td><code>ph</code></td><td>300</td><td>140–900.</td></tr>
+              <tr><td>Panel height (px)</td><td><code>ph</code></td><td>300</td><td>140–900. Everything in the strip (monsters, text, outlines) scales with it.</td></tr>
               <tr><td>Space between panels (px)</td><td><code>gap</code></td><td>16</td><td>0–80.</td></tr>
               <tr><td>Strip position</td><td><code>align</code></td><td>left</td><td><code>left</code>, <code>center</code> or <code>right</code>.</td></tr>
               <tr><td>Strip edge</td><td><code>vpos</code></td><td>bottom</td><td><code>bottom</code> or <code>top</code>.</td></tr>
@@ -359,7 +361,7 @@
               <tr><td>Clear after a quiet spell (s)</td><td><code>idle</code></td><td>60</td><td>The strip falls away when chat goes quiet. <code>0</code> = never.</td></tr>
               <tr><td class="group" colspan="4">Story</td></tr>
               <tr><td>Pace ×</td><td><code>speed</code></td><td>1</td><td>0.3–4. Higher = messages land faster.</td></tr>
-              <tr><td>Text size (px)</td><td><code>fs</code></td><td>19</td><td>11–48. Long messages shrink to fit their panel.</td></tr>
+              <tr><td>Text size (px)</td><td><code>fs</code></td><td>19</td><td>11–48, at the default 300px panel height; it scales with the panels. Long messages shrink to fit their panel.</td></tr>
               <tr><td>"Meanwhile…" captions</td><td><code>captions</code></td><td>on</td><td>Narration boxes when the story starts or picks back up.</td></tr>
               <tr><td>Props in solo panels</td><td><code>props</code></td><td>on</td><td>Sometimes a chatter gets a prop instead of a second chatter, so it looks like they're up to something.</td></tr>
               <tr><td>Crown for the streamer</td><td><code>crown</code></td><td>on</td><td>The broadcaster's monster wears a crown.</td></tr>
