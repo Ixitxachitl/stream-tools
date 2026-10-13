@@ -173,6 +173,10 @@
                     Turn on <em>Chat commands</em> and viewers can use <code>!pet</code> for hearts and
                     <code>!pet stats</code> to see how it's doing.
                   </li>
+                  <li>
+                    Turn on <em>Learn words from chat</em> and it picks up chat's words and mixes them into
+                    silly little phrases (see <a href="#advanced">For tinkerers</a> for how it stays clean).
+                  </li>
                 </ul>
               </div>
             </div>
@@ -296,7 +300,9 @@
               <tr><td>YouTube API key</td><td><code>ytkey</code></td><td>—</td><td>YouTube Data API v3 key from Google Cloud Console.</td></tr>
               <tr><td>YouTube check every (s)</td><td><code>ytpoll</code></td><td>6</td><td>2–60. Lower is snappier but uses the daily API quota faster.</td></tr>
               <tr><td>Ignore these names</td><td><code>ignore</code></td><td>—</td><td>Extra bots to ignore. Nightbot, StreamElements and friends are ignored already.</td></tr>
-              <tr><td>Chat commands</td><td><code>cmds</code></td><td>off</td><td><code>!pet</code> sends hearts, <code>!pet stats</code> shows its card.</td></tr>
+              <tr><td>Chat commands</td><td><code>cmds</code></td><td>off</td><td><code>!pet</code> sends hearts, <code>!pet stats</code> shows its card, <code>!pet say</code> makes it talk.</td></tr>
+              <tr><td>Learn words from chat</td><td><code>talk</code></td><td>off</td><td>Picks up words that 3+ chatters use and mixes them into silly phrases. Mods can type <code>!pet forget &lt;word&gt;</code>.</td></tr>
+              <tr><td>Never learn these</td><td><code>neverlearn</code></td><td>—</td><td>Words it should never pick up, on top of a built-in list of bad words.</td></tr>
               <tr><td>Demo chat</td><td><code>demo</code></td><td>off</td><td>Fake chatters, for trying it out. Never counts toward how it grows up.</td></tr>
               <tr><td class="group" colspan="4">Pet</td></tr>
               <tr><td>Name</td><td><code>name</code></td><td>its own</td><td>Leave empty and it gets a cute generated name when it hatches.</td></tr>
@@ -329,7 +335,8 @@ window.pet.raid("name", 40);
 window.pet.follow("name");
 window.pet.feed("cake");   // apple, fish, cookie or cake
 window.pet.play();
-window.pet.stats();</code></pre>
+window.pet.stats();
+window.pet.say();          // or .say("custom text")</code></pre>
             </div>
           </div>
           <div class="panel">
@@ -355,6 +362,23 @@ window.pet.stats();</code></pre>
                   <p>
                     It can't die. It looks after itself, and if it ever does feel poorly, medicine drops in and it's
                     soon back to normal.
+                  </p>
+                </div>
+              </details>
+              <details>
+                <summary>What can it learn from chat?</summary>
+                <div>
+                  <p>
+                    Only words that at least three different chatters have used, so one person can't teach it
+                    anything. Links, @mentions, anything with numbers, very long words, <code>!commands</code>,
+                    bots and first-time chatters are skipped, and so is anything on a public bad-words list or
+                    your own <em>Never learn these</em> list. It keeps at most 300 words and forgets the least
+                    used ones.
+                  </p>
+                  <p>
+                    It can still put harmless words together in an unlucky order, so mods can type
+                    <code>!pet forget &lt;word&gt;</code>, and <em>Settings → Your pet → Forget every word</em>
+                    wipes the lot.
                   </p>
                 </div>
               </details>
