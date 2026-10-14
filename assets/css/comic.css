@@ -471,6 +471,17 @@ kbd {
   font-size: 19px;
   padding: 9px 13px 7px;
 }
+/* a small text link beside a card's buttons, for side pages like a lab */
+.tool .lab-link {
+  align-self: center;
+  font: 700 14px/1 "Comic Neue", sans-serif;
+  color: var(--muted);
+  text-decoration: underline dotted;
+  text-underline-offset: 3px;
+}
+.tool .lab-link:hover {
+  color: var(--ink);
+}
 
 .tool.soon {
   --accent: #6c6690;
