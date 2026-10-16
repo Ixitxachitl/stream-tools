@@ -483,6 +483,35 @@ kbd {
   color: var(--ink);
 }
 
+/* a full-width card for downloadable apps, with an ultrawide screenshot */
+.tool.wide:not(:hover) {
+  transform: rotate(-0.25deg);
+}
+.tool.wide .shot {
+  aspect-ratio: 4 / 1;
+}
+.tool.wide .shot img:not(.badge-icon) {
+  object-position: center;
+}
+.tool h3 small {
+  font: 700 15px/1 "Comic Neue", sans-serif;
+  letter-spacing: 0;
+  color: var(--muted);
+  vertical-align: middle;
+}
+.tool .fine {
+  font-size: 14px;
+  color: var(--muted);
+}
+@media (max-width: 640px) {
+  .tool.wide .shot {
+    aspect-ratio: 2 / 1;
+  }
+  .tool.wide .shot img:not(.badge-icon) {
+    object-position: left center;
+  }
+}
+
 .tool.soon {
   --accent: #6c6690;
   background: repeating-linear-gradient(-45deg, #fff, #fff 14px, #f4f1ff 14px, #f4f1ff 28px);

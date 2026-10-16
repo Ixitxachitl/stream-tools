@@ -12,6 +12,7 @@ gets a card, a screenshot, and a setup guide. The site uses the same comic look 
 | Snowfall          | <https://snow.ixitxachitl.com/>              | [tools/snowfall.html](tools/snowfall.html)           |
 | Countdown Timer   | <https://countdown.ixitxachitl.com/>         | [tools/countdown.html](tools/countdown.html)         |
 | Stream Pet        | <https://pet.ixitxachitl.com/>               | [tools/stream-pet.html](tools/stream-pet.html)       |
+| StreamEdge (app)  | <https://github.com/Ixitxachitl/stream-edge> | `#apps` on the home page (download links)           |
 
 ## Layout
 
