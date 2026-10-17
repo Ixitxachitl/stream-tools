@@ -24,6 +24,7 @@ assets/js/site.js     copy-link buttons, toast, setup-link builder
 assets/icons/*.svg    manta logo + tool icons
 assets/img/*.webp     screenshots (wide ones for pages / og:image, *-card ones for the home cards)
 favicon.svg
+.github/workflows/streamedge-release.yml  hourly: StreamEdge card follows its newest release
 ```
 
 There's no build step and no dependencies apart from Google Fonts.
