@@ -6,7 +6,7 @@
     <title>Stunt Wheel · Ixitxachitl's Stream Tools</title>
     <meta
       name="description"
-      content="Set up the Stunt Wheel: a transparent OBS overlay where a tiny pixel-art wheel races an endless stunt track of ramps, loops and boost pads along the bottom of your stream."
+      content="Set up the Stunt Wheel: a transparent OBS overlay where a tiny pixel-art wheel races an endless stunt track along the bottom of your stream, and chatters roll by on wheels of their own with pixel speech bubbles."
     />
     <meta property="og:image" content="../assets/img/stunt-wheel-card.webp" />
     <meta name="theme-color" content="#1a0f33" />
@@ -48,8 +48,9 @@
               <h1>Stunt Wheel</h1>
               <p class="lead">
                 A tiny pixel-art wheel races along the bottom of your stream on a track that never ends. It hits
-                boost pads, flies off ramps, bounces on springs and spins through loop-the-loops. The track builds
-                itself as it goes, so no two runs are the same.
+                boost pads, flies off ramps, bounces on springs and spins through loop-the-loops. When people chat,
+                they get a wheel of their own in their chat color: it races in, parks next to yours to say its
+                piece in a pixel speech bubble, then zooms off.
               </p>
               <div class="url-box">
                 <label class="sr-only" for="url">Overlay URL</label>
@@ -57,11 +58,11 @@
                 <button class="btn sun" type="button" data-copy-from="#url">Copy link</button>
               </div>
               <div class="btn-row">
-                <a class="btn go" href="https://race.ixitxachitl.com/" target="_blank" rel="noopener"
-                  >Watch it race ↗</a
+                <a class="btn go" href="https://race.ixitxachitl.com/?demo=1" target="_blank" rel="noopener"
+                  >Try the demo ↗</a
                 >
                 <a class="btn" href="#setup">Setup guide</a>
-                <a class="btn" href="#link">Options</a>
+                <a class="btn" href="#settings">All settings</a>
               </div>
             </div>
           </div>
@@ -73,14 +74,15 @@
           <div class="preview">
             <span class="live">Live demo</span>
             <iframe
-              src="https://race.ixitxachitl.com/?bg=none"
-              title="Stunt Wheel overlay running live"
+              src="https://race.ixitxachitl.com/?demo=1&amp;bg=none"
+              title="Stunt Wheel running with demo chat"
               loading="lazy"
               tabindex="-1"
             ></iframe>
           </div>
           <p class="caption">
-            This is the real overlay, live. The wheel rolls in from the left, then the track scrolls along with it.
+            The real overlay with fake chat. On stream the background is transparent, so the track runs along the
+            bottom of your game or camera.
           </p>
         </div>
       </section>
@@ -95,55 +97,86 @@
                 <li>
                   <strong>Add a Browser source</strong>
                   In OBS click <kbd>+</kbd> under <em>Sources</em> → <em>Browser</em>. Paste
-                  <code>https://race.ixitxachitl.com/</code> as the URL.
+                  <code>https://race.ixitxachitl.com/</code> as the URL and set it to your full canvas size,
+                  usually <code>1920</code> × <code>1080</code>. The track runs along the bottom edge, and the
+                  background is transparent automatically.
                 </li>
                 <li>
-                  <strong>Make it a strip</strong>
-                  Set Width to your canvas width, like <code>1920</code>, and Height to <code>288</code>. That's
-                  the height of the track at the default size.
+                  <strong>Open the settings</strong>
+                  Right-click the source → <em>Interact</em>. Move your mouse over the overlay and click the orange
+                  <b>gear</b> in the bottom-right corner.
                 </li>
                 <li>
-                  <strong>Put it along the bottom</strong>
-                  Drag the source to the bottom edge of your scene and to the top of the source list, so the wheel
-                  races in front of your game. The background is already transparent in OBS.
+                  <strong>Connect your chat (optional)</strong>
+                  Type your Twitch and/or Kick channel name, and add TikTok or YouTube if you stream there. Without
+                  chat, the wheel just keeps racing on its own.
                 </li>
                 <li>
-                  <strong>Let it roll</strong>
-                  That's it. There's nothing to log in to and no settings panel. Make the pixels chunkier or the
-                  wheel faster with <a href="#link">a setup link</a> if you like.
+                  <strong>Save &amp; apply</strong>
+                  Press <em>Save &amp; apply</em> and close the Interact window. Your settings are saved inside
+                  this browser source. Press <em>Test chat</em> first if you want to see a chat wheel roll in.
                 </li>
               </ol>
+              <div class="callout warn">
+                The settings window <b>shows on stream while it's open</b>. Set things up before you go live, or
+                hide the source while you tweak.
+              </div>
             </div>
           </div>
 
           <div class="stack">
+            <div class="panel pink">
+              <div class="panel-head"><h3>Chat sources</h3></div>
+              <div class="panel-body">
+                <details open>
+                  <summary>Twitch &amp; Kick</summary>
+                  <div>
+                    <p>
+                      Just type the channel name. Chat is read anonymously, so there's no login and no bot account
+                      needed. Emotes show up as pictures in the bubbles, and a timeout or ban takes that chatter's
+                      wheel off the track.
+                    </p>
+                  </div>
+                </details>
+                <details>
+                  <summary>TikTok</summary>
+                  <div>
+                    <p>
+                      TikTok needs a bridge app running on your PC. If you use <b>TikFinity</b>, just type
+                      <code>1</code> in the TikTok box. Otherwise, paste your bridge's <code>ws://…</code> address.
+                    </p>
+                  </div>
+                </details>
+                <details>
+                  <summary>YouTube</summary>
+                  <div>
+                    <p>
+                      Paste your live stream's video ID or link, plus a <b>YouTube Data API v3 key</b> from the
+                      Google Cloud Console. You can also give a bridge <code>ws://…</code> address instead.
+                    </p>
+                  </div>
+                </details>
+              </div>
+            </div>
+
             <div class="panel cyan">
               <div class="panel-head"><h3>What you'll see</h3></div>
               <div class="panel-body">
                 <ul class="feature-list">
-                  <li>Rolling hills and bumpy stretches that the wheel can catch a little air off.</li>
-                  <li>Striped ramps that launch it over gaps. It always makes the jump.</li>
-                  <li>Glowing blue boost pads that send it zooming with a speed trail.</li>
-                  <li>Green spring pads that bounce it high into the air.</li>
-                  <li>Full loop-the-loops, with a boost pad just before each one.</li>
-                </ul>
-              </div>
-            </div>
-            <div class="panel green">
-              <div class="panel-head"><h3>Tips</h3></div>
-              <div class="panel-body">
-                <ul class="feature-list">
                   <li>
-                    The track always sits at the bottom of the source. If you make the source taller it still works,
-                    you just get empty space above it.
+                    Hills, bumps, striped ramps over gaps (it always makes the jump), blue boost pads, green spring
+                    pads and full loop-the-loops. The track builds itself as it goes, so no two runs are the same.
                   </li>
                   <li>
-                    The track is as wide as the source. A narrower source makes a shorter stretch of track, which
-                    works well in a corner.
+                    Every chatter gets a wheel in their chat color. It races in from the left, parks near the
+                    middle while its bubble is up, then races off to the right.
                   </li>
                   <li>
-                    If you change <code>scale</code> or <code>rows</code>, set the source's Height to rows ×
-                    scale so nothing gets cut off.
+                    Bubbles stay put while their wheel jumps and loops underneath them, so they're easy to read.
+                  </li>
+                  <li>
+                    Busy chat waits its turn: only a few wheels are on the track at once, and the next one rolls in
+                    when there's room. Common bots are ignored.
                   </li>
                 </ul>
               </div>
@@ -153,80 +186,92 @@
       </section>
 
       <section class="section" id="link" aria-labelledby="link-title">
-        <h2 class="burst-title" id="link-title">Options</h2>
-        <div class="grid-2">
-          <div class="panel violet">
-            <div class="panel-head"><h3>Build a setup link</h3></div>
-            <div class="panel-body">
-              <form data-builder data-base="https://race.ixitxachitl.com/" class="builder">
-                <div class="fields">
-                  <label
-                    >Pixel size
-                    <input name="scale" type="number" min="1" max="12" step="1" value="4" />
-                  </label>
-                  <label
-                    >Track height (rows)
-                    <input name="rows" type="number" min="40" max="200" step="1" value="72" />
-                  </label>
-                  <label
-                    >Speed (×)
-                    <input name="speed" type="number" min="0.1" max="5" step="0.1" value="1" />
-                  </label>
-                </div>
-                <div class="url-box">
-                  <label class="sr-only" for="built-url">Your setup link</label>
-                  <input id="built-url" type="text" readonly data-builder-out />
-                  <button class="btn sun" type="button" data-copy-from="#built-url">Copy link</button>
-                  <button class="btn" type="reset">Reset</button>
-                </div>
-              </form>
-            </div>
-          </div>
-          <div class="panel">
-            <div class="panel-head"><h3>URL parameters</h3></div>
-            <div class="panel-body">
-              <div class="table-wrap">
-                <table>
-                  <thead>
-                    <tr>
-                      <th scope="col">Parameter</th>
-                      <th scope="col">Default</th>
-                      <th scope="col">What it does</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td><code>scale</code></td>
-                      <td>4</td>
-                      <td>How big each pixel is on screen. Bigger means chunkier pixels and a bigger wheel.</td>
-                    </tr>
-                    <tr>
-                      <td><code>rows</code></td>
-                      <td>72</td>
-                      <td>
-                        How tall the track strip is, in pixels before scaling (at least 40). The strip is
-                        rows × scale tall on screen.
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><code>speed</code></td>
-                      <td>1</td>
-                      <td>Multiplies how fast everything runs. <code>0.5</code> is half speed, <code>2</code> is double.</td>
-                    </tr>
-                    <tr>
-                      <td><code>bg</code></td>
-                      <td>auto</td>
-                      <td>
-                        In a normal browser the overlay shows a dark background so you can see it. Set
-                        <code>bg=none</code> to make it transparent anyway, or give it a color like
-                        <code>bg=black</code>. In OBS it's always transparent unless you set a color.
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+        <h2 class="burst-title" id="link-title">Build a setup link</h2>
+        <div class="panel violet">
+          <div class="panel-head"><h3>Settings in the URL</h3></div>
+          <div class="panel-body">
+            <p>
+              Every setting can also go in the URL, and it overrides what's saved. That's handy for setting up
+              without the Interact window. (The overlay's own <em>Copy setup link</em> button does the same thing.)
+              Fill in what you need and paste the link into your browser source:
+            </p>
+            <form data-builder data-base="https://race.ixitxachitl.com/" class="builder">
+              <div class="fields">
+                <label>Twitch channel <input name="channel" type="text" placeholder="yourchannel" /></label>
+                <label>Kick channel <input name="kick" type="text" placeholder="yourchannel" /></label>
+                <label>TikTok bridge <input name="tiktok" type="text" placeholder="1 = TikFinity" /></label>
+                <label>YouTube live <input name="youtube" type="text" placeholder="video ID or link" /></label>
+                <label>Most wheels at once <input name="max" type="number" min="1" max="20" step="1" value="5" /></label>
+                <label>Seconds between wheels <input name="gap" type="number" min="0" max="60" step="0.5" value="2" /></label>
+                <label>Bubble text size (px) <input name="textsize" type="number" min="8" max="40" step="1" value="15" /></label>
+                <label>Bubble time (×) <input name="hold" type="number" min="0.3" max="5" step="0.1" value="1" /></label>
+                <label>Pixel size <input name="scale" type="number" min="1" max="12" step="1" value="4" /></label>
+                <label>Speed (×) <input name="speed" type="number" min="0.1" max="5" step="0.1" value="1" /></label>
               </div>
+              <div class="toggles">
+                <label><input name="bubbles" type="checkbox" checked /> Speech bubbles</label>
+                <label><input name="names" type="checkbox" checked /> Names in bubbles</label>
+                <label><input name="wheels" type="checkbox" checked /> Chat wheels</label>
+                <label><input name="demo" type="checkbox" /> Demo chat</label>
+              </div>
+              <div class="url-box">
+                <label class="sr-only" for="built-url">Your setup link</label>
+                <input id="built-url" type="text" readonly data-builder-out />
+                <button class="btn sun" type="button" data-copy-from="#built-url">Copy link</button>
+                <button class="btn" type="reset">Reset</button>
+              </div>
+            </form>
+            <div class="callout">
+              Using YouTube with an API key? Add it in the overlay's own settings rather than in a link, so the key
+              doesn't end up somewhere it could be shared. (<code>ytkey</code> works as a URL parameter too.)
             </div>
           </div>
+        </div>
+      </section>
+
+      <section class="section" id="settings" aria-labelledby="settings-title">
+        <h2 class="burst-title" id="settings-title">All settings</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Setting</th>
+                <th scope="col">URL parameter</th>
+                <th scope="col">Default</th>
+                <th scope="col">What it does</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="group" colspan="4">Chat (optional)</td></tr>
+              <tr><td>Twitch channel</td><td><code>channel</code></td><td>—</td><td>Read anonymously, no login needed.</td></tr>
+              <tr><td>Kick channel</td><td><code>kick</code></td><td>—</td><td>Read anonymously, no login needed.</td></tr>
+              <tr><td>TikTok bridge</td><td><code>tiktok</code></td><td>—</td><td><code>1</code> uses TikFinity on this PC, or give a <code>ws://…</code> bridge address.</td></tr>
+              <tr><td>YouTube live</td><td><code>youtube</code></td><td>—</td><td>Live video ID or link (needs the API key), or a bridge address.</td></tr>
+              <tr><td>YouTube API key</td><td><code>ytkey</code></td><td>—</td><td>A YouTube Data API v3 key from the Google Cloud Console.</td></tr>
+              <tr><td>YouTube check every (s)</td><td><code>ytpoll</code></td><td>6</td><td>Lower is snappier, but uses the daily API quota faster.</td></tr>
+              <tr><td>Ignore these names</td><td><code>ignore</code></td><td>—</td><td>Extra bot names, comma separated. Common bots are ignored already.</td></tr>
+              <tr><td>Show !commands</td><td><code>cmds</code></td><td>off</td><td>Messages starting with <code>!</code> are skipped unless this is on.</td></tr>
+              <tr><td>Demo chat</td><td><code>demo</code></td><td>off</td><td>Fake chatters, for trying it out.</td></tr>
+              <tr><td class="group" colspan="4">Chat wheels</td></tr>
+              <tr><td>Chatters roll by</td><td><code>wheels</code></td><td>on</td><td>Turn it off for just the track, with no chat at all.</td></tr>
+              <tr><td>Most wheels at once</td><td><code>max</code></td><td>5</td><td>Anyone else waits for a free spot.</td></tr>
+              <tr><td>Seconds between wheels</td><td><code>gap</code></td><td>2</td><td>Raise it to have chatters come by now and then instead of in a crowd.</td></tr>
+              <tr><td>Speech bubbles</td><td><code>bubbles</code></td><td>on</td><td>Off means chatters just roll by in their colors.</td></tr>
+              <tr><td>Names in bubbles</td><td><code>names</code></td><td>on</td><td>The chatter's name, on a tag in their color.</td></tr>
+              <tr><td>Bubble text size (px)</td><td><code>textsize</code></td><td>15</td><td>How big the words are.</td></tr>
+              <tr><td>Bubble time ×</td><td><code>hold</code></td><td>1</td><td>How long a message stays up. Longer messages already stay longer.</td></tr>
+              <tr><td>Max message length</td><td><code>maxchars</code></td><td>120</td><td>Longer messages are cut off with “…”.</td></tr>
+              <tr><td class="group" colspan="4">Track</td></tr>
+              <tr><td>Pixel size</td><td><code>scale</code></td><td>4</td><td>How big each pixel is on screen. Bigger means chunkier pixels and bigger wheels.</td></tr>
+              <tr><td>Track height (rows)</td><td><code>rows</code></td><td>72</td><td>How tall the track strip is, in pixels before scaling (at least 40).</td></tr>
+              <tr><td>Speed ×</td><td><code>speed</code></td><td>1</td><td><code>0.5</code> is half speed, <code>2</code> is double.</td></tr>
+              <tr><td>Background (testing)</td><td><code>bg</code></td><td>auto</td><td>In a normal browser the overlay shows a dark background so you can see it. <code>bg=none</code> makes it transparent anyway, or give a color like <code>bg=black</code>. In OBS it's always transparent unless you set a color.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout tip">
+          The track always sits at the bottom of the source and is as wide as the source. A narrower source makes a
+          shorter stretch of track, which works well in a corner. Keep some height above it for the bubbles.
         </div>
       </section>
     </main>
