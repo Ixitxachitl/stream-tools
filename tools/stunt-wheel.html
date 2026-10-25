@@ -6,7 +6,7 @@
     <title>Stunt Wheel · Ixitxachitl's Stream Tools</title>
     <meta
       name="description"
-      content="Set up the Stunt Wheel: a transparent OBS overlay where a tiny pixel-art wheel races an endless stunt track along the bottom of your stream, and chatters roll by on wheels of their own with pixel speech bubbles."
+      content="Set up the Stunt Wheel: a transparent OBS overlay where a tiny pixel-art wheel races an endless pinball-and-casino stunt track along the bottom of your stream, and chatters roll by on wheels of their own with pixel speech bubbles."
     />
     <meta property="og:image" content="../assets/img/stunt-wheel-card.webp" />
     <meta name="theme-color" content="#1a0f33" />
@@ -47,10 +47,10 @@
             <div>
               <h1>Stunt Wheel</h1>
               <p class="lead">
-                A tiny pixel-art wheel races along the bottom of your stream on a track that never ends. It hits
-                boost pads, flies off ramps, bounces on springs and spins through loop-the-loops. When people chat,
-                they get a wheel of their own in their chat color: it races in, parks next to yours to say its
-                piece in a pixel speech bubble, then zooms off.
+                A tiny pixel-art wheel races along the bottom of your stream on a track that never ends: ramps,
+                boost pads and loop-the-loops, pinball bumpers and flippers, slot machines and roulette wheels.
+                When people chat, they get a wheel of their own in their chat color: it races in, parks next to
+                yours to say its piece in a pixel speech bubble, then zooms off (unless it hits a die on the way).
               </p>
               <div class="url-box">
                 <label class="sr-only" for="url">Overlay URL</label>
@@ -168,6 +168,16 @@
                     pads and full loop-the-loops. The track builds itself as it goes, so no two runs are the same.
                   </li>
                   <li>
+                    Pinball pieces: pop bumpers that kick wheels into the air for points, flippers that swat them
+                    over a gap, and drop targets to knock flat for a bonus.
+                  </li>
+                  <li>
+                    Casino pieces: slot machines the track runs through (now and then one hits 7-7-7 and pays
+                    out a JACKPOT), roulette-wheel loops, and dice and chip stacks to hop. Your wheel always makes
+                    it over; chat wheels sometimes don't, and go BOOM.
+                  </li>
+                  <li>Dice, poker chips, coins, card suits and stars drift slowly behind the track.</li>
+                  <li>
                     Every chatter gets a wheel in their chat color. It races in from the left, parks near the
                     middle while its bubble is up, then races off to the right.
                   </li>
@@ -212,6 +222,8 @@
                 <label><input name="bubbles" type="checkbox" checked /> Speech bubbles</label>
                 <label><input name="names" type="checkbox" checked /> Names in bubbles</label>
                 <label><input name="wheels" type="checkbox" checked /> Chat wheels</label>
+                <label><input name="crashes" type="checkbox" checked /> Chat wheels can crash</label>
+                <label><input name="decor" type="checkbox" checked /> Floating decorations</label>
                 <label><input name="demo" type="checkbox" /> Demo chat</label>
               </div>
               <div class="url-box">
@@ -265,6 +277,8 @@
               <tr><td>Pixel size</td><td><code>scale</code></td><td>4</td><td>How big each pixel is on screen. Bigger means chunkier pixels and bigger wheels.</td></tr>
               <tr><td>Track height (rows)</td><td><code>rows</code></td><td>72</td><td>How tall the track strip is, in pixels before scaling (at least 40).</td></tr>
               <tr><td>Speed ×</td><td><code>speed</code></td><td>1</td><td><code>0.5</code> is half speed, <code>2</code> is double.</td></tr>
+              <tr><td>Chat wheels can crash</td><td><code>crashes</code></td><td>on</td><td>Now and then a chat wheel hits a die or a chip stack and blows up. Yours never does, and nobody crashes while their bubble is up.</td></tr>
+              <tr><td>Floating decorations</td><td><code>decor</code></td><td>on</td><td>Dice, chips, coins and card suits drifting behind the track.</td></tr>
               <tr><td>Background (testing)</td><td><code>bg</code></td><td>auto</td><td>In a normal browser the overlay shows a dark background so you can see it. <code>bg=none</code> makes it transparent anyway, or give a color like <code>bg=black</code>. In OBS it's always transparent unless you set a color.</td></tr>
             </tbody>
           </table>
