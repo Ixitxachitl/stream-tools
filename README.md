@@ -12,6 +12,7 @@ gets a card, a screenshot, and a setup guide. The site uses the same comic look 
 | Snowfall          | <https://snow.ixitxachitl.com/>              | [tools/snowfall.html](tools/snowfall.html)           |
 | Countdown Timer   | <https://countdown.ixitxachitl.com/>         | [tools/countdown.html](tools/countdown.html)         |
 | Stream Pet        | <https://pet.ixitxachitl.com/>               | [tools/stream-pet.html](tools/stream-pet.html)       |
+| Stunt Wheel       | <https://race.ixitxachitl.com/>              | [tools/stunt-wheel.html](tools/stunt-wheel.html)     |
 
 ## Layout
 
