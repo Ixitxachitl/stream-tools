@@ -168,8 +168,8 @@
                     pads and full loop-the-loops. The track builds itself as it goes, so no two runs are the same.
                   </li>
                   <li>
-                    Pinball pieces: pop bumpers that kick wheels into the air for points, flippers that swat them
-                    over a gap, and drop targets to knock flat for a bonus.
+                    Pinball pieces: pop bumpers that kick wheels into the air for points, flippers hinged on the
+                    edge of a gap that swat them across, and drop targets to knock flat for a bonus.
                   </li>
                   <li>
                     Casino pieces: slot machines the track runs through (now and then one hits 7-7-7 and pays
@@ -180,6 +180,10 @@
                   <li>
                     Every chatter gets a wheel in their chat color. It races in from the left, parks near the
                     middle while its bubble is up, then races off to the right.
+                  </li>
+                  <li>
+                    Your own messages come from the main wheel, in the middle, and it takes on your chat color
+                    (it remembers it, too).
                   </li>
                   <li>
                     Bubbles stay put while their wheel jumps and loops underneath them, so they're easy to read.
@@ -275,7 +279,7 @@
               <tr><td>Max message length</td><td><code>maxchars</code></td><td>120</td><td>Longer messages are cut off with “…”.</td></tr>
               <tr><td class="group" colspan="4">Track</td></tr>
               <tr><td>Pixel size</td><td><code>scale</code></td><td>4</td><td>How big each pixel is on screen. Bigger means chunkier pixels and bigger wheels.</td></tr>
-              <tr><td>Track height (rows)</td><td><code>rows</code></td><td>72</td><td>How tall the track strip is, in pixels before scaling (at least 40).</td></tr>
+              <tr><td>Track height (rows)</td><td><code>rows</code></td><td>72</td><td>The least height of the overlay, in pixels before scaling (at least 40). It always fills a taller source, with the track along the bottom.</td></tr>
               <tr><td>Speed ×</td><td><code>speed</code></td><td>1</td><td><code>0.5</code> is half speed, <code>2</code> is double.</td></tr>
               <tr><td>Chat wheels can crash</td><td><code>crashes</code></td><td>on</td><td>Now and then a chat wheel hits a die or a chip stack and blows up. Yours never does, and nobody crashes while their bubble is up.</td></tr>
               <tr><td>Floating decorations</td><td><code>decor</code></td><td>on</td><td>Dice, chips, coins and card suits drifting behind the track.</td></tr>
@@ -285,7 +289,8 @@
         </div>
         <div class="callout tip">
           The track always sits at the bottom of the source and is as wide as the source. A narrower source makes a
-          shorter stretch of track, which works well in a corner. Keep some height above it for the bubbles.
+          shorter stretch of track, which works well in a corner. Keep plenty of height above it: that's where the
+          bubbles go and where the wheels fly on big jumps (on a short source the jumps are kept lower to fit).
         </div>
       </section>
     </main>
