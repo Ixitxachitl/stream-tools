@@ -1,0 +1,62 @@
+# Keeps the StreamEdge card on the home page pointing at the newest
+# published release of Ixitxachitl/stream-edge: its version label and the
+# four download links. site.js already swaps the links in the browser, but
+# the HTML is what loads first, what search engines see, and what's left if
+# the GitHub API call fails or is rate-limited.
+name: streamedge-release
+
+on:
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+  # For stream-edge's release workflow to call, given a token that can.
+  repository_dispatch:
+    types: [streamedge-release]
+
+permissions:
+  contents: write
+
+concurrency: streamedge-release
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Point the download links at the newest release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          tag=$(gh api repos/Ixitxachitl/stream-edge/releases/latest --jq .tag_name)
+          version=${tag#v}
+          if ! [[ "$version" =~ ^[0-9]+(\.[0-9]+)+$ ]]; then
+            echo "::error::Unexpected release tag '$tag'."
+            exit 1
+          fi
+
+          sed -i -E \
+            -e "s#(stream-edge/releases/download/)v[0-9.]+/StreamEdge-[0-9.]+-#\1$tag/StreamEdge-$version-#g" \
+            -e "s#(<small data-release-version>)v[0-9.]+(</small>)#\1$tag\2#g" \
+            index.html
+
+          if git diff --quiet; then
+            echo "Already at $tag."
+            exit 0
+          fi
+
+          # Never publish a link to a file the release doesn't have (a
+          # platform whose build failed): leave the page as it was instead.
+          assets=$(gh api "repos/Ixitxachitl/stream-edge/releases/tags/$tag" --jq '.assets[].name')
+          for name in $(grep -oE "StreamEdge-$version-[A-Za-z0-9-]+\.(zip|tar\.gz)" index.html | sort -u); do
+            if ! grep -qxF "$name" <<<"$assets"; then
+              echo "::error::$tag has no $name; not updating the page."
+              exit 1
+            fi
+          done
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898183+github-actions[bot]@users.noreply.github.com'
+          git commit -am "StreamEdge $version"
+          git push

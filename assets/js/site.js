@@ -72,6 +72,22 @@
     build();
   }
 
+  // ---------- download links that follow the newest GitHub release ----------
+  // <article data-release="owner/repo">  with  <a data-asset="windows-x64">  and  <x data-release-version>.
+  // The links in the HTML already point at a release, so a failed lookup just leaves them as they are.
+  for (const card of document.querySelectorAll("[data-release]")) {
+    fetch(`https://api.github.com/repos/${card.dataset.release}/releases/latest`)
+      .then((r) => (r.ok ? r.json() : Promise.reject()))
+      .then((rel) => {
+        for (const a of card.querySelectorAll("a[data-asset]")) {
+          const asset = rel.assets.find((x) => x.name.includes(`-${a.dataset.asset}.`));
+          if (asset) a.href = asset.browser_download_url;
+        }
+        for (const el of card.querySelectorAll("[data-release-version]")) el.textContent = rel.tag_name;
+      })
+      .catch(() => {});
+  }
+
   // ---------- current year in footers ----------
   for (const el of document.querySelectorAll("[data-year]")) el.textContent = new Date().getFullYear();
 })();

@@ -13,6 +13,7 @@ gets a card, a screenshot, and a setup guide. The site uses the same comic look 
 | Countdown Timer   | <https://countdown.ixitxachitl.com/>         | [tools/countdown.html](tools/countdown.html)         |
 | Stream Pet        | <https://pet.ixitxachitl.com/>               | [tools/stream-pet.html](tools/stream-pet.html)       |
 | Stunt Wheel       | <https://race.ixitxachitl.com/>              | [tools/stunt-wheel.html](tools/stunt-wheel.html)     |
+| StreamEdge (app)  | <https://github.com/Ixitxachitl/stream-edge> | `#apps` on the home page (download links)           |
 
 ## Layout
 
@@ -24,6 +25,7 @@ assets/js/site.js     copy-link buttons, toast, setup-link builder
 assets/icons/*.svg    manta logo + tool icons
 assets/img/*.webp     screenshots (wide ones for pages / og:image, *-card ones for the home cards)
 favicon.svg
+.github/workflows/streamedge-release.yml  hourly: StreamEdge card follows its newest release
 ```
 
 There's no build step and no dependencies apart from Google Fonts.
