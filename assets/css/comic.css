@@ -493,6 +493,13 @@ kbd {
 .tool.wide .shot img:not(.badge-icon) {
   object-position: center;
 }
+/* stacked wide cards (the desktop apps): spaced apart, tilted the other way */
+.tool.wide + .tool.wide {
+  margin-top: 32px;
+}
+.tool.wide + .tool.wide:not(:hover) {
+  transform: rotate(0.25deg);
+}
 .tool h3 small {
   font: 700 15px/1 "Comic Neue", sans-serif;
   letter-spacing: 0;

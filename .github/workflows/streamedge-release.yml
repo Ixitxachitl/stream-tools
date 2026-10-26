@@ -38,7 +38,7 @@ jobs:
 
           sed -i -E \
             -e "s#(stream-edge/releases/download/)v[0-9.]+/StreamEdge-[0-9.]+-#\1$tag/StreamEdge-$version-#g" \
-            -e "s#(<small data-release-version>)v[0-9.]+(</small>)#\1$tag\2#g" \
+            -e "/data-release=\"Ixitxachitl\/stream-edge\"/,/<\/article>/s#(<small data-release-version>)v[0-9.]+(</small>)#\1$tag\2#" \
             index.html
 
           if git diff --quiet; then

@@ -1,0 +1,65 @@
+# Keeps the Desktop Overlay card on the home page pointing at the newest
+# published release of Ixitxachitl/desktop-overlay: its version label and
+# its download link. site.js already swaps the link in the browser, but the
+# HTML is what loads first, what search engines see, and what's left if the
+# GitHub API call fails or is rate-limited.
+name: desktop-overlay-release
+
+on:
+  schedule:
+    - cron: '23 * * * *'
+  workflow_dispatch:
+  # For desktop-overlay's release workflow to call, given a token that can.
+  repository_dispatch:
+    types: [desktop-overlay-release]
+
+permissions:
+  contents: write
+
+concurrency: desktop-overlay-release
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Point the download link at the newest release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if ! tag=$(gh api repos/Ixitxachitl/desktop-overlay/releases/latest --jq .tag_name 2>/dev/null); then
+            echo "No release yet."
+            exit 0
+          fi
+          version=${tag#v}
+          if ! [[ "$version" =~ ^[0-9]+(\.[0-9]+)+$ ]]; then
+            echo "::error::Unexpected release tag '$tag'."
+            exit 1
+          fi
+
+          sed -i -E \
+            -e "s#(desktop-overlay/releases/download/)v[0-9.]+/DesktopOverlay-[0-9.]+-#\1$tag/DesktopOverlay-$version-#g" \
+            -e "/id=\"desktop-overlay\"/,/<\/article>/s#(<small data-release-version>)v[0-9.]+(</small>)#\1$tag\2#" \
+            index.html
+
+          if git diff --quiet; then
+            echo "Already at $tag."
+            exit 0
+          fi
+
+          # Never publish a link to a file the release doesn't have (a build
+          # that failed): leave the page as it was instead.
+          assets=$(gh api "repos/Ixitxachitl/desktop-overlay/releases/tags/$tag" --jq '.assets[].name')
+          for name in $(grep -oE "DesktopOverlay-$version-[A-Za-z0-9-]+\.zip" index.html | sort -u); do
+            if ! grep -qxF "$name" <<<"$assets"; then
+              echo "::error::$tag has no $name; not updating the page."
+              exit 1
+            fi
+          done
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898183+github-actions[bot]@users.noreply.github.com'
+          git commit -am "Desktop Overlay $version"
+          git push

@@ -39,6 +39,7 @@
           <a href="tools/stream-pet.html">Stream Pet</a>
           <a href="tools/stunt-wheel.html">Stunt Wheel</a>
           <a href="#apps">StreamEdge</a>
+          <a href="#desktop-overlay">Desktop Overlay</a>
           <a href="#obs">OBS Setup</a>
         </nav>
       </div>
@@ -405,6 +406,48 @@
             <p class="fine">
               Unzip and run, no installer. On macOS install mpv first (<code>brew install mpv</code>); on Linux
               install your distribution's libmpv package (for example <code>sudo apt install libmpv2</code>).
+            </p>
+          </div>
+        </article>
+
+        <!-- Desktop Overlay. The download link points at the newest release; site.js refreshes it from GitHub. -->
+        <article class="tool wide" id="desktop-overlay" style="--accent: var(--pink)" data-release="Ixitxachitl/desktop-overlay">
+          <div class="shot">
+            <img
+              src="assets/img/desktop-overlay-card.webp"
+              alt="A desktop with Rave Chat's dancing cats and a clock floating see-through over a game window, the clock unlocked with its move-and-resize frame, next to the Desktop Overlay source editor"
+              width="1520"
+              height="380"
+              loading="lazy"
+            />
+            <img class="badge-icon" src="assets/icons/overlay.svg" alt="" />
+            <span class="kind" style="color: var(--ink); text-shadow: none">Desktop app</span>
+          </div>
+          <div class="body">
+            <h3>Desktop Overlay <small data-release-version>v0.1.0</small></h3>
+            <p>
+              Like an OBS browser source, but on your desktop. Put any of the tools above, any web page, a local
+              .html file or your own HTML over everything else, see-through wherever the page is. Unlock an overlay
+              to drag and resize it, lock it and clicks go straight through, or let it fill a screen and leave the
+              taskbar clear. It lives in the system tray, where every overlay is one click to show or hide.
+            </p>
+            <ul class="chips" aria-label="Works on">
+              <li class="chip">Windows</li>
+              <li class="chip">Any web page</li>
+              <li class="chip">Free &amp; open source</li>
+            </ul>
+            <div class="btn-row">
+              <a class="btn hot" data-asset="windows-x64"
+                href="https://github.com/Ixitxachitl/desktop-overlay/releases/download/v0.1.0/DesktopOverlay-0.1.0-windows-x64.zip"
+                >Windows</a
+              >
+              <a class="lab-link" href="https://github.com/Ixitxachitl/desktop-overlay" target="_blank" rel="noopener"
+                >Source &amp; all releases ↗</a
+              >
+            </div>
+            <p class="fine">
+              Unzip and run <code>Desktop Overlay.exe</code>, no installer. Windows 10 and 11. Games need to be in
+              borderless windowed mode for overlays to show over them.
             </p>
           </div>
         </article>

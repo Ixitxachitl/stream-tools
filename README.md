@@ -14,6 +14,7 @@ gets a card, a screenshot, and a setup guide. The site uses the same comic look 
 | Stream Pet        | <https://pet.ixitxachitl.com/>               | [tools/stream-pet.html](tools/stream-pet.html)       |
 | Stunt Wheel       | <https://race.ixitxachitl.com/>              | [tools/stunt-wheel.html](tools/stunt-wheel.html)     |
 | StreamEdge (app)  | <https://github.com/Ixitxachitl/stream-edge> | `#apps` on the home page (download links)           |
+| Desktop Overlay (app) | <https://github.com/Ixitxachitl/desktop-overlay> | `#desktop-overlay` on the home page (download link) |
 
 ## Layout
 
@@ -26,6 +27,7 @@ assets/icons/*.svg    manta logo + tool icons
 assets/img/*.webp     screenshots (wide ones for pages / og:image, *-card ones for the home cards)
 favicon.svg
 .github/workflows/streamedge-release.yml  hourly: StreamEdge card follows its newest release
+.github/workflows/desktop-overlay-release.yml  hourly: same for the Desktop Overlay card
 ```
 
 There's no build step and no dependencies apart from Google Fonts.
