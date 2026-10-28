@@ -712,6 +712,32 @@ kbd {
   box-shadow: 3px 3px 0 var(--ink);
   transform: rotate(-3deg);
 }
+/* buttons over a live demo that switch what it shows */
+.preview .views {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  z-index: 2;
+  display: flex;
+  gap: 6px;
+}
+.preview .views button {
+  font: 16px/1 "Bangers", sans-serif;
+  letter-spacing: 1px;
+  color: var(--ink);
+  background: var(--paper);
+  border: 3px solid var(--ink);
+  padding: 4px 10px 2px;
+  box-shadow: 3px 3px 0 var(--ink);
+  cursor: pointer;
+}
+.preview .views button[aria-pressed="true"] {
+  background: var(--yellow);
+}
+.preview .views button:focus-visible {
+  outline: 3px solid var(--pink);
+  outline-offset: 2px;
+}
 .preview .live::before {
   content: "● ";
   animation: blink 1s steps(1) infinite;

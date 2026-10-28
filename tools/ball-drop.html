@@ -63,7 +63,10 @@
               </div>
               <div class="btn-row">
                 <a class="btn go" href="https://drop.ixitxachitl.com/?demo=1" target="_blank" rel="noopener"
-                  >Try the demo ↗</a
+                  >Try the 2D demo ↗</a
+                >
+                <a class="btn go" href="https://drop.ixitxachitl.com/?demo=1&amp;view=3d" target="_blank" rel="noopener"
+                  >Try the 3D demo ↗</a
                 >
                 <a class="btn" href="#setup">Setup guide</a>
                 <a class="btn" href="#settings">All settings</a>
@@ -77,7 +80,12 @@
         <div class="panel">
           <div class="preview">
             <span class="live">Live demo</span>
+            <div class="views" role="group" aria-label="Which view the demo shows">
+              <button type="button" aria-pressed="true" data-demo="https://drop.ixitxachitl.com/?demo=1&amp;bg=none">2D</button>
+              <button type="button" aria-pressed="false" data-demo="https://drop.ixitxachitl.com/?demo=1&amp;view=3d">3D</button>
+            </div>
             <iframe
+              id="demo"
               src="https://drop.ixitxachitl.com/?demo=1&amp;bg=none"
               title="Ball Drop running with demo chat"
               loading="lazy"
@@ -85,8 +93,9 @@
             ></iframe>
           </div>
           <p class="caption">
-            The real overlay with fake chatters who join, race and spam emotes. On stream the background is
-            transparent, so the machine stands over your game or camera.
+            The real overlay with fake chatters who join, race and spam emotes. Switch between the 2D machine and
+            the 3D track with the buttons. On stream the 2D background is transparent, so the machine stands over
+            your game or camera; the 3D view has its own night sky.
           </p>
         </div>
       </section>
@@ -140,6 +149,7 @@
                   <li><code>!start</code>: mods and the broadcaster. Starts the race after a 3-2-1 countdown.</li>
                   <li><code>!cam name</code>: mods and the broadcaster, in the 3D view. Follows that racer; <code>!cam all</code> shows the whole course and <code>!cam</code> goes back to the automatic camera.</li>
                   <li>All three can be renamed in the settings, so they won't clash with your other bots.</li>
+                  <li><b>Auto mode</b> needs no commands at all: anyone who chats is in the race, and races start and run by themselves, one after another. People who go quiet drop out after a while.</li>
                 </ul>
               </div>
             </div>
@@ -253,6 +263,8 @@
                 <label>YouTube live <input name="youtube" type="text" placeholder="video ID or link" /></label>
                 <label>Join command <input name="joincmd" type="text" value="!join" /></label>
                 <label>Start command <input name="startcmd" type="text" value="!start" /></label>
+                <label>Auto mode: start after (s) <input name="autowait" type="number" min="5" max="300" step="5" value="20" /></label>
+                <label>Auto mode: quiet for (min) <input name="autoidle" type="number" min="1" max="120" step="1" value="10" /></label>
                 <label>Most racers <input name="max" type="number" min="1" max="100" step="1" value="40" /></label>
                 <label>Start by itself after (s) <input name="autostart" type="number" min="0" max="600" step="5" value="0" /></label>
                 <label>Time for the rest (s) <input name="finish" type="number" min="0" max="180" step="1" value="20" /></label>
@@ -266,6 +278,7 @@
                 <label>Camera command <input name="camcmd" type="text" value="!cam" /></label>
               </div>
               <div class="toggles">
+                <label><input name="auto" type="checkbox" /> Auto mode</label>
                 <label><input name="keep" type="checkbox" /> Racers stay in</label>
                 <label><input name="bubbles" type="checkbox" checked /> Emote bubbles</label>
                 <label><input name="decor" type="checkbox" checked /> Floating decorations</label>
@@ -313,6 +326,9 @@
               <tr><td class="group" colspan="4">Race</td></tr>
               <tr><td>Join command</td><td><code>joincmd</code></td><td><code>!join</code></td><td>Anyone in chat can type it to get a wheel in the next race.</td></tr>
               <tr><td>Start command</td><td><code>startcmd</code></td><td><code>!start</code></td><td>Mods and the broadcaster can start the race with it. There has to be at least one racer.</td></tr>
+              <tr><td>Auto mode</td><td><code>auto</code></td><td>off</td><td>Anyone who chats is in the race, no command needed, and races start and run by themselves, one after another.</td></tr>
+              <tr><td>Auto mode: start after (s)</td><td><code>autowait</code></td><td>20</td><td>How long each race waits in auto mode, from the first racer being in.</td></tr>
+              <tr><td>Auto mode: quiet for (min)</td><td><code>autoidle</code></td><td>10</td><td>In auto mode, someone who hasn't chatted for this long isn't in the next race.</td></tr>
               <tr><td>Most racers</td><td><code>max</code></td><td>40</td><td>Anyone after that is told the race is full.</td></tr>
               <tr><td>Start by itself after (s)</td><td><code>autostart</code></td><td>0</td><td>Counted from the first racer joining. <code>0</code> means only when someone starts it.</td></tr>
               <tr><td>Racers stay in</td><td><code>keep</code></td><td>off</td><td>Everyone who raced is already in the next race, without joining again.</td></tr>
@@ -352,5 +368,13 @@
       </div>
     </footer>
     <script src="../assets/js/site.js" defer></script>
+    <script>
+      // the live demo's 2D / 3D switch
+      for (const b of document.querySelectorAll("[data-demo]"))
+        b.addEventListener("click", () => {
+          for (const o of document.querySelectorAll("[data-demo]")) o.setAttribute("aria-pressed", String(o === b));
+          document.getElementById("demo").src = b.dataset.demo;
+        });
+    </script>
   </body>
 </html>
