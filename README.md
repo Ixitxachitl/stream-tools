@@ -14,6 +14,7 @@ gets a card, a screenshot, and a setup guide. The site uses the same comic look 
 | Stream Pet        | <https://pet.ixitxachitl.com/>               | [tools/stream-pet.html](tools/stream-pet.html)       |
 | Stunt Wheel       | <https://race.ixitxachitl.com/>              | [tools/stunt-wheel.html](tools/stunt-wheel.html)     |
 | Ball Drop         | <https://drop.ixitxachitl.com/>              | [tools/ball-drop.html](tools/ball-drop.html)         |
+| Input Display     | <https://input.ixitxachitl.com/>             | [tools/input-display.html](tools/input-display.html) |
 | StreamEdge (app)  | <https://github.com/Ixitxachitl/stream-edge> | `#apps` on the home page (download links)           |
 | Desktop Overlay (app) | <https://github.com/Ixitxachitl/desktop-overlay> | `#desktop-overlay` on the home page (download link) |
 

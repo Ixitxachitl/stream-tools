@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Input Display · Ixitxachitl's Stream Tools</title>
+    <meta
+      name="description"
+      content="Set up the Input Display: show your controller, fight stick or hit box on stream and light up every button you press. Presets for common controllers, or build your own layout."
+    />
+    <meta property="og:image" content="../assets/img/input-display-card.webp" />
+    <meta name="theme-color" content="#1a0f33" />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/comic.css" />
+  </head>
+  <body>
+    <a class="skip btn sun" href="#main">Skip to content</a>
+
+    <header class="topbar">
+      <div class="wrap">
+        <a class="brand" href="../"><img src="../assets/icons/manta-mark.svg" alt="" />Ixitxachitl's Stream Tools</a>
+        <nav class="nav" aria-label="Tools">
+          <a href="rave.html">Rave Chat</a>
+          <a href="chat-comics.html">Chat Comics</a>
+          <a href="game-wheel.html">Game Wheel</a>
+          <a href="snowfall.html">Snowfall</a>
+          <a href="countdown.html">Countdown</a>
+          <a href="stream-pet.html">Stream Pet</a>
+          <a href="stunt-wheel.html">Stunt Wheel</a>
+          <a href="ball-drop.html">Ball Drop</a>
+          <a href="input-display.html" aria-current="page">Input Display</a>
+          <a href="../#apps">StreamEdge</a>
+          <a href="../#desktop-overlay">Desktop Overlay</a>
+          <a href="../#obs">OBS Setup</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="wrap">
+      <section class="tool-hero">
+        <div class="panel">
+          <div class="panel-body">
+            <img class="big-icon" src="../assets/icons/gamepad.svg" alt="" />
+            <div>
+              <h1>Input Display</h1>
+              <p class="lead">
+                Show your controller on stream and light up every button you press, every stick you move and every
+                trigger you squeeze. It works with any controller your computer sees: Xbox, PlayStation and Switch
+                pads, fight sticks, hit boxes, retro adapters and more. Pick a preset or build your own layout in
+                the editor. It's all vector art, so it stays sharp at any size.
+              </p>
+              <div class="url-box">
+                <label class="sr-only" for="url">Editor URL</label>
+                <input id="url" type="text" readonly value="https://input.ixitxachitl.com/" />
+                <button class="btn sun" type="button" data-copy-from="#url">Copy link</button>
+              </div>
+              <div class="btn-row">
+                <a class="btn go" href="https://input.ixitxachitl.com/" target="_blank" rel="noopener"
+                  >Open the editor ↗</a
+                >
+                <a class="btn" href="#setup">Setup guide</a>
+                <a class="btn" href="#link">Link settings</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="panel">
+          <div class="preview">
+            <span class="live">Live demo</span>
+            <div class="views" role="group" aria-label="Which controller the demo shows">
+              <button type="button" aria-pressed="true" data-demo="https://input.ixitxachitl.com/overlay.html?layout=xbox&amp;demo=1&amp;bg=none">Xbox</button>
+              <button type="button" aria-pressed="false" data-demo="https://input.ixitxachitl.com/overlay.html?layout=playstation&amp;demo=1&amp;bg=none">PlayStation</button>
+              <button type="button" aria-pressed="false" data-demo="https://input.ixitxachitl.com/overlay.html?layout=hitbox&amp;theme=neon&amp;demo=1&amp;bg=none">Hit Box</button>
+              <button type="button" aria-pressed="false" data-demo="https://input.ixitxachitl.com/overlay.html?layout=stick-8&amp;demo=1&amp;bg=none">Fight stick</button>
+            </div>
+            <iframe
+              id="demo"
+              src="https://input.ixitxachitl.com/overlay.html?layout=xbox&amp;demo=1&amp;bg=none"
+              title="The Input Display with a pretend controller playing"
+              loading="lazy"
+              tabindex="-1"
+            ></iframe>
+          </div>
+          <p class="caption">
+            The real overlay with a pretend controller playing by itself. Switch between a few presets with the
+            buttons. On stream the background is transparent, so only the controller shows.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="setup" aria-labelledby="setup-title">
+        <h2 class="burst-title" id="setup-title">Setup guide</h2>
+        <div class="grid-2">
+          <div class="panel">
+            <div class="panel-head"><h3>Show your controller</h3></div>
+            <div class="panel-body">
+              <ol class="steps">
+                <li>
+                  <strong>Open the editor</strong>
+                  Go to <a href="https://input.ixitxachitl.com/" target="_blank" rel="noopener">input.ixitxachitl.com</a>
+                  and press a button on your controller so the browser can see it. The dot in the top corner turns
+                  green and the preview starts lighting up.
+                </li>
+                <li>
+                  <strong>Pick a layout</strong>
+                  Click a preset on the left: Xbox, PlayStation, Switch Pro, GameCube, N64, SNES, NES, Genesis,
+                  Saturn, Hit Box, leverless, or a fight stick. Or start from <em>New blank</em> and build your own.
+                </li>
+                <li>
+                  <strong>Check it lines up</strong>
+                  Press everything. If something lights up the wrong part, click that part and press
+                  <em>Bind</em>, then press the right input on your controller.
+                </li>
+                <li>
+                  <strong>Choose a look</strong>
+                  Under <em>Overlay link</em>, pick a theme (Dark, Light, Outline, Neon or Ghost), turn on the glow,
+                  hide the controller body, or fade it out when you're not touching the controller.
+                </li>
+                <li>
+                  <strong>Add it to OBS</strong>
+                  Press <em>Copy link</em>, add a <em>Browser</em> source and paste the link into its <em>URL</em>
+                  field. Make it the size the editor shows under the link (e.g. <code>1000</code> ×
+                  <code>800</code>) or any size of that shape. Then press a button on the controller once so OBS
+                  sees it too.
+                </li>
+              </ol>
+              <div class="callout tip">
+                Browsers only see a controller after one of its buttons is pressed. If the overlay sits still in OBS,
+                press any button on the controller.
+              </div>
+            </div>
+          </div>
+
+          <div class="stack">
+            <div class="panel">
+              <img
+                src="../assets/img/input-display.webp"
+                alt="The Input Display editor: controller presets down the left, an Xbox controller in the middle, and the list of parts and the layout settings on the right"
+                width="1280"
+                height="720"
+                loading="lazy"
+              />
+              <p class="caption">The editor: presets on the left, your layout in the middle, settings on the right.</p>
+            </div>
+            <div class="panel cyan">
+              <div class="panel-head"><h3>Build your own</h3></div>
+              <div class="panel-body">
+                <ul class="feature-list">
+                  <li>
+                    Add buttons, thumbsticks, analog triggers, d-pads, ball-top arcade levers, labels and shapes,
+                    then drag them where you want them. Perfect for custom hit boxes and leverless layouts.
+                  </li>
+                  <li>
+                    Bind a part by pressing it: click <em>Bind</em>, then press the button or move the stick. Use
+                    <em>+</em> to let a second input light the same part.
+                  </li>
+                  <li>
+                    The bar under the canvas shows every button and axis your controller sends, so odd adapters and
+                    DirectInput sticks are easy to set up. The <em>All inputs</em> preset shows the lot.
+                  </li>
+                  <li>
+                    Give each part its own colors and shape, mirror parts to the other side, snap to a grid, and undo
+                    anything.
+                  </li>
+                  <li>
+                    Save layouts in your browser or export them as a file. The overlay link carries the whole layout,
+                    so OBS doesn't need anything saved.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="link" aria-labelledby="link-title">
+        <h2 class="burst-title" id="link-title">Link settings</h2>
+        <div class="panel violet">
+          <div class="panel-head"><h3>Editing the link by hand</h3></div>
+          <div class="panel-body">
+            <p>
+              The editor builds the link for you, but you can also tweak it yourself. Every setting is optional and
+              missing ones use the defaults. The overlay lives at
+              <code>https://input.ixitxachitl.com/overlay.html</code>.
+            </p>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">Setting</th>
+                    <th scope="col">Values</th>
+                    <th scope="col">Default</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>layout</code></td>
+                    <td>
+                      A preset: <code>xbox</code>, <code>playstation</code>, <code>switch</code>, <code>gamecube</code>,
+                      <code>n64</code>, <code>snes</code>, <code>nes</code>, <code>genesis</code>, <code>saturn</code>,
+                      <code>hitbox</code>, <code>leverless-wasd</code>, <code>stick-8</code>, <code>stick-6</code>,
+                      <code>stick-4</code>, or <code>raw</code> (every input the controller has)
+                    </td>
+                    <td><code>xbox</code></td>
+                  </tr>
+                  <tr><td><code>l</code></td><td>Your own layout, filled in by the editor</td><td>none</td></tr>
+                  <tr><td><code>src</code></td><td>A link to a layout <code>.json</code> file exported from the editor</td><td>none</td></tr>
+                  <tr><td><code>theme</code></td><td><code>dark</code>, <code>light</code>, <code>outline</code>, <code>neon</code>, <code>ghost</code></td><td><code>dark</code></td></tr>
+                  <tr><td><code>pad</code></td><td><code>auto</code> (whichever controller was used last) or <code>1</code> to <code>4</code></td><td><code>auto</code></td></tr>
+                  <tr><td><code>colors</code></td><td><code>0</code> = ignore each button's own colors and use the theme's</td><td>on</td></tr>
+                  <tr><td><code>glow</code></td><td><code>1</code> or <code>0</code>: a glow on whatever's pressed</td><td>the theme's</td></tr>
+                  <tr><td><code>body</code></td><td><code>0</code> = hide the controller body or panel, just the buttons</td><td>shown</td></tr>
+                  <tr><td><code>fill</code>, <code>press</code>, <code>outline</code>, <code>text</code>, <code>bodyfill</code></td><td>Theme colors to override, as hex without the <code>#</code>, e.g. <code>press=ff2bd6</code></td><td>the theme's</td></tr>
+                  <tr><td><code>idle</code>, <code>idleop</code></td><td>Fade out after this many seconds without input, and how far (0 to 1)</td><td>never, <code>0.15</code></td></tr>
+                  <tr><td><code>dz</code></td><td>Stick deadzone, 0 to 1</td><td><code>0.1</code></td></tr>
+                  <tr><td><code>align</code></td><td>Where it sits if the source is a different shape: <code>left</code>, <code>right</code>, <code>top</code>, <code>bottom</code>, or two, e.g. <code>top-left</code></td><td>centered</td></tr>
+                  <tr><td><code>demo</code></td><td><code>1</code> = a pretend controller plays by itself</td><td>off</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="callout">
+              The presets expect the standard layout most modern controllers use. A fight stick in DirectInput mode or
+              an old adapter can number its buttons differently. If a preset doesn't line up, rebind it in the editor.
+              Keyboard keys can be bound too, but OBS doesn't pass key presses to browser sources, so they only work
+              in a normal browser window.
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <a class="brand" href="../"><img src="../assets/icons/manta-mark.svg" alt="" />Ixitxachitl's Stream Tools</a>
+        <span>Made with <a href="https://claude.com/claude-code" target="_blank" rel="noopener" title="Claude">glowsticks</a> · © <span data-year>2026</span> Ixitxachitl</span>
+      </div>
+    </footer>
+    <script src="../assets/js/site.js" defer></script>
+    <script>
+      // the live demo's controller switch
+      for (const b of document.querySelectorAll("[data-demo]"))
+        b.addEventListener("click", () => {
+          for (const o of document.querySelectorAll("[data-demo]")) o.setAttribute("aria-pressed", String(o === b));
+          document.getElementById("demo").src = b.dataset.demo;
+        });
+    </script>
+  </body>
+</html>
