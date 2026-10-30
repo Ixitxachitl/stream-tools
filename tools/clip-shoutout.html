@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Clip Shoutout · Ixitxachitl's Stream Tools</title>
+    <meta
+      name="description"
+      content="Set up Clip Shoutout: when a mod or VIP types !so name in chat, a comic shoutout card pops up in OBS and plays one of that streamer's clips, picked at random. Twitch and Kick, no login needed."
+    />
+    <meta property="og:image" content="../assets/img/clip-shoutout-card.webp" />
+    <meta name="theme-color" content="#1a0f33" />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/comic.css" />
+  </head>
+  <body>
+    <a class="skip btn sun" href="#main">Skip to content</a>
+
+    <header class="topbar">
+      <div class="wrap">
+        <a class="brand" href="../"><img src="../assets/icons/manta-mark.svg" alt="" />Ixitxachitl's Stream Tools</a>
+        <nav class="nav" aria-label="Tools">
+          <a href="rave.html">Rave Chat</a>
+          <a href="chat-comics.html">Chat Comics</a>
+          <a href="game-wheel.html">Game Wheel</a>
+          <a href="snowfall.html">Snowfall</a>
+          <a href="countdown.html">Countdown</a>
+          <a href="stream-pet.html">Stream Pet</a>
+          <a href="stunt-wheel.html">Stunt Wheel</a>
+          <a href="ball-drop.html">Ball Drop</a>
+          <a href="input-display.html">Input Display</a>
+          <a href="clip-shoutout.html" aria-current="page">Clip Shoutout</a>
+          <a href="../#apps">StreamEdge</a>
+          <a href="../#desktop-overlay">Desktop Overlay</a>
+          <a href="../#obs">OBS Setup</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="wrap">
+      <section class="tool-hero">
+        <div class="panel">
+          <div class="panel-body">
+            <img class="big-icon" src="../assets/icons/shoutout.svg" alt="" />
+            <div>
+              <h1>Clip Shoutout</h1>
+              <p class="lead">
+                Give another streamer a proper shoutout. When a mod, a VIP or you type <code>!so name</code> in chat,
+                a comic-book card pops up with their picture, name, link and what they were last playing, and one
+                of their clips plays in it, picked at random (never the same one twice in a row). Shoutouts given
+                while one is on screen wait their turn, and someone with no clips still gets the card.
+              </p>
+              <div class="url-box">
+                <label class="sr-only" for="url">Overlay URL</label>
+                <input id="url" type="text" readonly value="https://clips.ixitxachitl.com/" />
+                <button class="btn sun" type="button" data-copy-from="#url">Copy link</button>
+              </div>
+              <div class="btn-row">
+                <a class="btn go" href="https://clips.ixitxachitl.com/?demo=1" target="_blank" rel="noopener"
+                  >Try the demo ↗</a
+                >
+                <a class="btn" href="#setup">Setup guide</a>
+                <a class="btn" href="#settings">All settings</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="panel">
+          <div class="preview">
+            <span class="live">Live demo</span>
+            <iframe
+              id="demo"
+              src="https://clips.ixitxachitl.com/?demo=1&amp;bg=none"
+              title="Clip Shoutout giving demo shoutouts"
+              loading="lazy"
+              tabindex="-1"
+            ></iframe>
+          </div>
+          <p class="caption">
+            The real overlay with a pretend mod giving a shoutout every few seconds: one with clips, and one for
+            someone who has none. The clips play muted here; in OBS you hear them. On stream the background is
+            transparent, so only the card shows.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="setup" aria-labelledby="setup-title">
+        <h2 class="burst-title" id="setup-title">Setup guide</h2>
+        <div class="grid-2">
+          <div class="panel">
+            <div class="panel-head"><h3>Get it on stream</h3></div>
+            <div class="panel-body">
+              <ol class="steps">
+                <li>
+                  <strong>Add a Browser source</strong>
+                  In OBS click <kbd>+</kbd> under <em>Sources</em> → <em>Browser</em>. Paste
+                  <code>https://clips.ixitxachitl.com/</code> as the URL and set it to your full canvas size,
+                  usually <code>1920</code> × <code>1080</code>. The background is transparent automatically. Tick
+                  <em>Control audio via OBS</em> if you want the clips on their own mixer slider.
+                </li>
+                <li>
+                  <strong>Connect your chat</strong>
+                  Right-click the source → <em>Interact</em>, move your mouse over the overlay and click the yellow
+                  <b>gear</b> in the bottom-right corner. Type your Twitch and/or Kick channel name, add TikTok or
+                  YouTube if you stream there, and press <em>Save &amp; apply</em>.
+                </li>
+                <li>
+                  <strong>Try it</strong>
+                  <em>Test shoutout</em> in the settings shouts you out. The box next to the gear shouts out any
+                  name you type, and <b>Skip</b> skips the one on screen.
+                </li>
+                <li>
+                  <strong>Shout someone out</strong>
+                  A mod, a VIP or you types <code>!so name</code> in chat. The card pops up, their clip plays, and
+                  it goes away when the clip ends. Give a few at once and they play one after another.
+                </li>
+              </ol>
+              <div class="callout warn">
+                The settings window and the buttons <b>show on stream while you're using them</b>. Set things up
+                before you go live.
+              </div>
+            </div>
+          </div>
+
+          <div class="stack">
+            <div class="panel pink">
+              <div class="panel-head"><h3>Chat commands</h3></div>
+              <div class="panel-body">
+                <ul class="feature-list">
+                  <li><code>!so name</code>: mods, VIPs and the broadcaster. A shoutout for <code>name</code> (<code>@name</code> works too). <b>Who can use it</b> in the settings changes that to just you, mods only, or everyone, and you can let particular people use it too.</li>
+                  <li><code>!soskip</code>: mods and the broadcaster. Skips the shoutout on screen; <code>!soskip all</code> empties the queue as well.</li>
+                  <li>Both can be renamed in the settings, so they won't clash with your other bots.</li>
+                  <li><code>!so kick.com/name</code>, <code>!so twitch.tv/name</code>, <code>!so kick:name</code> or <code>!so twitch:name</code> shout out a channel on the other platform.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="panel pink">
+              <div class="panel-head"><h3>Chat sources</h3></div>
+              <div class="panel-body">
+                <details open>
+                  <summary>Twitch &amp; Kick</summary>
+                  <div>
+                    <p>
+                      Just type the channel name. Chat is read anonymously, and channels and clips are looked up
+                      without logging in, so there's no login, bot account or app to set up. Mods and VIPs are
+                      recognised by their badges. A shoutout typed in Twitch chat shows a Twitch channel and clip;
+                      one typed in Kick chat, a Kick one.
+                    </p>
+                  </div>
+                </details>
+                <details>
+                  <summary>TikTok</summary>
+                  <div>
+                    <p>
+                      TikTok needs a bridge app running on your PC. If you use <b>TikFinity</b>, just type
+                      <code>1</code> in the TikTok box. Otherwise, paste your bridge's <code>ws://…</code> address.
+                      TikTok has no clips to show, so the name is looked up on Twitch (or Kick: see <b>YouTube &amp;
+                      TikTok shoutouts look up</b>).
+                    </p>
+                  </div>
+                </details>
+                <details>
+                  <summary>YouTube</summary>
+                  <div>
+                    <p>
+                      Paste your live stream's video ID or link, plus a <b>YouTube Data API v3 key</b> from the
+                      Google Cloud Console. You can also give a bridge <code>ws://…</code> address instead. Like
+                      TikTok, the name is looked up on Twitch or Kick.
+                    </p>
+                  </div>
+                </details>
+              </div>
+            </div>
+
+            <div class="panel cyan">
+              <div class="panel-head"><h3>What you'll see</h3></div>
+              <div class="panel-body">
+                <ul class="feature-list">
+                  <li>
+                    A <b>SHOUTOUT!</b> banner over the clip, its title in a yellow caption box, who clipped it and
+                    how many views it has, and a progress bar along the bottom.
+                  </li>
+                  <li>
+                    A name plate with their picture, name, what they're playing (with a LIVE tag if they're live
+                    right now) or last played, their channel link, and a tagline you can change.
+                  </li>
+                  <li>
+                    A <b>random clip</b> from their 100 most-viewed, never the same one they got last time (it
+                    remembers across restarts). Shorter clips are picked first, and you can stick to their top few
+                    or to recent ones.
+                  </li>
+                  <li>
+                    A <b>queue</b>: shoutouts given while one is up wait their turn, with a "+2 more" tag on the
+                    card. Shout the same person out twice and they get two different clips.
+                  </li>
+                  <li>
+                    <b>No clips?</b> If they have none, or the channel can't be found, the card still pops up on its
+                    own for a few seconds.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="link" aria-labelledby="link-title">
+        <h2 class="burst-title" id="link-title">Build a setup link</h2>
+        <div class="panel violet">
+          <div class="panel-head"><h3>Settings in the URL</h3></div>
+          <div class="panel-body">
+            <p>
+              Every setting can also go in the URL, and it overrides what's saved. That's handy for setting up
+              without the Interact window. (The overlay's own <em>Copy setup link</em> button does the same thing.)
+              Fill in what you need and paste the link into your browser source:
+            </p>
+            <form data-builder data-base="https://clips.ixitxachitl.com/" class="builder">
+              <div class="fields">
+                <label>Twitch channel <input name="channel" type="text" placeholder="yourchannel" /></label>
+                <label>Kick channel <input name="kick" type="text" placeholder="yourchannel" /></label>
+                <label>TikTok bridge <input name="tiktok" type="text" placeholder="1 = TikFinity" /></label>
+                <label>YouTube live <input name="youtube" type="text" placeholder="video ID or link" /></label>
+                <label>Shoutout command <input name="socmd" type="text" value="!so" /></label>
+                <label>Who can use it <select name="who"><option value="owner">Only the broadcaster</option><option value="mods">Mods</option><option value="vips" selected>Mods and VIPs</option><option value="everyone">Everyone</option></select></label>
+                <label>These people can too <input name="allow" type="text" placeholder="friend1, friend2" /></label>
+                <label>Skip command <input name="skipcmd" type="text" value="!soskip" /></label>
+                <label>Most waiting in the queue <input name="maxqueue" type="number" min="1" max="50" step="1" value="10" /></label>
+                <label>YouTube &amp; TikTok shoutouts look up <select name="lookup"><option value="twitch" selected>Twitch</option><option value="kick">Kick</option><option value="none">Nobody (just the card)</option></select></label>
+                <label>Clips from <select name="period"><option value="all" selected>All time</option><option value="month">The last month</option><option value="week">The last week</option><option value="day">The last day</option></select></label>
+                <label>Only the top N clips <input name="top" type="number" min="0" max="100" step="1" value="0" /></label>
+                <label>Longest clip (s) <input name="maxlen" type="number" min="0" max="180" step="5" value="60" /></label>
+                <label>Video quality <select name="quality"><option value="1080" selected>Up to 1080p</option><option value="720">Up to 720p</option><option value="480">Up to 480p</option><option value="360">360p</option></select></label>
+                <label>Volume <input name="volume" type="number" min="0" max="100" step="5" value="80" /></label>
+                <label>Position <select name="pos"><option value="center" selected>Center</option><option value="top">Top</option><option value="bottom">Bottom</option><option value="tl">Top left</option><option value="tr">Top right</option><option value="bl">Bottom left</option><option value="br">Bottom right</option></select></label>
+                <label>Size (% of the width) <input name="size" type="number" min="15" max="90" step="1" value="42" /></label>
+                <label>Card without a clip (s) <input name="cardtime" type="number" min="2" max="60" step="1" value="8" /></label>
+                <label>Gap between shoutouts (s) <input name="gap" type="number" min="0" max="30" step="0.5" value="1.5" /></label>
+                <label>Tagline <input name="tagline" type="text" value="Go give them a follow!" /></label>
+              </div>
+              <div class="toggles">
+                <label><input name="title" type="checkbox" checked /> Clip title and who clipped it</label>
+                <label><input name="game" type="checkbox" checked /> What they last played</label>
+                <label><input name="demo" type="checkbox" /> Demo chat</label>
+              </div>
+              <div class="url-box">
+                <label class="sr-only" for="built-url">Your setup link</label>
+                <input id="built-url" type="text" readonly data-builder-out />
+                <button class="btn sun" type="button" data-copy-from="#built-url">Copy link</button>
+                <button class="btn" type="reset">Reset</button>
+              </div>
+            </form>
+            <div class="callout">
+              Using YouTube with an API key? Add it in the overlay's own settings rather than in a link, so the key
+              doesn't end up somewhere it could be shared. (<code>ytkey</code> works as a URL parameter too.)
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="settings" aria-labelledby="settings-title">
+        <h2 class="burst-title" id="settings-title">All settings</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Setting</th>
+                <th scope="col">URL parameter</th>
+                <th scope="col">Default</th>
+                <th scope="col">What it does</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="group" colspan="4">Chat</td></tr>
+              <tr><td>Twitch channel</td><td><code>channel</code></td><td>—</td><td>Read anonymously, no login needed.</td></tr>
+              <tr><td>Kick channel</td><td><code>kick</code></td><td>—</td><td>Read anonymously, no login needed.</td></tr>
+              <tr><td>TikTok bridge</td><td><code>tiktok</code></td><td>—</td><td><code>1</code> uses TikFinity on this PC, or give a <code>ws://…</code> bridge address.</td></tr>
+              <tr><td>YouTube live</td><td><code>youtube</code></td><td>—</td><td>Live video ID or link (needs the API key), or a bridge address.</td></tr>
+              <tr><td>YouTube API key</td><td><code>ytkey</code></td><td>—</td><td>A YouTube Data API v3 key from the Google Cloud Console.</td></tr>
+              <tr><td>YouTube check every (s)</td><td><code>ytpoll</code></td><td>6</td><td>Lower is snappier, but uses the daily API quota faster.</td></tr>
+              <tr><td>Demo chat</td><td><code>demo</code></td><td>off</td><td>A pretend mod gives a shoutout every few seconds, for trying it out.</td></tr>
+              <tr><td class="group" colspan="4">Shoutouts</td></tr>
+              <tr><td>Shoutout command</td><td><code>socmd</code></td><td><code>!so</code></td><td>Followed by a name: <code>!so somestreamer</code>.</td></tr>
+              <tr><td>Who can use it</td><td><code>who</code></td><td><code>vips</code></td><td><code>owner</code> only you, <code>mods</code>, <code>vips</code> mods and VIPs, or <code>everyone</code>. The broadcaster always can.</td></tr>
+              <tr><td>These people can too</td><td><code>allow</code></td><td>—</td><td>Names that can give shoutouts whatever <code>who</code> says, comma separated.</td></tr>
+              <tr><td>Skip command</td><td><code>skipcmd</code></td><td><code>!soskip</code></td><td>Mods and the broadcaster skip the shoutout on screen; add <code>all</code> to empty the queue too.</td></tr>
+              <tr><td>Most waiting in the queue</td><td><code>maxqueue</code></td><td>10</td><td>Shoutouts past that are dropped.</td></tr>
+              <tr><td>YouTube &amp; TikTok shoutouts look up</td><td><code>lookup</code></td><td><code>twitch</code></td><td>Where a name shouted out in YouTube or TikTok chat is looked up: <code>twitch</code>, <code>kick</code> or <code>none</code> (just the card).</td></tr>
+              <tr><td class="group" colspan="4">Clips</td></tr>
+              <tr><td>Clips from</td><td><code>period</code></td><td><code>all</code></td><td><code>all</code>, <code>month</code>, <code>week</code> or <code>day</code>: how recent the clips can be.</td></tr>
+              <tr><td>Only the top N clips</td><td><code>top</code></td><td>0</td><td>Pick at random from their N most-viewed clips. <code>0</code> means any of the 100 most viewed.</td></tr>
+              <tr><td>Longest clip (s)</td><td><code>maxlen</code></td><td>60</td><td>Clips up to this long are picked first. If all of theirs are longer, one is cut off here. <code>0</code> means any length.</td></tr>
+              <tr><td>Video quality</td><td><code>quality</code></td><td>1080</td><td>The highest quality to play: <code>1080</code>, <code>720</code>, <code>480</code> or <code>360</code>.</td></tr>
+              <tr><td>Volume</td><td><code>volume</code></td><td>80</td><td>0 to 100.</td></tr>
+              <tr><td class="group" colspan="4">Look</td></tr>
+              <tr><td>Position</td><td><code>pos</code></td><td><code>center</code></td><td><code>center</code>, <code>top</code>, <code>bottom</code>, <code>tl</code>, <code>tr</code>, <code>bl</code> or <code>br</code>.</td></tr>
+              <tr><td>Size (% of the width)</td><td><code>size</code></td><td>42</td><td>How wide the card is.</td></tr>
+              <tr><td>Card without a clip (s)</td><td><code>cardtime</code></td><td>8</td><td>How long a shoutout stays up when they have no clips.</td></tr>
+              <tr><td>Gap between shoutouts (s)</td><td><code>gap</code></td><td>1.5</td><td>The pause between shoutouts in the queue.</td></tr>
+              <tr><td>Tagline</td><td><code>tagline</code></td><td>Go give them a follow!</td><td>The line under the name. <code>{name}</code> is replaced with their name; empty means none.</td></tr>
+              <tr><td>Clip title and who clipped it</td><td><code>title</code></td><td>on</td><td>The caption box and the clipper and view count.</td></tr>
+              <tr><td>What they last played</td><td><code>game</code></td><td>on</td><td>The game or category under their name.</td></tr>
+              <tr><td>Background (testing)</td><td><code>bg</code></td><td>auto</td><td>In a normal browser the overlay shows a dark background so you can see it. <code>bg=none</code> makes it transparent anyway, or give a color like <code>bg=black</code>. In OBS it's always transparent unless you set a color.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout tip">
+          Streamer.bot or another tool can trigger shoutouts too: <code>window.clips.shoutout("name", { platform: "twitch" })</code>,
+          <code>.skip()</code> and <code>.clear()</code>.
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <a class="brand" href="../"><img src="../assets/icons/manta-mark.svg" alt="" />Ixitxachitl's Stream Tools</a>
+        <span>Made with <a href="https://claude.com/claude-code" target="_blank" rel="noopener" title="Claude">glowsticks</a> · © <span data-year>2026</span> Ixitxachitl</span>
+      </div>
+    </footer>
+    <script src="../assets/js/site.js" defer></script>
+  </body>
+</html>
