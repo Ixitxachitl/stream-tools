@@ -13,6 +13,7 @@ gets a card, a screenshot, and a setup guide. The site uses the same comic look 
 | Clip Shoutout         | <https://clips.ixitxachitl.com/>                 | [tools/clip-shoutout.html](tools/clip-shoutout.html) |
 | Ball Drop             | <https://drop.ixitxachitl.com/>                  | [tools/ball-drop.html](tools/ball-drop.html)         |
 | Duel                  | <https://duel.ixitxachitl.com/>                  | [tools/duel.html](tools/duel.html)                   |
+| Chat Slam             | <https://slam.ixitxachitl.com/>                  | [tools/chat-slam.html](tools/chat-slam.html)         |
 | Game Wheel            | <https://wheel.ixitxachitl.com/>                 | [tools/game-wheel.html](tools/game-wheel.html)       |
 | Countdown Timer       | <https://countdown.ixitxachitl.com/>             | [tools/countdown.html](tools/countdown.html)         |
 | Snowfall              | <https://snow.ixitxachitl.com/>                  | [tools/snowfall.html](tools/snowfall.html)           |

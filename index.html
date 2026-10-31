@@ -6,12 +6,12 @@
     <title>Ixitxachitl's Stream Tools</title>
     <meta
       name="description"
-      content="Free, no-login stream overlays, chat games and widgets: Rave Chat, Chat Comics, the Stunt Wheel, Stream Pet, Clip Shoutout, Ball Drop, Duel, the Game Wheel, the Countdown Timer, Snowfall and Input Display, plus the StreamEdge and Desktop Overlay apps. Drop them into OBS as a browser source."
+      content="Free, no-login stream overlays, chat games and widgets: Rave Chat, Chat Comics, the Stunt Wheel, Stream Pet, Clip Shoutout, Ball Drop, Duel, Chat Slam, the Game Wheel, the Countdown Timer, Snowfall and Input Display, plus the StreamEdge and Desktop Overlay apps. Drop them into OBS as a browser source."
     />
     <meta property="og:title" content="Ixitxachitl's Stream Tools" />
     <meta
       property="og:description"
-      content="Free overlays, chat games and widgets for streamers: dancing chat critters, a live chat comic, a pixel stunt track, a voxel pet, clip shoutouts, a pachinko race, a water-pistol duel, a game-picking wheel, a countdown, snowfall and an input display."
+      content="Free overlays, chat games and widgets for streamers: dancing chat critters, a live chat comic, a pixel stunt track, a voxel pet, clip shoutouts, a pachinko race, a water-pistol duel, a pro-wrestling match, a game-picking wheel, a countdown, snowfall and an input display."
     />
     <meta property="og:image" content="assets/img/rave.webp" />
     <meta name="theme-color" content="#1a0f33" />
@@ -38,6 +38,7 @@
           <a href="tools/clip-shoutout.html">Clip Shoutout</a>
           <a href="tools/ball-drop.html">Ball Drop</a>
           <a href="tools/duel.html">Duel</a>
+          <a href="tools/chat-slam.html">Chat Slam</a>
           <a href="tools/game-wheel.html">Game Wheel</a>
           <a href="tools/countdown.html">Countdown</a>
           <a href="tools/snowfall.html">Snowfall</a>
@@ -275,12 +276,30 @@
               </div>
             </article>
 
-            <!-- Placeholder for future tools -->
-            <article class="tool soon" aria-label="More tools coming soon">
-              <div class="shot"><span class="pow" aria-hidden="true">Soon!</span></div>
+            <!-- Chat Slam -->
+            <article class="tool" style="--accent: var(--violet)">
+              <div class="shot">
+                <img
+                  src="assets/img/chat-slam-card.webp"
+                  alt="A pixel-art wrestling ring under spotlights, CHAT SLAM on its apron and a crowd waving signs behind it: a masked wrestler stands on the top turnbuckle ready to dive while the ref and the other wrestler wait in the ring, under a banner reading Off the top rope!"
+                  width="760"
+                  height="380"
+                  loading="lazy"
+                />
+                <img class="badge-icon" src="assets/icons/slam.svg" alt="" />
+              </div>
               <div class="body">
-                <h4>More on the way…</h4>
-                <p>New overlays, games and widgets get added here as they're built. Check back soon!</p>
+                <h4>Chat Slam</h4>
+                <p><code>!wrestle name</code> starts a little pro-wrestling match: slams, suplexes, a near fall or two, then a finisher and the 3-count.</p>
+                <ul class="chips" aria-label="Highlights">
+                  <li class="chip">!wrestle name</li>
+                  <li class="chip">Health bars</li>
+                  <li class="chip">Title belt</li>
+                </ul>
+                <div class="btn-row">
+                  <a class="btn hot" href="tools/chat-slam.html">How to set up</a>
+                  <a class="btn" href="https://slam.ixitxachitl.com/?demo=1" target="_blank" rel="noopener">Try it ↗</a>
+                </div>
               </div>
             </article>
           </div>

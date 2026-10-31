@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chat Slam · Ixitxachitl's Stream Tools</title>
+    <meta
+      name="description"
+      content="Set up Chat Slam: a chatter types !wrestle name and a pixel-art wrestling arena grows in along the bottom of your stream. Two little wrestlers leap into the ring and trade dropkicks, suplexes and flying crossbodies until the ref counts 3. Twitch, Kick, YouTube and TikTok, no login needed."
+    />
+    <meta property="og:image" content="../assets/img/chat-slam-card.webp" />
+    <meta name="theme-color" content="#1a0f33" />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/comic.css" />
+  </head>
+  <body>
+    <a class="skip btn sun" href="#main">Skip to content</a>
+
+    <header class="topbar">
+      <div class="wrap">
+        <a class="brand" href="../"><img src="../assets/icons/manta-mark.svg" alt="" />Ixitxachitl's Stream Tools</a>
+        <nav class="nav" aria-label="Tools">
+          <a href="rave.html">Rave Chat</a>
+          <a href="chat-comics.html">Chat Comics</a>
+          <a href="stunt-wheel.html">Stunt Wheel</a>
+          <a href="stream-pet.html">Stream Pet</a>
+          <a href="clip-shoutout.html">Clip Shoutout</a>
+          <a href="ball-drop.html">Ball Drop</a>
+          <a href="duel.html">Duel</a>
+          <a href="chat-slam.html" aria-current="page">Chat Slam</a>
+          <a href="game-wheel.html">Game Wheel</a>
+          <a href="countdown.html">Countdown</a>
+          <a href="snowfall.html">Snowfall</a>
+          <a href="input-display.html">Input Display</a>
+          <a href="../#apps">StreamEdge</a>
+          <a href="../#desktop-overlay">Desktop Overlay</a>
+          <a href="../#obs">OBS Setup</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="wrap">
+      <section class="tool-hero">
+        <div class="panel">
+          <div class="panel-body">
+            <img class="big-icon" src="../assets/icons/slam.svg" alt="" />
+            <div>
+              <h1>Chat Slam</h1>
+              <p class="lead">
+                A little pro-wrestling match for chat. When someone types <code>!wrestle name</code>, a pixel-art arena
+                grows in along the bottom of your stream: a ring under spotlights and a crowd waving signs. The two of
+                them leap over the top rope, the bell rings, and they trade dropkicks, body slams, suplexes and flying
+                crossbodies, with a near fall or two, until the winner hits their own finishing move and the ref counts
+                3. The winner holds up the title belt; the loser just sees stars. Then it all shrinks away until the
+                next match.
+              </p>
+              <div class="url-box">
+                <label class="sr-only" for="url">Overlay URL</label>
+                <input id="url" type="text" readonly value="https://slam.ixitxachitl.com/" />
+                <button class="btn sun" type="button" data-copy-from="#url">Copy link</button>
+              </div>
+              <div class="btn-row">
+                <a class="btn go" href="https://slam.ixitxachitl.com/?demo=1" target="_blank" rel="noopener"
+                  >Try the demo ↗</a
+                >
+                <a class="btn" href="#setup">Setup guide</a>
+                <a class="btn" href="#settings">All settings</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="panel">
+          <div class="preview">
+            <span class="live">Live demo</span>
+            <iframe
+              id="demo"
+              src="https://slam.ixitxachitl.com/?demo=1&amp;bg=none&amp;volume=0"
+              title="Chat Slam with pretend chatters wrestling every so often"
+              loading="lazy"
+              tabindex="-1"
+            ></iframe>
+          </div>
+          <p class="caption">
+            The real overlay with pretend chatters challenging each other every so often (muted here; in OBS you hear
+            the bell, the crowd and every slam). On stream the background is transparent, so only the arena shows, and
+            only while a match is on.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="setup" aria-labelledby="setup-title">
+        <h2 class="burst-title" id="setup-title">Setup guide</h2>
+        <div class="grid-2">
+          <div class="panel">
+            <div class="panel-head"><h3>Get it on stream</h3></div>
+            <div class="panel-body">
+              <ol class="steps">
+                <li>
+                  <strong>Add a Browser source</strong>
+                  In OBS click <kbd>+</kbd> under <em>Sources</em> → <em>Browser</em>. Paste
+                  <code>https://slam.ixitxachitl.com/</code> as the URL and set it to your full canvas size,
+                  usually <code>1920</code> × <code>1080</code>. The background is transparent automatically, and the
+                  arena sits along the bottom edge.
+                </li>
+                <li>
+                  <strong>Connect your chat</strong>
+                  Right-click the source → <em>Interact</em>, move your mouse over the overlay and click the yellow
+                  <b>gear</b> in the bottom-right corner. Type your Twitch and/or Kick channel name, add TikTok or
+                  YouTube if you stream there, and press <em>Save &amp; apply</em>.
+                </li>
+                <li>
+                  <strong>Try it</strong>
+                  <em>Test match</em> in the settings puts you in the ring with a pretend wrestler. The boxes next to
+                  the gear start a match between any two names you type, and <b>Stop</b> ends one early.
+                </li>
+                <li>
+                  <strong>Let chat wrestle</strong>
+                  Someone types <code>!wrestle name</code>. After the match there's a cooldown (a minute by default)
+                  before the next one.
+                </li>
+              </ol>
+              <div class="callout warn">
+                The settings window and the buttons <b>show on stream while you're using them</b>. Set things up
+                before you go live.
+              </div>
+            </div>
+          </div>
+
+          <div class="stack">
+            <div class="panel pink">
+              <div class="panel-head"><h3>Chat commands</h3></div>
+              <div class="panel-body">
+                <ul class="feature-list">
+                  <li><code>!wrestle name</code>: starts a match with <code>name</code> (<code>@name</code> works too). They have to have chatted in the <b>last 10 minutes</b>, so nobody gets dragged into the ring when they're not around.</li>
+                  <li><code>!wrestle</code> on its own picks someone at random from the people who chatted in the last 10 minutes.</li>
+                  <li>Everyone can start one by default. <b>Who can start one</b> in the settings changes that to mods and VIPs, mods, or just you, and you can let particular people too.</li>
+                  <li>The <b>cooldown</b> starts when a match ends. You skip it, and so can mods if you turn that on. While a match is on, other <code>!wrestle</code>s are ignored.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="panel pink">
+              <div class="panel-head"><h3>Chat sources</h3></div>
+              <div class="panel-body">
+                <details open>
+                  <summary>Twitch &amp; Kick</summary>
+                  <div>
+                    <p>
+                      Just type the channel name. Chat is read anonymously, so there's no login, bot account or app
+                      to set up. Each wrestler's singlet is their chat color, and mods and VIPs are recognised by their
+                      badges.
+                    </p>
+                  </div>
+                </details>
+                <details>
+                  <summary>TikTok</summary>
+                  <div>
+                    <p>
+                      TikTok needs a bridge app running on your PC. If you use <b>TikFinity</b>, just type
+                      <code>1</code> in the TikTok box. Otherwise, paste your bridge's <code>ws://…</code> address.
+                    </p>
+                  </div>
+                </details>
+                <details>
+                  <summary>YouTube</summary>
+                  <div>
+                    <p>
+                      Paste your live stream's video ID or link, plus a <b>YouTube Data API v3 key</b> from the
+                      Google Cloud Console. You can also give a bridge <code>ws://…</code> address instead.
+                    </p>
+                  </div>
+                </details>
+              </div>
+            </div>
+
+            <div class="panel cyan">
+              <div class="panel-head"><h3>What you'll see</h3></div>
+              <div class="panel-body">
+                <ul class="feature-list">
+                  <li>
+                    A <b>low-res pixel-art arena</b>: a ring with red and blue corners and your show's name on the
+                    apron, swaying spotlights, and a crowd on the bleachers waving signs and taking photos. Everything is
+                    a full 3D voxel model seen flat on, so it looks like 2D pixel art, with just the floor and the mat
+                    showing some depth.
+                  </li>
+                  <li>
+                    Two little wrestlers in singlets of their <b>chat colors</b>, some in luchador masks. The same
+                    chatter always gets the same look and the same finishing move. Twitch chatters who have set their
+                    pronouns with the <a href="https://pronouns.alejo.io/" target="_blank" rel="noopener">Chat
+                    Pronouns</a> extension get a look to match.
+                  </li>
+                  <li>
+                    A <b>simulated match</b> with health bars: dropkicks, clotheslines, hip tosses, body slams,
+                    suplexes, elbow drops and dives off the top turnbuckle, each with a comic "WHAM!". The loser gets a
+                    comeback, and there's a near fall or two: "1… 2… KICKOUT!"
+                  </li>
+                  <li>
+                    A <b>clear winner</b>: their finisher (a lift, a spin and a slam), the 3-count, the bell, and the
+                    title belt held high in a shower of confetti. The loser lies there seeing stars. Nobody gets hurt.
+                  </li>
+                  <li>
+                    <b>Sound effects</b> made on the fly: the ring bell, the crowd's cheers and "ooh"s, slams, the ref's
+                    count. Turn them down or off in the settings.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="link" aria-labelledby="link-title">
+        <h2 class="burst-title" id="link-title">Build a setup link</h2>
+        <div class="panel violet">
+          <div class="panel-head"><h3>Settings in the URL</h3></div>
+          <div class="panel-body">
+            <p>
+              Every setting can also go in the URL, and it overrides what's saved. That's handy for setting up
+              without the Interact window. (The overlay's own <em>Copy setup link</em> button does the same thing.)
+              Fill in what you need and paste the link into your browser source:
+            </p>
+            <form data-builder data-base="https://slam.ixitxachitl.com/" class="builder">
+              <div class="fields">
+                <label>Twitch channel <input name="channel" type="text" placeholder="yourchannel" /></label>
+                <label>Kick channel <input name="kick" type="text" placeholder="yourchannel" /></label>
+                <label>TikTok bridge <input name="tiktok" type="text" placeholder="1 = TikFinity" /></label>
+                <label>YouTube live <input name="youtube" type="text" placeholder="video ID or link" /></label>
+                <label>Match command <input name="cmd" type="text" value="!wrestle" /></label>
+                <label>Cooldown (s) <input name="cooldown" type="number" min="0" max="3600" step="5" value="60" /></label>
+                <label>Who can start one <select name="who"><option value="everyone" selected>Everyone</option><option value="vips">Mods and VIPs</option><option value="mods">Mods</option><option value="owner">Only the broadcaster</option></select></label>
+                <label>These people can too <input name="allow" type="text" placeholder="friend1, friend2" /></label>
+                <label>Show name (on the ring) <input name="title" type="text" value="CHAT SLAM" /></label>
+                <label>Pixel size <input name="pixel" type="number" min="0" max="16" step="1" value="0" /></label>
+                <label>Winner stays up for (s) <input name="hold" type="number" min="1" max="30" step="0.5" value="5" /></label>
+                <label>Sound effects volume <input name="volume" type="number" min="0" max="100" step="5" value="50" /></label>
+              </div>
+              <div class="toggles">
+                <label><input name="modskip" type="checkbox" /> Mods skip the cooldown</label>
+                <label><input name="pronouns" type="checkbox" checked /> Looks by pronouns</label>
+                <label><input name="demo" type="checkbox" /> Demo chat</label>
+              </div>
+              <div class="url-box">
+                <label class="sr-only" for="built-url">Your setup link</label>
+                <input id="built-url" type="text" readonly data-builder-out />
+                <button class="btn sun" type="button" data-copy-from="#built-url">Copy link</button>
+                <button class="btn" type="reset">Reset</button>
+              </div>
+            </form>
+            <div class="callout">
+              Using YouTube with an API key? Add it in the overlay's own settings rather than in a link, so the key
+              doesn't end up somewhere it could be shared. (<code>ytkey</code> works as a URL parameter too.)
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="settings" aria-labelledby="settings-title">
+        <h2 class="burst-title" id="settings-title">All settings</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Setting</th>
+                <th scope="col">URL parameter</th>
+                <th scope="col">Default</th>
+                <th scope="col">What it does</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="group" colspan="4">Chat</td></tr>
+              <tr><td>Twitch channel</td><td><code>channel</code></td><td>—</td><td>Read anonymously, no login needed.</td></tr>
+              <tr><td>Kick channel</td><td><code>kick</code></td><td>—</td><td>Read anonymously, no login needed.</td></tr>
+              <tr><td>TikTok bridge</td><td><code>tiktok</code></td><td>—</td><td><code>1</code> uses TikFinity on this PC, or give a <code>ws://…</code> bridge address.</td></tr>
+              <tr><td>YouTube live</td><td><code>youtube</code></td><td>—</td><td>Live video ID or link (needs the API key), or a bridge address.</td></tr>
+              <tr><td>YouTube API key</td><td><code>ytkey</code></td><td>—</td><td>A YouTube Data API v3 key from the Google Cloud Console.</td></tr>
+              <tr><td>YouTube check every (s)</td><td><code>ytpoll</code></td><td>6</td><td>Lower is snappier, but uses the daily API quota faster.</td></tr>
+              <tr><td>Demo chat</td><td><code>demo</code></td><td>off</td><td>Pretend chatters wrestle every so often, for trying it out.</td></tr>
+              <tr><td class="group" colspan="4">Matches</td></tr>
+              <tr><td>Match command</td><td><code>cmd</code></td><td><code>!wrestle</code></td><td>Followed by a name: <code>!wrestle somebody</code>. On its own it picks someone who chatted recently. Either way, only people who chatted in the last 10 minutes can be picked.</td></tr>
+              <tr><td>Cooldown (s)</td><td><code>cooldown</code></td><td>60</td><td>After a match, how long until the next one can start. The broadcaster skips it.</td></tr>
+              <tr><td>Mods skip the cooldown</td><td><code>modskip</code></td><td>off</td><td>Lets mods start a match during the cooldown too.</td></tr>
+              <tr><td>Who can start one</td><td><code>who</code></td><td><code>everyone</code></td><td><code>everyone</code>, <code>vips</code> mods and VIPs, <code>mods</code>, or <code>owner</code> only you. The broadcaster always can.</td></tr>
+              <tr><td>These people can too</td><td><code>allow</code></td><td>—</td><td>Names that can start a match whatever <code>who</code> says, comma separated.</td></tr>
+              <tr><td>Looks by pronouns</td><td><code>pronouns</code></td><td>on</td><td>Looks up Twitch chatters' pronouns from the Chat Pronouns extension (pronouns.alejo.io), so she/her and he/him get a look to match; anyone else gets any look.</td></tr>
+              <tr><td class="group" colspan="4">Look</td></tr>
+              <tr><td>Show name (on the ring)</td><td><code>title</code></td><td>CHAT SLAM</td><td>The name on the ring apron and the opening banner: letters, numbers and spaces, up to 20.</td></tr>
+              <tr><td>Pixel size</td><td><code>pixel</code></td><td>0</td><td>Screen pixels per art pixel: bigger is chunkier and fills more of the screen. <code>0</code> picks one from the source's height (9 at 1080p).</td></tr>
+              <tr><td>Winner stays up for (s)</td><td><code>hold</code></td><td>5</td><td>How long the result stays before everything shrinks away.</td></tr>
+              <tr><td>Sound effects volume</td><td><code>volume</code></td><td>50</td><td>0 to 100; 0 is silent.</td></tr>
+              <tr><td>Background (testing)</td><td><code>bg</code></td><td>auto</td><td>In a normal browser the overlay shows a dark background so you can see it. <code>bg=none</code> makes it transparent anyway, or give a color like <code>bg=black</code>. In OBS it's always transparent unless you set a color.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout tip">
+          Streamer.bot or another tool can start one too: <code>window.slam.start("challenger", "opponent", { winner: 1 })</code>
+          (leave out <code>winner</code> for a coin flip), and <code>window.slam.stop()</code>. These skip the cooldown and the
+          10-minute rule.
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <a class="brand" href="../"><img src="../assets/icons/manta-mark.svg" alt="" />Ixitxachitl's Stream Tools</a>
+        <span>Made with <a href="https://claude.com/claude-code" target="_blank" rel="noopener" title="Claude">glowsticks</a> · © <span data-year>2026</span> Ixitxachitl</span>
+      </div>
+    </footer>
+    <script src="../assets/js/site.js" defer></script>
+  </body>
+</html>
