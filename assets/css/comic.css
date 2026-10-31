@@ -366,11 +366,91 @@ kbd {
   background-color: #e3dcff;
 }
 
+/* ---------- shelves of tools ---------- */
+/* The tools are grouped into shelves of four, so every shelf is one even row (two on tablets). */
+.shelves {
+  width: min(1280px, 100% - 2 * var(--gutter));
+  margin-inline: auto;
+}
+.lede {
+  max-width: 760px;
+  margin: 0 0 30px;
+  color: #ece6ff;
+  font-size: 18px;
+}
+.shelf + .shelf {
+  margin-top: 52px;
+}
+.shelf-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 16px;
+  margin: 0 0 22px;
+  padding-bottom: 10px;
+  border-bottom: 3px dashed rgba(255, 255, 255, 0.22);
+}
+.shelf-head h3 {
+  margin: 0;
+  font: 34px/1 "Bangers", sans-serif;
+  letter-spacing: 1.5px;
+  color: var(--yellow);
+  -webkit-text-stroke: 1.5px var(--ink);
+  paint-order: stroke fill;
+  text-shadow: 3px 3px 0 var(--ink);
+  transform: rotate(-1deg);
+}
+.shelf-head p {
+  margin: 0;
+  color: #ece6ff;
+}
+/* quick links under the hero, one per shelf */
+.jump {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 12px;
+  margin-top: 34px;
+}
+.jump a {
+  font: 19px/1 "Bangers", sans-serif;
+  letter-spacing: 1px;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 9px 14px 7px;
+  border: 3px solid var(--ink);
+  border-radius: 999px;
+  background: var(--paper);
+  box-shadow: 3px 3px 0 var(--ink);
+  transition:
+    transform 0.1s,
+    box-shadow 0.1s;
+}
+.jump a:nth-child(5n + 1) { background: #ffd0f4; }
+.jump a:nth-child(5n + 2) { background: #c7f8ff; }
+.jump a:nth-child(5n + 3) { background: #fff7b0; }
+.jump a:nth-child(5n + 4) { background: #e3dcff; }
+.jump a:nth-child(5n + 5) { background: #c9ffdf; }
+.jump a:hover {
+  transform: translate(-1px, -2px);
+  box-shadow: 4px 5px 0 var(--ink);
+}
+
 /* ---------- tool cards ---------- */
 .tools {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 26px;
+}
+@media (max-width: 1100px) {
+  .tools {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 640px) {
+  .tools {
+    grid-template-columns: 1fr;
+  }
 }
 .tool {
   display: flex;
@@ -420,19 +500,6 @@ kbd {
   box-shadow: 3px 3px 0 var(--ink);
   transform: rotate(-8deg);
 }
-.tool .kind {
-  position: absolute;
-  right: 12px;
-  top: 14px;
-  font: 16px/1 "Bangers", sans-serif;
-  letter-spacing: 1px;
-  padding: 5px 9px 3px;
-  border: 3px solid var(--ink);
-  background: var(--accent, var(--pink));
-  color: #fff;
-  text-shadow: 1.5px 1.5px 0 var(--ink);
-  transform: rotate(4deg);
-}
 .tool .body {
   padding: 16px 18px 20px;
   display: flex;
@@ -440,9 +507,9 @@ kbd {
   gap: 12px;
   flex: 1;
 }
-.tool h3 {
+.tool h4 {
   margin: 0;
-  font: 34px/1 "Bangers", sans-serif;
+  font: 32px/1 "Bangers", sans-serif;
   letter-spacing: 1.5px;
 }
 .tool p {
@@ -471,36 +538,31 @@ kbd {
   font-size: 19px;
   padding: 9px 13px 7px;
 }
-/* a small text link beside a card's buttons, for side pages like a lab */
-.tool .lab-link {
-  align-self: center;
-  font: 700 14px/1 "Comic Neue", sans-serif;
-  color: var(--muted);
-  text-decoration: underline dotted;
-  text-underline-offset: 3px;
-}
-.tool .lab-link:hover {
-  color: var(--ink);
-}
 
-/* a full-width card for downloadable apps, with an ultrawide screenshot */
-.tool.wide:not(:hover) {
-  transform: rotate(-0.25deg);
+/* the desktop apps: the same cards, two side by side, with their ultrawide screenshots */
+.tools.apps {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
-.tool.wide .shot {
+.tool.app .shot {
   aspect-ratio: 4 / 1;
 }
-.tool.wide .shot img:not(.badge-icon) {
+.tool.app .shot img:not(.badge-icon) {
   object-position: center;
 }
-/* stacked wide cards (the desktop apps): spaced apart, tilted the other way */
-.tool.wide + .tool.wide {
-  margin-top: 32px;
+@media (max-width: 900px) {
+  .tools.apps {
+    grid-template-columns: 1fr;
+  }
 }
-.tool.wide + .tool.wide:not(:hover) {
-  transform: rotate(0.25deg);
+@media (max-width: 640px) {
+  .tool.app .shot {
+    aspect-ratio: 2 / 1;
+  }
+  .tool.app .shot img:not(.badge-icon) {
+    object-position: left center;
+  }
 }
-.tool h3 small {
+.tool h4 small {
   font: 700 15px/1 "Comic Neue", sans-serif;
   letter-spacing: 0;
   color: var(--muted);
@@ -510,13 +572,13 @@ kbd {
   font-size: 14px;
   color: var(--muted);
 }
-@media (max-width: 640px) {
-  .tool.wide .shot {
-    aspect-ratio: 2 / 1;
-  }
-  .tool.wide .shot img:not(.badge-icon) {
-    object-position: left center;
-  }
+.tool .fine a {
+  color: var(--muted);
+  text-decoration: underline dotted;
+  text-underline-offset: 3px;
+}
+.tool .fine a:hover {
+  color: var(--ink);
 }
 
 .tool.soon {

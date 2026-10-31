@@ -6,12 +6,12 @@
     <title>Ixitxachitl's Stream Tools</title>
     <meta
       name="description"
-      content="Free, no-login stream overlays and widgets: Rave Chat, Chat Comics, the Game Wheel, Snowfall, the Countdown Timer, Stream Pet, the Stunt Wheel and Ball Drop. Drop them into OBS as a browser source."
+      content="Free, no-login stream overlays, chat games and widgets: Rave Chat, Chat Comics, the Stunt Wheel, Stream Pet, Clip Shoutout, Ball Drop, Duel, the Game Wheel, the Countdown Timer, Snowfall and Input Display, plus the StreamEdge and Desktop Overlay apps. Drop them into OBS as a browser source."
     />
     <meta property="og:title" content="Ixitxachitl's Stream Tools" />
     <meta
       property="og:description"
-      content="Free overlays and widgets for streamers — dancing chat cats, dogs, bees, pumpkins and snowmen, a game-picking wheel, snow with snowmen, a countdown timer, a voxel pet that grows up on your stream, a pixel-art stunt track where chatters roll by on wheels of their own and a pachinko-style race chat can join."
+      content="Free overlays, chat games and widgets for streamers: dancing chat critters, a live chat comic, a pixel stunt track, a voxel pet, clip shoutouts, a pachinko race, a water-pistol duel, a game-picking wheel, a countdown, snowfall and an input display."
     />
     <meta property="og:image" content="assets/img/rave.webp" />
     <meta name="theme-color" content="#1a0f33" />
@@ -33,15 +33,15 @@
         <nav class="nav" aria-label="Tools">
           <a href="tools/rave.html">Rave Chat</a>
           <a href="tools/chat-comics.html">Chat Comics</a>
-          <a href="tools/game-wheel.html">Game Wheel</a>
-          <a href="tools/snowfall.html">Snowfall</a>
-          <a href="tools/countdown.html">Countdown</a>
-          <a href="tools/stream-pet.html">Stream Pet</a>
           <a href="tools/stunt-wheel.html">Stunt Wheel</a>
-          <a href="tools/ball-drop.html">Ball Drop</a>
-          <a href="tools/input-display.html">Input Display</a>
+          <a href="tools/stream-pet.html">Stream Pet</a>
           <a href="tools/clip-shoutout.html">Clip Shoutout</a>
+          <a href="tools/ball-drop.html">Ball Drop</a>
           <a href="tools/duel.html">Duel</a>
+          <a href="tools/game-wheel.html">Game Wheel</a>
+          <a href="tools/countdown.html">Countdown</a>
+          <a href="tools/snowfall.html">Snowfall</a>
+          <a href="tools/input-display.html">Input Display</a>
           <a href="#apps">StreamEdge</a>
           <a href="#desktop-overlay">Desktop Overlay</a>
           <a href="#obs">OBS Setup</a>
@@ -57,380 +57,445 @@
           Free overlays &amp; widgets for your stream. No accounts, nothing to install — paste a link into OBS
           and your chat starts dancing.
         </p>
+        <nav class="jump" aria-label="Sections">
+          <a href="#chat-overlays">Chat overlays</a>
+          <a href="#chat-games">Chat games</a>
+          <a href="#widgets">Widgets</a>
+          <a href="#apps">Desktop apps</a>
+          <a href="#obs">OBS setup</a>
+        </nav>
       </section>
 
-      <section class="section wrap" id="tools" aria-labelledby="tools-title">
+      <section class="section shelves" id="tools" aria-labelledby="tools-title">
         <h2 class="burst-title" id="tools-title">Pick a tool</h2>
+        <p class="lede">
+          Every chat tool reads Twitch, Kick, YouTube and TikTok chat, with no login. Each one has a setup guide and a
+          demo you can try right here in your browser.
+        </p>
 
-        <div class="tools">
-          <!-- Rave Chat -->
-          <article class="tool" style="--accent: var(--pink)">
-            <div class="shot">
-              <img
-                src="assets/img/rave-card.webp"
-                alt="A cat, a spotted dog, a bee in shades, a jack-o'-lantern and a snowman in a top hat dance with glowsticks, shouting MEOW!!, AWOO!, bzz bzz, BOO! and BRRR! in comic bubbles"
-                width="760"
-                height="380"
-                loading="lazy"
-              />
-              <img class="badge-icon" src="assets/icons/cat.svg" alt="" />
-              <span class="kind">Chat overlay</span>
-            </div>
-            <div class="body">
-              <h3>Rave Chat</h3>
-              <p>
-                Every chatter becomes a glowstick-waving dancer that bops to the beat and says their message in a
-                comic speech bubble. Pick cats, dogs &amp; wolves, bees, costumed jack-o'-lanterns or snowmen.
-              </p>
-              <ul class="chips" aria-label="Works with">
-                <li class="chip">Twitch</li>
-                <li class="chip">Kick</li>
-                <li class="chip">YouTube</li>
-                <li class="chip">TikTok</li>
-              </ul>
-              <div class="btn-row">
-                <a class="btn hot" href="tools/rave.html">How to set up</a>
-                <a class="btn" href="https://rave.ixitxachitl.com/" target="_blank" rel="noopener">Open ↗</a>
+        <section class="shelf" id="chat-overlays" aria-labelledby="chat-overlays-title">
+          <div class="shelf-head">
+            <h3 id="chat-overlays-title">Chat overlays</h3>
+            <p>Your chat, on screen: every chatter gets a character of their own.</p>
+          </div>
+          <div class="tools">
+            <!-- Rave Chat -->
+            <article class="tool" style="--accent: var(--pink)">
+              <div class="shot">
+                <img
+                  src="assets/img/rave-card.webp"
+                  alt="A cat, a spotted dog, a bee in shades, a jack-o&#x27;-lantern and a snowman in a top hat dance with glowsticks, shouting MEOW!!, AWOO!, bzz bzz, BOO! and BRRR! in comic bubbles"
+                  width="760"
+                  height="380"
+                  loading="lazy"
+                />
+                <img class="badge-icon" src="assets/icons/cat.svg" alt="" />
               </div>
-            </div>
-          </article>
-
-          <!-- Chat Comics -->
-          <article class="tool" style="--accent: #2b9bff">
-            <div class="shot">
-              <img
-                src="assets/img/chat-comics-card.webp"
-                alt="Two slanted manga panels of big-headed fuzzy monsters: a crowned orange one laughs through a little victory dance while a pink one says haha the dance, then a teal one in headphones asks what if we beat the boss with only a spoon and the orange one says worst idea ever. do it"
-                width="760"
-                height="380"
-                loading="lazy"
-              />
-              <img class="badge-icon" src="assets/icons/comic.svg" alt="" />
-              <span class="kind">Chat overlay</span>
-            </div>
-            <div class="body">
-              <h3>Chat Comics</h3>
-              <p>
-                Chat becomes a live comic strip. Every chatter is their own big-headed fuzzy monster, whoever's
-                talking shares the panel, and faces change with the mood. Meanwhile…
-              </p>
-              <ul class="chips" aria-label="Works with">
-                <li class="chip">Twitch</li>
-                <li class="chip">Kick</li>
-                <li class="chip">YouTube</li>
-                <li class="chip">TikTok</li>
-              </ul>
-              <div class="btn-row">
-                <a class="btn hot" href="tools/chat-comics.html">How to set up</a>
-                <a class="btn" href="https://comics.ixitxachitl.com/" target="_blank" rel="noopener">Open ↗</a>
+              <div class="body">
+                <h4>Rave Chat</h4>
+                <p>Every chatter becomes a glowstick-waving dancer that bops to the beat and says their message in a comic speech bubble.</p>
+                <ul class="chips" aria-label="Highlights">
+                <li class="chip">Cats, dogs &amp; bees</li>
+                <li class="chip">Pumpkins &amp; snowmen</li>
+                <li class="chip">Speech bubbles</li>
+                </ul>
+                <div class="btn-row">
+                  <a class="btn hot" href="tools/rave.html">How to set up</a>
+                  <a class="btn" href="https://rave.ixitxachitl.com/" target="_blank" rel="noopener">Try it ↗</a>
+                </div>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <!-- Game Wheel -->
-          <article class="tool" style="--accent: var(--cyan)">
-            <div class="shot">
-              <img
-                src="assets/img/game-wheel.webp"
-                alt="A colorful spinning prize wheel on a starry night background with a games list beside it"
-                width="1280"
-                height="720"
-                loading="lazy"
-              />
-              <img class="badge-icon" src="assets/icons/wheel.svg" alt="" />
-              <span class="kind" style="color: var(--ink); text-shadow: none">Widget</span>
-            </div>
-            <div class="body">
-              <h3>Game Wheel</h3>
-              <p>
-                "What are we playing?" Fill the wheel with your games, give it a spin on stream, and let fate
-                decide. Surprise visitors included.
-              </p>
-              <ul class="chips" aria-label="Features">
-                <li class="chip">Transparent background</li>
+            <!-- Chat Comics -->
+            <article class="tool" style="--accent: var(--cyan)">
+              <div class="shot">
+                <img
+                  src="assets/img/chat-comics-card.webp"
+                  alt="Two slanted manga panels of big-headed fuzzy monsters: a crowned orange one laughs through a little victory dance while a pink one says haha the dance, then a teal one in headphones asks what if we beat the boss with only a spoon and the orange one says worst idea ever. do it"
+                  width="760"
+                  height="380"
+                  loading="lazy"
+                />
+                <img class="badge-icon" src="assets/icons/comic.svg" alt="" />
+              </div>
+              <div class="body">
+                <h4>Chat Comics</h4>
+                <p>Chat becomes a live comic strip. Every chatter is their own big-headed fuzzy monster, and their faces change with the mood.</p>
+                <ul class="chips" aria-label="Highlights">
+                <li class="chip">Manga panels</li>
+                <li class="chip">Fuzzy monsters</li>
+                <li class="chip">Mood faces</li>
+                </ul>
+                <div class="btn-row">
+                  <a class="btn hot" href="tools/chat-comics.html">How to set up</a>
+                  <a class="btn" href="https://comics.ixitxachitl.com/" target="_blank" rel="noopener">Try it ↗</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Stunt Wheel -->
+            <article class="tool" style="--accent: var(--sun)">
+              <div class="shot">
+                <img
+                  src="assets/img/stunt-wheel-card.webp"
+                  alt="Tiny pixel-art wheels on an orange stunt track: a purple chatter&#x27;s wheel says speeeeed in a pixel speech bubble while the main wheel rolls under a slot machine showing a bell, a cherry and a 7, with a heart, a 7 and a spade floating above"
+                  width="760"
+                  height="380"
+                  loading="lazy"
+                />
+                <img class="badge-icon" src="assets/icons/stunt.svg" alt="" />
+              </div>
+              <div class="body">
+                <h4>Stunt Wheel</h4>
+                <p>A pixel-art wheel races an endless pinball-and-casino stunt track. Chatters roll in on wheels of their own to say their piece.</p>
+                <ul class="chips" aria-label="Highlights">
+                <li class="chip">Pixel art</li>
+                <li class="chip">Endless track</li>
+                <li class="chip">Chat colors</li>
+                </ul>
+                <div class="btn-row">
+                  <a class="btn hot" href="tools/stunt-wheel.html">How to set up</a>
+                  <a class="btn" href="https://race.ixitxachitl.com/?demo=1" target="_blank" rel="noopener">Try it ↗</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Stream Pet -->
+            <article class="tool" style="--accent: var(--violet)">
+              <div class="shot">
+                <img
+                  src="assets/img/stream-pet-card.webp"
+                  alt="A row of little voxel critters on a starry purple background: a spotted egg, a blue baby, a golden one with a crown and mane, a blue one with long ears and a fin, and a dark one with antennae"
+                  width="760"
+                  height="380"
+                  loading="lazy"
+                />
+                <img class="badge-icon" src="assets/icons/pet.svg" alt="" />
+              </div>
+              <div class="body">
+                <h4>Stream Pet</h4>
+                <p>A voxel critter lives along the bottom of your stream. It hatches, grows up with your channel and evolves into a surprise.</p>
+                <ul class="chips" aria-label="Highlights">
+                <li class="chip">Hatches &amp; grows up</li>
+                <li class="chip">Hundreds of forms</li>
+                <li class="chip">Voxel 3D</li>
+                </ul>
+                <div class="btn-row">
+                  <a class="btn hot" href="tools/stream-pet.html">How to set up</a>
+                  <a class="btn" href="https://pet.ixitxachitl.com/?demo=1&amp;stage=baby&amp;ball=1" target="_blank" rel="noopener">Try it ↗</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+        <section class="shelf" id="chat-games" aria-labelledby="chat-games-title">
+          <div class="shelf-head">
+            <h3 id="chat-games-title">Chat games &amp; commands</h3>
+            <p>Things chat sets off by typing a command.</p>
+          </div>
+          <div class="tools">
+            <!-- Clip Shoutout -->
+            <article class="tool" style="--accent: var(--green)">
+              <div class="shot">
+                <img
+                  src="assets/img/clip-shoutout-card.webp"
+                  alt="A comic-book SHOUTOUT! card: a Games Done Quick Super Metroid race clip plays under a yellow caption box reading Beanie guy leaves, over a name plate with the GDQ logo, the name GamesDoneQuick, what they last played and their Twitch link"
+                  width="760"
+                  height="380"
+                  loading="lazy"
+                />
+                <img class="badge-icon" src="assets/icons/shoutout.svg" alt="" />
+              </div>
+              <div class="body">
+                <h4>Clip Shoutout</h4>
+                <p>A mod types <code>!so name</code> and a comic shoutout card pops up, playing one of that streamer's clips, picked at random.</p>
+                <ul class="chips" aria-label="Highlights">
+                <li class="chip">!so name</li>
+                <li class="chip">Random clips</li>
+                <li class="chip">Shoutout queue</li>
+                </ul>
+                <div class="btn-row">
+                  <a class="btn hot" href="tools/clip-shoutout.html">How to set up</a>
+                  <a class="btn" href="https://clips.ixitxachitl.com/?demo=1" target="_blank" rel="noopener">Try it ↗</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Ball Drop -->
+            <article class="tool" style="--accent: var(--pink)">
+              <div class="shot">
+                <img
+                  src="assets/img/ball-drop-card.webp"
+                  alt="Pixel wheels with chatters&#x27; names roll down orange track and red girders, two of them with speech bubbles full of emotes and emoji, past a turning gear, floating pop bumpers and a glowing loop"
+                  width="760"
+                  height="380"
+                  loading="lazy"
+                />
+                <img class="badge-icon" src="assets/icons/drop.svg" alt="" />
+              </div>
+              <div class="body">
+                <h4>Ball Drop</h4>
+                <p>Chat types <code>!join</code>, a mod types <code>!start</code>, and everyone races down a pachinko machine built fresh every race.</p>
+                <ul class="chips" aria-label="Highlights">
+                <li class="chip">!join &amp; !start</li>
+                <li class="chip">A new machine every race</li>
+                <li class="chip">Emote bubbles</li>
+                </ul>
+                <div class="btn-row">
+                  <a class="btn hot" href="tools/ball-drop.html">How to set up</a>
+                  <a class="btn" href="https://drop.ixitxachitl.com/?demo=1" target="_blank" rel="noopener">Try it ↗</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Duel -->
+            <article class="tool" style="--accent: var(--cyan)">
+              <div class="shot">
+                <img
+                  src="assets/img/duel-card.webp"
+                  alt="A pixel-art Old West town at sunset, with a hotel, a bank, a saloon with two horses tied up out front, a general store and a jail: two little cowboys face off in the street under a big Draw! banner as one soaks the other with a stream of water"
+                  width="760"
+                  height="380"
+                  loading="lazy"
+                />
+                <img class="badge-icon" src="assets/icons/duel.svg" alt="" />
+              </div>
+              <div class="body">
+                <h4>Duel</h4>
+                <p><code>!duel name</code> grows a pixel-art Old West town. Two cowboys or cowgirls take five paces and draw water pistols.</p>
+                <ul class="chips" aria-label="Highlights">
+                <li class="chip">!duel name</li>
+                <li class="chip">Water pistols</li>
+                <li class="chip">Cooldown</li>
+                </ul>
+                <div class="btn-row">
+                  <a class="btn hot" href="tools/duel.html">How to set up</a>
+                  <a class="btn" href="https://duel.ixitxachitl.com/?demo=1" target="_blank" rel="noopener">Try it ↗</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Placeholder for future tools -->
+            <article class="tool soon" aria-label="More tools coming soon">
+              <div class="shot"><span class="pow" aria-hidden="true">Soon!</span></div>
+              <div class="body">
+                <h4>More on the way…</h4>
+                <p>New overlays, games and widgets get added here as they're built. Check back soon!</p>
+              </div>
+            </article>
+          </div>
+        </section>
+        <section class="shelf" id="widgets" aria-labelledby="widgets-title">
+          <div class="shelf-head">
+            <h3 id="widgets-title">Widgets &amp; effects</h3>
+            <p>No chat needed: set them up once and drop them into a scene.</p>
+          </div>
+          <div class="tools">
+            <!-- Game Wheel -->
+            <article class="tool" style="--accent: var(--sun)">
+              <div class="shot">
+                <img
+                  src="assets/img/game-wheel.webp"
+                  alt="A colorful spinning prize wheel on a starry night background with a games list beside it"
+                  width="1280"
+                  height="720"
+                  loading="lazy"
+                />
+                <img class="badge-icon" src="assets/icons/wheel.svg" alt="" />
+              </div>
+              <div class="body">
+                <h4>Game Wheel</h4>
+                <p>&ldquo;What are we playing?&rdquo; Fill the wheel with your games, give it a spin on stream and let fate decide.</p>
+                <ul class="chips" aria-label="Highlights">
                 <li class="chip">Stream view</li>
                 <li class="chip">Pick history</li>
-              </ul>
-              <div class="btn-row">
-                <a class="btn hot" href="tools/game-wheel.html">How to set up</a>
-                <a class="btn" href="https://wheel.ixitxachitl.com/" target="_blank" rel="noopener">Open ↗</a>
+                <li class="chip">Surprise visitors</li>
+                </ul>
+                <div class="btn-row">
+                  <a class="btn hot" href="tools/game-wheel.html">How to set up</a>
+                  <a class="btn" href="https://wheel.ixitxachitl.com/" target="_blank" rel="noopener">Try it ↗</a>
+                </div>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <!-- Snowfall -->
-          <article class="tool" style="--accent: var(--violet)">
-            <div class="shot">
-              <img
-                src="assets/img/snowfall-card.webp"
-                alt="Snow falls on a black background and has piled up along the bottom, where a row of snowmen in top hats stand in the drift"
-                width="960"
-                height="480"
-                loading="lazy"
-              />
-              <img class="badge-icon" src="assets/icons/snowman.svg" alt="" />
-              <span class="kind">Overlay</span>
-            </div>
-            <div class="body">
-              <h3>Snowfall</h3>
-              <p>
-                Let it snow! Flakes drift over your stream, pile up along the bottom, and build themselves into
-                snowmen that wave for a while before melting away.
-              </p>
-              <ul class="chips" aria-label="Features">
-                <li class="chip">Snowmen</li>
-                <li class="chip">Wind gusts</li>
-                <li class="chip">Transparent background</li>
-              </ul>
-              <div class="btn-row">
-                <a class="btn hot" href="tools/snowfall.html">How to set up</a>
-                <a class="btn" href="https://snow.ixitxachitl.com/?background=true" target="_blank" rel="noopener"
-                  >Open ↗</a
-                >
+            <!-- Countdown Timer -->
+            <article class="tool" style="--accent: var(--violet)">
+              <div class="shot">
+                <img
+                  src="assets/img/countdown-card.webp"
+                  alt="A neon countdown titled NEW YEAR, with pink glowing blocks for days, hours, minutes and seconds"
+                  width="760"
+                  height="380"
+                  loading="lazy"
+                />
+                <img class="badge-icon" src="assets/icons/stopwatch.svg" alt="" />
               </div>
-            </div>
-          </article>
-
-          <!-- Countdown Timer -->
-          <article class="tool" style="--accent: var(--green)">
-            <div class="shot">
-              <img
-                src="assets/img/countdown-card.webp"
-                alt="A neon countdown titled NEW YEAR, with pink glowing blocks for days, hours, minutes and seconds"
-                width="760"
-                height="380"
-                loading="lazy"
-              />
-              <img class="badge-icon" src="assets/icons/stopwatch.svg" alt="" />
-              <span class="kind" style="color: var(--ink); text-shadow: none">Widget</span>
-            </div>
-            <div class="body">
-              <h3>Countdown Timer</h3>
-              <p>
-                "Stream starts in…" Design a countdown with your own fonts, colors and effects, then paste the link
-                into OBS. Everyone counts down to the same moment.
-              </p>
-              <ul class="chips" aria-label="Features">
+              <div class="body">
+                <h4>Countdown Timer</h4>
+                <p>Design a &ldquo;stream starts in&hellip;&rdquo; countdown with your own fonts, colors and effects. Everyone counts down to the same moment.</p>
+                <ul class="chips" aria-label="Highlights">
                 <li class="chip">Any Google Font</li>
                 <li class="chip">Neon &amp; glitch effects</li>
-                <li class="chip">Transparent background</li>
-              </ul>
-              <div class="btn-row">
-                <a class="btn hot" href="tools/countdown.html">How to set up</a>
-                <a class="btn" href="https://countdown.ixitxachitl.com/" target="_blank" rel="noopener">Open ↗</a>
+                <li class="chip">Shared end time</li>
+                </ul>
+                <div class="btn-row">
+                  <a class="btn hot" href="tools/countdown.html">How to set up</a>
+                  <a class="btn" href="https://countdown.ixitxachitl.com/" target="_blank" rel="noopener">Try it ↗</a>
+                </div>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <!-- Stream Pet -->
-          <article class="tool" style="--accent: var(--violet)">
-            <div class="shot">
-              <img
-                src="assets/img/stream-pet-card.webp"
-                alt="A row of little voxel critters on a starry purple background: a spotted egg, a blue baby, a golden one with a crown and mane, a blue one with long ears and a fin, and a dark one with antennae"
-                width="760"
-                height="380"
-                loading="lazy"
-              />
-              <img class="badge-icon" src="assets/icons/pet.svg" alt="" />
-              <span class="kind">Overlay</span>
-            </div>
-            <div class="body">
-              <h3>Stream Pet</h3>
-              <p>
-                A voxel critter that lives along the bottom of your stream and looks after itself. It hatches,
-                grows up with your channel, and evolves into one of hundreds of forms. Which one is a surprise.
-              </p>
-              <ul class="chips" aria-label="Works with">
-                <li class="chip">Twitch</li>
-                <li class="chip">Kick</li>
-                <li class="chip">YouTube</li>
-                <li class="chip">TikTok</li>
-              </ul>
-              <div class="btn-row">
-                <a class="btn hot" href="tools/stream-pet.html">How to set up</a>
-                <a class="btn" href="https://pet.ixitxachitl.com/?demo=1&amp;stage=baby&amp;ball=1" target="_blank" rel="noopener"
-                  >Try the demo ↗</a
-                >
-                <a class="lab-link" href="https://pet.ixitxachitl.com/walk-lab.html" target="_blank" rel="noopener"
-                  >Walk lab ↗</a
-                >
+            <!-- Snowfall -->
+            <article class="tool" style="--accent: var(--green)">
+              <div class="shot">
+                <img
+                  src="assets/img/snowfall-card.webp"
+                  alt="Snow falls on a black background and has piled up along the bottom, where a row of snowmen in top hats stand in the drift"
+                  width="960"
+                  height="480"
+                  loading="lazy"
+                />
+                <img class="badge-icon" src="assets/icons/snowman.svg" alt="" />
               </div>
-            </div>
-          </article>
-
-          <!-- Stunt Wheel -->
-          <article class="tool" style="--accent: var(--sun)">
-            <div class="shot">
-              <img
-                src="assets/img/stunt-wheel-card.webp"
-                alt="Tiny pixel-art wheels on an orange stunt track: a purple chatter's wheel says speeeeed in a pixel speech bubble while the main wheel rolls under a slot machine showing a bell, a cherry and a 7, with a heart, a 7 and a spade floating above"
-                width="760"
-                height="380"
-                loading="lazy"
-              />
-              <img class="badge-icon" src="assets/icons/stunt.svg" alt="" />
-              <span class="kind" style="color: var(--ink); text-shadow: none">Chat overlay</span>
-            </div>
-            <div class="body">
-              <h3>Stunt Wheel</h3>
-              <p>
-                A tiny pixel-art wheel races an endless pinball-and-casino stunt track. Chatters roll in on wheels
-                of their own, in their chat color, to say their piece in a pixel speech bubble, and sometimes crash.
-              </p>
-              <ul class="chips" aria-label="Works with">
-                <li class="chip">Twitch</li>
-                <li class="chip">Kick</li>
-                <li class="chip">YouTube</li>
-                <li class="chip">TikTok</li>
-              </ul>
-              <div class="btn-row">
-                <a class="btn hot" href="tools/stunt-wheel.html">How to set up</a>
-                <a class="btn" href="https://race.ixitxachitl.com/?demo=1" target="_blank" rel="noopener">Try the demo ↗</a>
+              <div class="body">
+                <h4>Snowfall</h4>
+                <p>Flakes drift over your stream, pile up along the bottom and build themselves into snowmen that wave, then melt away.</p>
+                <ul class="chips" aria-label="Highlights">
+                <li class="chip">Snowmen</li>
+                <li class="chip">Wind gusts</li>
+                <li class="chip">Drifts that pile up</li>
+                </ul>
+                <div class="btn-row">
+                  <a class="btn hot" href="tools/snowfall.html">How to set up</a>
+                  <a class="btn" href="https://snow.ixitxachitl.com/?background=true" target="_blank" rel="noopener">Try it ↗</a>
+                </div>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <!-- Ball Drop -->
-          <article class="tool" style="--accent: var(--pink)">
-            <div class="shot">
-              <img
-                src="assets/img/ball-drop-card.webp"
-                alt="Pixel wheels with chatters' names roll down orange track and red girders, two of them with speech bubbles full of emotes and emoji, past a turning gear, floating pop bumpers and a glowing loop"
-                width="760"
-                height="380"
-                loading="lazy"
-              />
-              <img class="badge-icon" src="assets/icons/drop.svg" alt="" />
-              <span class="kind">Chat game</span>
-            </div>
-            <div class="body">
-              <h3>Ball Drop</h3>
-              <p>
-                Chat types !join, a mod types !start, and everyone's wheel races down a pachinko-style Rube Goldberg
-                machine that's built fresh every race. First one into the goal wins.
-              </p>
-              <ul class="chips" aria-label="Works with">
-                <li class="chip">Twitch</li>
-                <li class="chip">Kick</li>
-                <li class="chip">YouTube</li>
-                <li class="chip">TikTok</li>
-              </ul>
-              <div class="btn-row">
-                <a class="btn hot" href="tools/ball-drop.html">How to set up</a>
-                <a class="btn" href="https://drop.ixitxachitl.com/?demo=1" target="_blank" rel="noopener">Try the demo ↗</a>
+            <!-- Input Display -->
+            <article class="tool" style="--accent: var(--pink)">
+              <div class="shot">
+                <img
+                  src="assets/img/input-display-card.webp"
+                  alt="An Xbox controller drawn in dark vector art with its A button lit green, a stick pushed and the left trigger half squeezed, next to a neon hit box with two directions and two buttons lit"
+                  width="760"
+                  height="380"
+                  loading="lazy"
+                />
+                <img class="badge-icon" src="assets/icons/gamepad.svg" alt="" />
               </div>
-            </div>
-          </article>
-
-          <!-- Input Display -->
-          <article class="tool" style="--accent: var(--cyan)">
-            <div class="shot">
-              <img
-                src="assets/img/input-display-card.webp"
-                alt="An Xbox controller drawn in dark vector art with its A button lit green, a stick pushed and the left trigger half squeezed, next to a neon hit box with two directions and two buttons lit"
-                width="760"
-                height="380"
-                loading="lazy"
-              />
-              <img class="badge-icon" src="assets/icons/gamepad.svg" alt="" />
-              <span class="kind" style="color: var(--ink); text-shadow: none">Overlay</span>
-            </div>
-            <div class="body">
-              <h3>Input Display</h3>
-              <p>
-                Show your controller on stream with every button, stick and trigger lighting up as you play. Presets
-                for gamepads, retro pads, fight sticks and hit boxes, or build your own layout in the editor.
-              </p>
-              <ul class="chips" aria-label="Works with">
+              <div class="body">
+                <h4>Input Display</h4>
+                <p>Your controller on stream, every button, stick and trigger lighting up as you play. Use a preset or build your own layout.</p>
+                <ul class="chips" aria-label="Highlights">
                 <li class="chip">Any controller</li>
                 <li class="chip">Fight sticks</li>
                 <li class="chip">Hit boxes</li>
-              </ul>
-              <div class="btn-row">
-                <a class="btn hot" href="tools/input-display.html">How to set up</a>
-                <a class="btn" href="https://input.ixitxachitl.com/" target="_blank" rel="noopener">Open ↗</a>
+                </ul>
+                <div class="btn-row">
+                  <a class="btn hot" href="tools/input-display.html">How to set up</a>
+                  <a class="btn" href="https://input.ixitxachitl.com/" target="_blank" rel="noopener">Try it ↗</a>
+                </div>
               </div>
-            </div>
-          </article>
+            </article>
+          </div>
+        </section>
 
-          <!-- Clip Shoutout -->
-          <article class="tool" style="--accent: var(--pink)">
-            <div class="shot">
-              <img
-                src="assets/img/clip-shoutout-card.webp"
-                alt="A comic-book SHOUTOUT! card: a Games Done Quick Super Metroid race clip plays under a yellow caption box reading Beanie guy leaves, over a name plate with the GDQ logo, the name GamesDoneQuick, what they last played and their Twitch link"
-                width="760"
-                height="380"
-                loading="lazy"
-              />
-              <img class="badge-icon" src="assets/icons/shoutout.svg" alt="" />
-              <span class="kind">Chat overlay</span>
-            </div>
-            <div class="body">
-              <h3>Clip Shoutout</h3>
-              <p>
-                When a mod or VIP types <code>!so name</code>, a comic shoutout card pops up and plays one of that
-                streamer's clips, picked at random. Shoutouts queue up, and someone with no clips still gets the card.
-              </p>
-              <ul class="chips" aria-label="Works with">
-                <li class="chip">Twitch</li>
-                <li class="chip">Kick</li>
-                <li class="chip">YouTube</li>
-                <li class="chip">TikTok</li>
-              </ul>
-              <div class="btn-row">
-                <a class="btn hot" href="tools/clip-shoutout.html">How to set up</a>
-                <a class="btn" href="https://clips.ixitxachitl.com/?demo=1" target="_blank" rel="noopener">Try the demo ↗</a>
+        <section class="shelf" id="apps" aria-labelledby="apps-title">
+          <div class="shelf-head">
+            <h3 id="apps-title">Desktop apps</h3>
+            <p>Free, open-source downloads. Unzip and run, no installer.</p>
+          </div>
+          <div class="tools apps">
+            <!-- StreamEdge. Download links point at the newest release; site.js refreshes them from GitHub. -->
+            <article class="tool app" style="--accent: var(--sun)" data-release="Ixitxachitl/stream-edge">
+              <div class="shot">
+                <img
+                  src="assets/img/streamedge-card.webp"
+                  alt="StreamEdge on a short ultrawide screen: the live follows list on the left, a stream in the middle and Twitch chat on the right, all in one row"
+                  width="1520"
+                  height="380"
+                  loading="lazy"
+                />
+                <img class="badge-icon" src="assets/icons/ultrawide.svg" alt="" />
               </div>
-            </div>
-          </article>
-
-          <!-- Duel -->
-          <article class="tool" style="--accent: var(--sun)">
-            <div class="shot">
-              <img
-                src="assets/img/duel-card.webp"
-                alt="A pixel-art Old West town at sunset, with a hotel, a bank, a saloon with two horses tied up out front, a general store and a jail: two little cowboys face off in the street under a big Draw! banner as one soaks the other with a stream of water"
-                width="760"
-                height="380"
-                loading="lazy"
-              />
-              <img class="badge-icon" src="assets/icons/duel.svg" alt="" />
-              <span class="kind">Chat game</span>
-            </div>
-            <div class="body">
-              <h3>Duel</h3>
-              <p>
-                A chatter types <code>!duel name</code> and a pixel-art Old West town grows in along the bottom of your
-                stream. Two cowboys or cowgirls walk out of the saloon, take five paces and draw water pistols. One gets
-                soaked, nobody gets hurt.
-              </p>
-              <ul class="chips" aria-label="Works with">
-                <li class="chip">Twitch</li>
-                <li class="chip">Kick</li>
-                <li class="chip">YouTube</li>
-                <li class="chip">TikTok</li>
-              </ul>
-              <div class="btn-row">
-                <a class="btn hot" href="tools/duel.html">How to set up</a>
-                <a class="btn" href="https://duel.ixitxachitl.com/?demo=1" target="_blank" rel="noopener">Try the demo ↗</a>
+              <div class="body">
+                <h4>StreamEdge <small data-release-version>v0.1.34</small></h4>
+                <p>
+                  A Twitch client for small ultrawide second screens. Your live follows, the stream and chat sit side by
+                  side in one short row, and the player stays close to live, so you can keep up with chat while you play.
+                </p>
+                <ul class="chips" aria-label="Highlights">
+                  <li class="chip">Windows, macOS &amp; Linux</li>
+                  <li class="chip">Ultrawide second screens</li>
+                  <li class="chip">Twitch</li>
+                </ul>
+                <div class="btn-row">
+                  <a class="btn hot" data-asset="windows-x64"
+                    href="https://github.com/Ixitxachitl/stream-edge/releases/download/v0.1.34/StreamEdge-0.1.34-windows-x64.zip"
+                    >Windows</a
+                  >
+                  <a class="btn" data-asset="macos-arm64"
+                    href="https://github.com/Ixitxachitl/stream-edge/releases/download/v0.1.34/StreamEdge-0.1.34-macos-arm64.zip"
+                    >macOS</a
+                  >
+                  <a class="btn" data-asset="linux-x64"
+                    href="https://github.com/Ixitxachitl/stream-edge/releases/download/v0.1.34/StreamEdge-0.1.34-linux-x64.tar.gz"
+                    >Linux</a
+                  >
+                  <a class="btn" data-asset="linux-arm64"
+                    href="https://github.com/Ixitxachitl/stream-edge/releases/download/v0.1.34/StreamEdge-0.1.34-linux-arm64.tar.gz"
+                    >Linux ARM</a
+                  >
+                </div>
+                <p class="fine">
+                  macOS needs mpv (<code>brew install mpv</code>); Linux needs libmpv (for example
+                  <code>sudo apt install libmpv2</code>).
+                  <a href="https://github.com/Ixitxachitl/stream-edge" target="_blank" rel="noopener">Source &amp; all releases ↗</a>
+                </p>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <!-- Placeholder for future tools -->
-          <article class="tool soon" aria-label="More tools coming soon">
-            <div class="shot"><span class="pow" aria-hidden="true">Soon!</span></div>
-            <div class="body">
-              <h3>More on the way…</h3>
-              <p>New overlays and widgets get added here as they're built. Check back soon!</p>
-            </div>
-          </article>
-        </div>
+            <!-- Desktop Overlay. The download link points at the newest release; site.js refreshes it from GitHub. -->
+            <article class="tool app" id="desktop-overlay" style="--accent: var(--violet)" data-release="Ixitxachitl/desktop-overlay">
+              <div class="shot">
+                <img
+                  src="assets/img/desktop-overlay-card.webp"
+                  alt="A desktop with Rave Chat's dancing cats and a clock floating see-through over a game window, the clock unlocked with its move-and-resize frame, next to the Desktop Overlay source editor"
+                  width="1520"
+                  height="380"
+                  loading="lazy"
+                />
+                <img class="badge-icon" src="assets/icons/overlay.svg" alt="" />
+              </div>
+              <div class="body">
+                <h4>Desktop Overlay <small data-release-version>v0.2.5</small></h4>
+                <p>
+                  Like an OBS browser source, but on your desktop. Float any of these tools or any web page over your
+                  game, see-through, with clicks going straight through. Comes with a pixel-font CPU, GPU and FPS panel.
+                </p>
+                <ul class="chips" aria-label="Highlights">
+                  <li class="chip">Windows 10 &amp; 11</li>
+                  <li class="chip">Any web page</li>
+                  <li class="chip">Stats panel</li>
+                </ul>
+                <div class="btn-row">
+                  <a class="btn hot" data-asset="windows-x64"
+                    href="https://github.com/Ixitxachitl/desktop-overlay/releases/download/v0.2.5/DesktopOverlay-0.2.5-windows-x64.zip"
+                    >Windows</a
+                  >
+                </div>
+                <p class="fine">
+                  Shows over games in borderless or windowed fullscreen, not exclusive fullscreen.
+                  <a href="https://github.com/Ixitxachitl/desktop-overlay" target="_blank" rel="noopener">Source &amp; all releases ↗</a>
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
       </section>
 
-      <section class="section wrap" id="obs" aria-labelledby="obs-title">
+      <section class="section shelves" id="obs" aria-labelledby="obs-title">
         <h2 class="burst-title" id="obs-title">Adding a tool to OBS</h2>
         <div class="grid-2">
           <div class="panel">
@@ -481,111 +546,6 @@
             </div>
           </div>
         </div>
-      </section>
-
-      <section class="section wrap" id="apps" aria-labelledby="apps-title">
-        <h2 class="burst-title" id="apps-title">Desktop apps</h2>
-
-        <!-- StreamEdge. Download links point at the newest release; site.js refreshes them from GitHub. -->
-        <article class="tool wide" style="--accent: var(--cyan)" data-release="Ixitxachitl/stream-edge">
-          <div class="shot">
-            <img
-              src="assets/img/streamedge-card.webp"
-              alt="StreamEdge on a short ultrawide screen: the live follows list on the left, a stream in the middle and Twitch chat on the right, all in one row"
-              width="1520"
-              height="380"
-              loading="lazy"
-            />
-            <img class="badge-icon" src="assets/icons/ultrawide.svg" alt="" />
-            <span class="kind" style="color: var(--ink); text-shadow: none">Desktop app</span>
-          </div>
-          <div class="body">
-            <h3>StreamEdge <small data-release-version>v0.1.34</small></h3>
-            <p>
-              A Twitch client for small ultrawide second screens. Your live follows, the stream and chat sit side
-              by side in one short row, and the player stays close to live, so you can keep up with chat while you
-              play. On Windows, hover over the video for the stream's title, game, viewers and uptime. Log in with Twitch to
-              see who's live and chat.
-            </p>
-            <ul class="chips" aria-label="Works on">
-              <li class="chip">Windows</li>
-              <li class="chip">macOS</li>
-              <li class="chip">Linux</li>
-              <li class="chip">Twitch</li>
-              <li class="chip">Free &amp; open source</li>
-            </ul>
-            <div class="btn-row">
-              <a class="btn hot" data-asset="windows-x64"
-                href="https://github.com/Ixitxachitl/stream-edge/releases/download/v0.1.34/StreamEdge-0.1.34-windows-x64.zip"
-                >Windows</a
-              >
-              <a class="btn" data-asset="macos-arm64"
-                href="https://github.com/Ixitxachitl/stream-edge/releases/download/v0.1.34/StreamEdge-0.1.34-macos-arm64.zip"
-                >macOS (Apple silicon)</a
-              >
-              <a class="btn" data-asset="linux-x64"
-                href="https://github.com/Ixitxachitl/stream-edge/releases/download/v0.1.34/StreamEdge-0.1.34-linux-x64.tar.gz"
-                >Linux x64</a
-              >
-              <a class="btn" data-asset="linux-arm64"
-                href="https://github.com/Ixitxachitl/stream-edge/releases/download/v0.1.34/StreamEdge-0.1.34-linux-arm64.tar.gz"
-                >Linux ARM64</a
-              >
-              <a class="lab-link" href="https://github.com/Ixitxachitl/stream-edge" target="_blank" rel="noopener"
-                >Source &amp; all releases ↗</a
-              >
-            </div>
-            <p class="fine">
-              Unzip and run, no installer. On macOS install mpv first (<code>brew install mpv</code>); on Linux
-              install your distribution's libmpv package (for example <code>sudo apt install libmpv2</code>).
-            </p>
-          </div>
-        </article>
-
-        <!-- Desktop Overlay. The download link points at the newest release; site.js refreshes it from GitHub. -->
-        <article class="tool wide" id="desktop-overlay" style="--accent: var(--pink)" data-release="Ixitxachitl/desktop-overlay">
-          <div class="shot">
-            <img
-              src="assets/img/desktop-overlay-card.webp"
-              alt="A desktop with Rave Chat's dancing cats and a clock floating see-through over a game window, the clock unlocked with its move-and-resize frame, next to the Desktop Overlay source editor"
-              width="1520"
-              height="380"
-              loading="lazy"
-            />
-            <img class="badge-icon" src="assets/icons/overlay.svg" alt="" />
-            <span class="kind" style="color: var(--ink); text-shadow: none">Desktop app</span>
-          </div>
-          <div class="body">
-            <h3>Desktop Overlay <small data-release-version>v0.2.5</small></h3>
-            <p>
-              Like an OBS browser source, but on your desktop. Put any of the tools above, any web page, a local
-              .html file or your own HTML over everything else, see-through wherever the page is. Unlock an overlay
-              to drag and resize it (it snaps to the screen and to other overlays), lock it and clicks go straight
-              through, fit it to its page, or let it fill a screen and leave the taskbar clear. It also comes with a
-              little pixel-font stats panel: CPU, GPU, video memory and the frame rate of whatever game is in focus,
-              on your desktop or as a browser source in OBS. It lives in the system tray, where every overlay is one
-              click to show or hide.
-            </p>
-            <ul class="chips" aria-label="Works on">
-              <li class="chip">Windows</li>
-              <li class="chip">Any web page</li>
-              <li class="chip">Free &amp; open source</li>
-            </ul>
-            <div class="btn-row">
-              <a class="btn hot" data-asset="windows-x64"
-                href="https://github.com/Ixitxachitl/desktop-overlay/releases/download/v0.2.5/DesktopOverlay-0.2.5-windows-x64.zip"
-                >Windows</a
-              >
-              <a class="lab-link" href="https://github.com/Ixitxachitl/desktop-overlay" target="_blank" rel="noopener"
-                >Source &amp; all releases ↗</a
-              >
-            </div>
-            <p class="fine">
-              Unzip and run <code>Desktop Overlay.exe</code>, no installer. Windows 10 and 11. Overlays show over
-              games in borderless or windowed fullscreen, not in exclusive fullscreen.
-            </p>
-          </div>
-        </article>
       </section>
     </main>
 

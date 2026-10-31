@@ -4,21 +4,21 @@ A small static site that collects Ixitxachitl's free stream overlays and widgets
 gets a card, a screenshot, and a setup guide. The site uses the same comic look as the Rave overlays
 (Bangers + Comic Neue, thick ink outlines, hard shadows, halftone dots, neon rave colors).
 
-| Tool              | Lives at                                     | Guide                                                |
-| ----------------- | -------------------------------------------- | ---------------------------------------------------- |
-| Rave Chat         | <https://rave.ixitxachitl.com/>              | [tools/rave.html](tools/rave.html)                   |
-| Chat Comics       | <https://comics.ixitxachitl.com/>            | [tools/chat-comics.html](tools/chat-comics.html)     |
-| Game Wheel        | <https://wheel.ixitxachitl.com/>             | [tools/game-wheel.html](tools/game-wheel.html)       |
-| Snowfall          | <https://snow.ixitxachitl.com/>              | [tools/snowfall.html](tools/snowfall.html)           |
-| Countdown Timer   | <https://countdown.ixitxachitl.com/>         | [tools/countdown.html](tools/countdown.html)         |
-| Stream Pet        | <https://pet.ixitxachitl.com/>               | [tools/stream-pet.html](tools/stream-pet.html)       |
-| Stunt Wheel       | <https://race.ixitxachitl.com/>              | [tools/stunt-wheel.html](tools/stunt-wheel.html)     |
-| Ball Drop         | <https://drop.ixitxachitl.com/>              | [tools/ball-drop.html](tools/ball-drop.html)         |
-| Input Display     | <https://input.ixitxachitl.com/>             | [tools/input-display.html](tools/input-display.html) |
-| Clip Shoutout     | <https://clips.ixitxachitl.com/>             | [tools/clip-shoutout.html](tools/clip-shoutout.html) |
-| Duel              | <https://duel.ixitxachitl.com/>              | [tools/duel.html](tools/duel.html)                   |
-| StreamEdge (app)  | <https://github.com/Ixitxachitl/stream-edge> | `#apps` on the home page (download links)           |
-| Desktop Overlay (app) | <https://github.com/Ixitxachitl/desktop-overlay> | `#desktop-overlay` on the home page (download link) |
+| Tool                  | Lives at                                         | Guide                                                |
+| --------------------- | ------------------------------------------------ | ---------------------------------------------------- |
+| Rave Chat             | <https://rave.ixitxachitl.com/>                  | [tools/rave.html](tools/rave.html)                   |
+| Chat Comics           | <https://comics.ixitxachitl.com/>                | [tools/chat-comics.html](tools/chat-comics.html)     |
+| Stunt Wheel           | <https://race.ixitxachitl.com/>                  | [tools/stunt-wheel.html](tools/stunt-wheel.html)     |
+| Stream Pet            | <https://pet.ixitxachitl.com/>                   | [tools/stream-pet.html](tools/stream-pet.html)       |
+| Clip Shoutout         | <https://clips.ixitxachitl.com/>                 | [tools/clip-shoutout.html](tools/clip-shoutout.html) |
+| Ball Drop             | <https://drop.ixitxachitl.com/>                  | [tools/ball-drop.html](tools/ball-drop.html)         |
+| Duel                  | <https://duel.ixitxachitl.com/>                  | [tools/duel.html](tools/duel.html)                   |
+| Game Wheel            | <https://wheel.ixitxachitl.com/>                 | [tools/game-wheel.html](tools/game-wheel.html)       |
+| Countdown Timer       | <https://countdown.ixitxachitl.com/>             | [tools/countdown.html](tools/countdown.html)         |
+| Snowfall              | <https://snow.ixitxachitl.com/>                  | [tools/snowfall.html](tools/snowfall.html)           |
+| Input Display         | <https://input.ixitxachitl.com/>                 | [tools/input-display.html](tools/input-display.html) |
+| StreamEdge (app)      | <https://github.com/Ixitxachitl/stream-edge>     | `#apps` on the home page (download links)            |
+| Desktop Overlay (app) | <https://github.com/Ixitxachitl/desktop-overlay> | `#desktop-overlay` on the home page (download link)  |
 
 ## Layout
 
@@ -55,9 +55,13 @@ file with the domain in it.
    a widget) and rewrite its content.
 2. Add an icon to `assets/icons/` (64×64 viewBox, `#111` strokes about 2.6 wide, so it matches the others).
 3. Add a 760×380 card screenshot to `assets/img/` (see below).
-4. In `index.html`, copy one of the `<article class="tool">` cards above the "More on the way…" card.
-   Set `--accent` to one of the theme colors.
-5. Add the new page to the `<nav>` in the header of **every** page.
+4. In `index.html`, copy one of the `<article class="tool">` cards into the right shelf: **Chat overlays**,
+   **Chat games & commands** or **Widgets & effects** (desktop apps go in **Desktop apps**). Keep every card
+   the same: a screenshot and icon, a pitch of about 120 characters, three chips that set it apart, and the
+   two buttons **How to set up** and **Try it ↗**. Set `--accent` to a theme color its neighbours don't use.
+   Shelves are four across, so keep each one to four cards (the "Soon!" card fills a gap); if a shelf
+   outgrows that, give it a second row of four or split it.
+5. Add the new page to the `<nav>` in the header of **every** page, in the same order as the shelves.
 
 ## Retaking screenshots
 
