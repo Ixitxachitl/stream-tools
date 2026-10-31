@@ -108,7 +108,8 @@
                   In OBS click <kbd>+</kbd> under <em>Sources</em> → <em>Browser</em>. Paste
                   <code>https://duel.ixitxachitl.com/</code> as the URL and set it to your full canvas size,
                   usually <code>1920</code> × <code>1080</code>. The background is transparent automatically, and the
-                  street sits along the bottom edge.
+                  town pops up in a small box at the bottom centre (or across the whole screen, if you'd rather: see
+                  <b>Where it shows</b>).
                 </li>
                 <li>
                   <strong>Connect your chat</strong>
@@ -235,6 +236,8 @@
                 <label>Cooldown (s) <input name="cooldown" type="number" min="0" max="3600" step="5" value="60" /></label>
                 <label>Who can start one <select name="who"><option value="everyone" selected>Everyone</option><option value="vips">Mods and VIPs</option><option value="mods">Mods</option><option value="owner">Only the broadcaster</option></select></label>
                 <label>These people can too <input name="allow" type="text" placeholder="friend1, friend2" /></label>
+                <label>Where it shows <select name="layout"><option value="box" selected>A small box at the bottom centre</option><option value="wide">The whole screen</option></select></label>
+                <label>Box width (% of the screen) <input name="boxsize" type="number" min="15" max="100" step="1" value="40" /></label>
                 <label>Pixel size <input name="pixel" type="number" min="0" max="16" step="1" value="0" /></label>
                 <label>Winner stays up for (s) <input name="hold" type="number" min="1" max="30" step="0.5" value="4" /></label>
                 <label>Sound effects volume <input name="volume" type="number" min="0" max="100" step="5" value="50" /></label>
@@ -289,7 +292,9 @@
               <tr><td>These people can too</td><td><code>allow</code></td><td>—</td><td>Names that can start a duel whatever <code>who</code> says, comma separated.</td></tr>
               <tr><td>Cowboys or cowgirls by pronouns</td><td><code>pronouns</code></td><td>on</td><td>Looks up Twitch chatters' pronouns from the Chat Pronouns extension (pronouns.alejo.io): she/her gets a cowgirl, he/him a cowboy, anyone else either.</td></tr>
               <tr><td class="group" colspan="4">Look</td></tr>
-              <tr><td>Pixel size</td><td><code>pixel</code></td><td>0</td><td>Screen pixels per art pixel: bigger is chunkier and fills more of the screen. <code>0</code> picks one from the source's height (7 at 1080p).</td></tr>
+              <tr><td>Where it shows</td><td><code>layout</code></td><td><code>box</code></td><td><code>box</code>: in a small box along the bottom of the screen, in the middle, with everything kept inside it. <code>wide</code>: the whole screen, with the sky and lights going right up to the top.</td></tr>
+              <tr><td>Box width (% of the screen)</td><td><code>boxsize</code></td><td>40</td><td>How wide the small box is.</td></tr>
+              <tr><td>Pixel size</td><td><code>pixel</code></td><td>0</td><td>Screen pixels per art pixel: bigger is chunkier and fills more of the screen. <code>0</code> picks one to fill the small box, or from the source's height on the whole screen (7 at 1080p).</td></tr>
               <tr><td>Show the duelers' names</td><td><code>names</code></td><td>on</td><td>Their names over their hats, in their chat colors.</td></tr>
               <tr><td>Winner stays up for (s)</td><td><code>hold</code></td><td>4</td><td>How long the result stays before everything shrinks away.</td></tr>
               <tr><td>Sound effects volume</td><td><code>volume</code></td><td>50</td><td>0 to 100; 0 is silent.</td></tr>
