@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chat Aquarium · Ixitxachitl's Stream Tools</title>
+    <meta
+      name="description"
+      content="Set up Chat Aquarium: a pixel-art fish tank along the bottom of your stream where every chatter gets a fish in their chat color. Fish swim about, blow bubbles, leap out of the water and say their messages in speech bubbles, and !feed sprinkles in food. Twitch, Kick, YouTube and TikTok, no login needed."
+    />
+    <meta property="og:image" content="../assets/img/chat-aquarium-card.webp" />
+    <meta name="theme-color" content="#1a0f33" />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/comic.css" />
+  </head>
+  <body>
+    <a class="skip btn sun" href="#main">Skip to content</a>
+
+    <header class="topbar">
+      <div class="wrap">
+        <a class="brand" href="../"><img src="../assets/icons/manta-mark.svg" alt="" />Ixitxachitl's Stream Tools</a>
+        <nav class="nav" aria-label="Tools">
+          <a href="rave.html">Rave Chat</a>
+          <a href="chat-comics.html">Chat Comics</a>
+          <a href="stunt-wheel.html">Stunt Wheel</a>
+          <a href="stream-pet.html">Stream Pet</a>
+          <a href="chat-aquarium.html" aria-current="page">Chat Aquarium</a>
+          <a href="clip-shoutout.html">Clip Shoutout</a>
+          <a href="ball-drop.html">Ball Drop</a>
+          <a href="duel.html">Duel</a>
+          <a href="chat-slam.html">Chat Slam</a>
+          <a href="game-wheel.html">Game Wheel</a>
+          <a href="countdown.html">Countdown</a>
+          <a href="snowfall.html">Snowfall</a>
+          <a href="input-display.html">Input Display</a>
+          <a href="../#apps">StreamEdge</a>
+          <a href="../#desktop-overlay">Desktop Overlay</a>
+          <a href="../#obs">OBS Setup</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="wrap">
+      <section class="tool-hero">
+        <div class="panel">
+          <div class="panel-body">
+            <img class="big-icon" src="../assets/icons/fish.svg" alt="" />
+            <div>
+              <h1>Chat Aquarium</h1>
+              <p class="lead">
+                A little pixel-art fish tank along the bottom of your stream, and everyone who chats gets a fish. A new
+                chatter's fish drops in with a splash, then swims about among the seaweed, the rocks and the coral,
+                blowing bubbles and now and then leaping out of the water. When they chat again, their fish darts about
+                and what they said pops up in a speech bubble over it. <code>!feed</code> sprinkles in fish food, and
+                every fish nearby races for it. Chatters who go quiet for a while swim off the side.
+              </p>
+              <div class="url-box">
+                <label class="sr-only" for="url">Overlay URL</label>
+                <input id="url" type="text" readonly value="https://aquarium.ixitxachitl.com/" />
+                <button class="btn sun" type="button" data-copy-from="#url">Copy link</button>
+              </div>
+              <div class="btn-row">
+                <a class="btn go" href="https://aquarium.ixitxachitl.com/?demo=1" target="_blank" rel="noopener"
+                  >Try the demo ↗</a
+                >
+                <a class="btn" href="#setup">Setup guide</a>
+                <a class="btn" href="#settings">All settings</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="panel">
+          <div class="preview">
+            <span class="live">Live demo</span>
+            <iframe
+              id="demo"
+              src="https://aquarium.ixitxachitl.com/?demo=1&amp;bg=none&amp;volume=0&amp;height=45&amp;pixel=4"
+              title="Chat Aquarium with pretend chatters swimming in and chatting"
+              loading="lazy"
+              tabindex="-1"
+            ></iframe>
+          </div>
+          <p class="caption">
+            The real overlay with pretend chatters (muted, and with a deeper tank than usual so you can see it here). On
+            stream the tank takes the bottom 10% of the screen and the rest is transparent.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="setup" aria-labelledby="setup-title">
+        <h2 class="burst-title" id="setup-title">Setup guide</h2>
+        <div class="grid-2">
+          <div class="panel">
+            <div class="panel-head"><h3>Get it on stream</h3></div>
+            <div class="panel-body">
+              <ol class="steps">
+                <li>
+                  <strong>Add a Browser source</strong>
+                  In OBS click <kbd>+</kbd> under <em>Sources</em> → <em>Browser</em>. Paste
+                  <code>https://aquarium.ixitxachitl.com/</code> as the URL and set it to your full canvas size,
+                  usually <code>1920</code> × <code>1080</code>. The background is transparent automatically, and the
+                  tank fills the bottom 10% of the screen (see <b>Tank height</b> and <b>Tank width</b> to change that).
+                </li>
+                <li>
+                  <strong>Connect your chat</strong>
+                  Right-click the source → <em>Interact</em>, move your mouse over the overlay and click the yellow
+                  <b>gear</b> in the bottom-right corner. Type your Twitch and/or Kick channel name, add TikTok or
+                  YouTube if you stream there, and press <em>Save &amp; apply</em>.
+                </li>
+                <li>
+                  <strong>Try it</strong>
+                  <em>Add test fish</em> in the settings drops a few pretend chatters in. The bar next to the gear adds a
+                  fish by name, feeds them, or empties the tank.
+                </li>
+                <li>
+                  <strong>Let chat swim</strong>
+                  Anyone who chats gets a fish, and <code>!feed</code> feeds them all.
+                </li>
+              </ol>
+              <div class="callout warn">
+                The settings window and the buttons <b>show on stream while you're using them</b>. Set things up
+                before you go live.
+              </div>
+            </div>
+          </div>
+
+          <div class="stack">
+            <div class="panel pink">
+              <div class="panel-head"><h3>Chat commands</h3></div>
+              <div class="panel-body">
+                <ul class="feature-list">
+                  <li><b>Anything</b>: a chatter's first message drops their fish into the tank. After that, every message makes it dart about and blow bubbles (or leap, if it's near the top), with what they said in a speech bubble.</li>
+                  <li><code>!feed</code>: sprinkles fish food in, and every fish nearby races for it. There's a cooldown (30 seconds by default) that you and your mods skip.</li>
+                  <li>A fish swims off once its chatter has been quiet for <b>20 minutes</b>. When the tank holds <b>40 fish</b>, the quietest one leaves to make room. Both are in the settings.</li>
+                  <li>Nightbot, StreamElements and the other usual bots never get a fish. Add anyone else to <b>No fish for</b>.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="panel pink">
+              <div class="panel-head"><h3>Chat sources</h3></div>
+              <div class="panel-body">
+                <details open>
+                  <summary>Twitch &amp; Kick</summary>
+                  <div>
+                    <p>
+                      Just type the channel name. Chat is read anonymously, so there's no login, bot account or app
+                      to set up. Each fish is its chatter's chat color, and mods are recognised by their badges.
+                    </p>
+                  </div>
+                </details>
+                <details>
+                  <summary>TikTok</summary>
+                  <div>
+                    <p>
+                      TikTok needs a bridge app running on your PC. If you use <b>TikFinity</b>, just type
+                      <code>1</code> in the TikTok box. Otherwise, paste your bridge's <code>ws://…</code> address.
+                    </p>
+                  </div>
+                </details>
+                <details>
+                  <summary>YouTube</summary>
+                  <div>
+                    <p>
+                      Paste your live stream's video ID or link, plus a <b>YouTube Data API v3 key</b> from the
+                      Google Cloud Console. You can also give a bridge <code>ws://…</code> address instead.
+                    </p>
+                  </div>
+                </details>
+              </div>
+            </div>
+
+            <div class="panel cyan">
+              <div class="panel-head"><h3>What you'll see</h3></div>
+              <div class="panel-body">
+                <ul class="feature-list">
+                  <li>
+                    A <b>low-res pixel-art tank</b>: sand, rocks, swaying seaweed, coral, an air stone that never stops
+                    bubbling, and a treasure chest that pops open now and then. The water is see-through blue with shafts
+                    of light and a rippling surface. Everything is a full 3D voxel model seen flat on, so it looks like
+                    2D pixel art, with just the sand showing some depth.
+                  </li>
+                  <li>
+                    A <b>fish for every chatter</b> in their chat color, with their name over it. The same chatter
+                    always gets the same fish: plain, round, angelfish, long or puffer, with its own fins and stripes
+                    or spots. Fish turn round in 3D, so you see their faces as they turn.
+                  </li>
+                  <li>
+                    <b>Speech bubbles</b> with what they said (commands don't show). Names can also show only for a
+                    moment when they chat, or not at all.
+                  </li>
+                  <li>
+                    <b>Sound effects</b> made on the fly: a plop when a fish arrives, splashes, bubbles and nibbles.
+                    They're quiet by default; turn them down or off in the settings.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="link" aria-labelledby="link-title">
+        <h2 class="burst-title" id="link-title">Build a setup link</h2>
+        <div class="panel violet">
+          <div class="panel-head"><h3>Settings in the URL</h3></div>
+          <div class="panel-body">
+            <p>
+              Every setting can also go in the URL, and it overrides what's saved. That's handy for setting up
+              without the Interact window. (The overlay's own <em>Copy setup link</em> button does the same thing.)
+              Fill in what you need and paste the link into your browser source:
+            </p>
+            <form data-builder data-base="https://aquarium.ixitxachitl.com/" class="builder">
+              <div class="fields">
+                <label>Twitch channel <input name="channel" type="text" placeholder="yourchannel" /></label>
+                <label>Kick channel <input name="kick" type="text" placeholder="yourchannel" /></label>
+                <label>TikTok bridge <input name="tiktok" type="text" placeholder="1 = TikFinity" /></label>
+                <label>YouTube live <input name="youtube" type="text" placeholder="video ID or link" /></label>
+                <label>Swims off after (minutes quiet) <input name="stay" type="number" min="0" max="600" step="1" value="20" /></label>
+                <label>Most fish at once <input name="max" type="number" min="1" max="150" step="1" value="40" /></label>
+                <label>Names <select name="names"><option value="always" selected>Always, over every fish</option><option value="chat">For a moment when they chat</option><option value="never">Never</option></select></label>
+                <label>No fish for <input name="skip" type="text" value="nightbot, streamelements, streamlabs, moobot, fossabot, wizebot, sery_bot, botrix, kofistreambot, soundalerts" /></label>
+                <label>Feed command <input name="feed" type="text" value="!feed" /></label>
+                <label>Feeding cooldown (s) <input name="feedcd" type="number" min="0" max="3600" step="5" value="30" /></label>
+                <label>Tank height (% of the screen) <input name="height" type="number" min="5" max="60" step="1" value="10" /></label>
+                <label>Tank width (% of the screen) <input name="width" type="number" min="20" max="100" step="1" value="100" /></label>
+                <label>Pixel size <input name="pixel" type="number" min="0" max="16" step="1" value="0" /></label>
+                <label>Water tint <input name="water" type="number" min="0" max="90" step="5" value="35" /></label>
+                <label>Sound effects volume <input name="volume" type="number" min="0" max="100" step="5" value="30" /></label>
+              </div>
+              <div class="toggles">
+                <label><input name="say" type="checkbox" checked /> Chat in speech bubbles</label>
+                <label><input name="demo" type="checkbox" /> Demo chat</label>
+              </div>
+              <div class="url-box">
+                <label class="sr-only" for="built-url">Your setup link</label>
+                <input id="built-url" type="text" readonly data-builder-out />
+                <button class="btn sun" type="button" data-copy-from="#built-url">Copy link</button>
+                <button class="btn" type="reset">Reset</button>
+              </div>
+            </form>
+            <div class="callout">
+              Using YouTube with an API key? Add it in the overlay's own settings rather than in a link, so the key
+              doesn't end up somewhere it could be shared. (<code>ytkey</code> works as a URL parameter too.)
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="settings" aria-labelledby="settings-title">
+        <h2 class="burst-title" id="settings-title">All settings</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Setting</th>
+                <th scope="col">URL parameter</th>
+                <th scope="col">Default</th>
+                <th scope="col">What it does</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="group" colspan="4">Chat</td></tr>
+              <tr><td>Twitch channel</td><td><code>channel</code></td><td>—</td><td>Read anonymously, no login needed.</td></tr>
+              <tr><td>Kick channel</td><td><code>kick</code></td><td>—</td><td>Read anonymously, no login needed.</td></tr>
+              <tr><td>TikTok bridge</td><td><code>tiktok</code></td><td>—</td><td><code>1</code> uses TikFinity on this PC, or give a <code>ws://…</code> bridge address.</td></tr>
+              <tr><td>YouTube live</td><td><code>youtube</code></td><td>—</td><td>Live video ID or link (needs the API key), or a bridge address.</td></tr>
+              <tr><td>YouTube API key</td><td><code>ytkey</code></td><td>—</td><td>A YouTube Data API v3 key from the Google Cloud Console.</td></tr>
+              <tr><td>YouTube check every (s)</td><td><code>ytpoll</code></td><td>6</td><td>Lower is snappier, but uses the daily API quota faster.</td></tr>
+              <tr><td>Demo chat</td><td><code>demo</code></td><td>off</td><td>Pretend chatters swim in and chat, for trying it out.</td></tr>
+              <tr><td class="group" colspan="4">Fish</td></tr>
+              <tr><td>Swims off after (minutes quiet)</td><td><code>stay</code></td><td>20</td><td>A chatter's fish swims off once they've been quiet this long. <code>0</code> keeps every fish until the source reloads.</td></tr>
+              <tr><td>Most fish at once</td><td><code>max</code></td><td>40</td><td>When the tank's full, the fish whose chatter has been quiet longest swims off to make room.</td></tr>
+              <tr><td>Names</td><td><code>names</code></td><td><code>always</code></td><td><code>always</code> over every fish, <code>chat</code> for a few seconds when they chat, or <code>never</code>.</td></tr>
+              <tr><td>Chat in speech bubbles</td><td><code>say</code></td><td>on</td><td>What they say pops up over their fish for a few seconds. Commands (<code>!…</code>) don't.</td></tr>
+              <tr><td>No fish for</td><td><code>skip</code></td><td>the usual bots</td><td>Names that never get a fish, comma separated. Starts with Nightbot, StreamElements, Streamlabs, Moobot, Fossabot, WizeBot, Sery_Bot, Botrix, Ko-fi's bot and SoundAlerts.</td></tr>
+              <tr><td class="group" colspan="4">Feeding</td></tr>
+              <tr><td>Feed command</td><td><code>feed</code></td><td><code>!feed</code></td><td>Sprinkles fish food in. Leave it empty to turn feeding off.</td></tr>
+              <tr><td>Feeding cooldown (s)</td><td><code>feedcd</code></td><td>30</td><td>How long until the next feeding. The broadcaster and mods skip it.</td></tr>
+              <tr><td class="group" colspan="4">Look</td></tr>
+              <tr><td>Tank height (% of the screen)</td><td><code>height</code></td><td>10</td><td>How much of the bottom of the screen is water. A taller tank gives the fish more room.</td></tr>
+              <tr><td>Tank width (% of the screen)</td><td><code>width</code></td><td>100</td><td>A narrower tank sits in the middle.</td></tr>
+              <tr><td>Pixel size</td><td><code>pixel</code></td><td>0</td><td>Screen pixels per art pixel: bigger is chunkier. <code>0</code> picks one from the source's height (5 at 1080p).</td></tr>
+              <tr><td>Water tint</td><td><code>water</code></td><td>35</td><td>0 to 90: <code>0</code> is clear water, higher is bluer.</td></tr>
+              <tr><td>Sound effects volume</td><td><code>volume</code></td><td>30</td><td>0 to 100; 0 is silent.</td></tr>
+              <tr><td>Background (testing)</td><td><code>bg</code></td><td>auto</td><td>In a normal browser the overlay shows a dark background so you can see it. <code>bg=none</code> makes it transparent anyway, or give a color like <code>bg=black</code>. In OBS it's always transparent unless you set a color.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout tip">
+          Streamer.bot or another tool can drive it too: <code>window.aquarium.add("name", { color: "#ff7f50", text: "hi!" })</code>,
+          <code>window.aquarium.feed()</code>, <code>window.aquarium.remove("name")</code> and <code>window.aquarium.clear()</code>.
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <a class="brand" href="../"><img src="../assets/icons/manta-mark.svg" alt="" />Ixitxachitl's Stream Tools</a>
+        <span>Made with <a href="https://claude.com/claude-code" target="_blank" rel="noopener" title="Claude">glowsticks</a> · © <span data-year>2026</span> Ixitxachitl</span>
+      </div>
+    </footer>
+    <script src="../assets/js/site.js" defer></script>
+  </body>
+</html>

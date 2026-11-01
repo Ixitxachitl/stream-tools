@@ -10,6 +10,7 @@ gets a card, a screenshot, and a setup guide. The site uses the same comic look 
 | Chat Comics           | <https://comics.ixitxachitl.com/>                | [tools/chat-comics.html](tools/chat-comics.html)     |
 | Stunt Wheel           | <https://race.ixitxachitl.com/>                  | [tools/stunt-wheel.html](tools/stunt-wheel.html)     |
 | Stream Pet            | <https://pet.ixitxachitl.com/>                   | [tools/stream-pet.html](tools/stream-pet.html)       |
+| Chat Aquarium         | <https://aquarium.ixitxachitl.com/>              | [tools/chat-aquarium.html](tools/chat-aquarium.html) |
 | Clip Shoutout         | <https://clips.ixitxachitl.com/>                 | [tools/clip-shoutout.html](tools/clip-shoutout.html) |
 | Ball Drop             | <https://drop.ixitxachitl.com/>                  | [tools/ball-drop.html](tools/ball-drop.html)         |
 | Duel                  | <https://duel.ixitxachitl.com/>                  | [tools/duel.html](tools/duel.html)                   |
@@ -60,8 +61,8 @@ file with the domain in it.
    **Chat games & commands** or **Widgets & effects** (desktop apps go in **Desktop apps**). Keep every card
    the same: a screenshot and icon, a pitch of about 120 characters, three chips that set it apart, and the
    two buttons **How to set up** and **Try it ↗**. Set `--accent` to a theme color its neighbours don't use.
-   Shelves are four across, so keep each one to four cards (the "Soon!" card fills a gap); if a shelf
-   outgrows that, give it a second row of four or split it.
+   Shelves are four across; a shelf with more than four cards scrolls sideways, with arrows in its heading
+   (`site.js` adds them), so cards can just be added.
 5. Add the new page to the `<nav>` in the header of **every** page, in the same order as the shelves.
 
 ## Retaking screenshots

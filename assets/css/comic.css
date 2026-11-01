@@ -367,7 +367,8 @@ kbd {
 }
 
 /* ---------- shelves of tools ---------- */
-/* The tools are grouped into shelves of four, so every shelf is one even row (two on tablets). */
+/* The tools are grouped into shelves of four, so every shelf is one even row (two on tablets); a shelf with more
+   scrolls sideways (see .tools.scrolls). */
 .shelves {
   width: min(1280px, 100% - 2 * var(--gutter));
   margin-inline: auto;
@@ -450,6 +451,54 @@ kbd {
 @media (max-width: 640px) {
   .tools {
     grid-template-columns: 1fr;
+  }
+}
+/* A shelf with more than four tools scrolls sideways, still four at a time (two on tablets). The padding leaves
+   room for the cards' shadows and their lift on hover, which the scrolling would otherwise clip. */
+@media (min-width: 641px) {
+  .tools.scrolls {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% - 3 * 26px) / 4);
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 6px;
+    padding: 6px 16px 22px 6px;
+    margin: -6px -16px -22px -6px;
+    scrollbar-color: var(--yellow) rgba(255, 255, 255, 0.12);
+  }
+  .tools.scrolls > * {
+    scroll-snap-align: start;
+  }
+}
+@media (min-width: 641px) and (max-width: 1100px) {
+  .tools.scrolls {
+    grid-auto-columns: calc((100% - 26px) / 2);
+  }
+}
+.shelf-nav {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+  align-self: center;
+}
+.shelf-nav .btn {
+  font-size: 20px;
+  padding: 6px 12px 4px;
+}
+.shelf-nav .btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+  transform: none;
+}
+/* (hidden while everything fits) */
+.shelf-nav[hidden] {
+  display: none;
+}
+@media (max-width: 640px) {
+  .shelf-nav {
+    display: none;
   }
 }
 .tool {

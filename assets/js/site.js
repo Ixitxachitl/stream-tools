@@ -88,6 +88,29 @@
       .catch(() => {});
   }
 
+  // ---------- shelves with more than four tools scroll sideways, with arrows in the shelf's heading ----------
+  for (const shelf of document.querySelectorAll(".shelf")) {
+    const row = shelf.querySelector(".tools:not(.apps)");
+    if (!row || row.children.length <= 4) continue;
+    row.classList.add("scrolls");
+    const nav = document.createElement("div");
+    nav.className = "shelf-nav";
+    nav.innerHTML = `<button class="btn" type="button" aria-label="Scroll back">◀</button><button class="btn sun" type="button" aria-label="Scroll on">▶</button>`;
+    shelf.querySelector(".shelf-head").appendChild(nav);
+    const [back, on] = nav.children;
+    const step = () => row.children[1].offsetLeft - row.children[0].offsetLeft;
+    back.addEventListener("click", () => row.scrollBy({ left: -step(), behavior: "smooth" }));
+    on.addEventListener("click", () => row.scrollBy({ left: step(), behavior: "smooth" }));
+    const update = () => {
+      back.disabled = row.scrollLeft <= 2;
+      on.disabled = row.scrollLeft >= row.scrollWidth - row.clientWidth - 2;
+      nav.hidden = row.scrollWidth <= row.clientWidth + 2;
+    };
+    row.addEventListener("scroll", update, { passive: true });
+    addEventListener("resize", update);
+    update();
+  }
+
   // ---------- current year in footers ----------
   for (const el of document.querySelectorAll("[data-year]")) el.textContent = new Date().getFullYear();
 })();
