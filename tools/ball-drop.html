@@ -341,8 +341,11 @@
               <tr><td>YouTube live</td><td><code>youtube</code></td><td>—</td><td>Live video ID or link (needs the API key), or a bridge address.</td></tr>
               <tr><td>YouTube API key</td><td><code>ytkey</code></td><td>—</td><td>A YouTube Data API v3 key from the Google Cloud Console.</td></tr>
               <tr><td>YouTube check every (s)</td><td><code>ytpoll</code></td><td>6</td><td>Lower is snappier, but uses the daily API quota faster.</td></tr>
-              <tr><td>Ignore these names</td><td><code>ignore</code></td><td>—</td><td>Extra bot names, comma separated. Common bots are ignored already.</td></tr>
               <tr><td>Demo chat</td><td><code>demo</code></td><td>off</td><td>Fake chatters join, race and spam emotes, for trying it out.</td></tr>
+              <tr><td class="group" colspan="4">Filtering</td></tr>
+              <tr><td>Show first-time chatters</td><td><code>firsttime</code></td><td>off</td><td>Twitch flags these; spam bots usually show up this way.</td></tr>
+              <tr><td>Hide known bots</td><td><code>botlist</code></td><td>on</td><td>Uses the public TwitchInsights bot list.</td></tr>
+              <tr><td>Always hide these users</td><td><code>ignore</code></td><td>the usual bots</td><td>Comma or line separated. Starts with Nightbot, StreamElements, Streamlabs, Moobot, Fossabot, WizeBot, SoundAlerts, Sery_Bot, Ko-fi Stream Bot, BotRix and CommanderRoot.</td></tr>
               <tr><td class="group" colspan="4">Race</td></tr>
               <tr><td>Join command</td><td><code>joincmd</code></td><td><code>!join</code></td><td>Anyone in chat can type it to get a wheel in the next race.</td></tr>
               <tr><td>Start command</td><td><code>startcmd</code></td><td><code>!start</code></td><td>Mods and the broadcaster can start the race with it. There has to be at least one racer.</td></tr>

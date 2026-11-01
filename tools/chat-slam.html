@@ -288,6 +288,10 @@
               <tr><td>YouTube API key</td><td><code>ytkey</code></td><td>—</td><td>A YouTube Data API v3 key from the Google Cloud Console.</td></tr>
               <tr><td>YouTube check every (s)</td><td><code>ytpoll</code></td><td>6</td><td>Lower is snappier, but uses the daily API quota faster.</td></tr>
               <tr><td>Demo chat</td><td><code>demo</code></td><td>off</td><td>Pretend chatters wrestle every so often, for trying it out.</td></tr>
+              <tr><td class="group" colspan="4">Filtering</td></tr>
+              <tr><td>Show first-time chatters</td><td><code>firsttime</code></td><td>off</td><td>Twitch flags these; spam bots usually show up this way.</td></tr>
+              <tr><td>Hide known bots</td><td><code>botlist</code></td><td>on</td><td>Uses the public TwitchInsights bot list.</td></tr>
+              <tr><td>Always hide these users</td><td><code>ignore</code></td><td>the usual bots</td><td>Comma or line separated. Starts with Nightbot, StreamElements, Streamlabs, Moobot, Fossabot, WizeBot, SoundAlerts, Sery_Bot, Ko-fi Stream Bot, BotRix and CommanderRoot.</td></tr>
               <tr><td class="group" colspan="4">Matches</td></tr>
               <tr><td>Match command</td><td><code>cmd</code></td><td><code>!wrestle</code></td><td>Followed by a name: <code>!wrestle somebody</code>. On its own it picks someone who chatted recently. Either way, only people who chatted in the last 10 minutes can be picked.</td></tr>
               <tr><td>Cooldown (s)</td><td><code>cooldown</code></td><td>60</td><td>After a match, how long until the next one can start. The broadcaster skips it.</td></tr>

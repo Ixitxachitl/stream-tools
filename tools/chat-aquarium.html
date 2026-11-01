@@ -228,7 +228,6 @@
                 <label>Swims off after (minutes quiet) <input name="stay" type="number" min="0" max="600" step="1" value="20" /></label>
                 <label>Most fish at once <input name="max" type="number" min="1" max="150" step="1" value="40" /></label>
                 <label>Names <select name="names"><option value="always" selected>Always, over every fish</option><option value="chat">For a moment when they chat</option><option value="never">Never</option></select></label>
-                <label>No fish for <input name="skip" type="text" value="nightbot, streamelements, streamlabs, moobot, fossabot, wizebot, sery_bot, botrix, kofistreambot, soundalerts" /></label>
                 <label>Feed command <input name="feed" type="text" value="!feed" /></label>
                 <label>Feeding cooldown (s) <input name="feedcd" type="number" min="0" max="3600" step="5" value="30" /></label>
                 <label>Tank height (% of the screen) <input name="height" type="number" min="5" max="60" step="1" value="10" /></label>
@@ -278,12 +277,15 @@
               <tr><td>YouTube API key</td><td><code>ytkey</code></td><td>—</td><td>A YouTube Data API v3 key from the Google Cloud Console.</td></tr>
               <tr><td>YouTube check every (s)</td><td><code>ytpoll</code></td><td>6</td><td>Lower is snappier, but uses the daily API quota faster.</td></tr>
               <tr><td>Demo chat</td><td><code>demo</code></td><td>off</td><td>Pretend chatters swim in and chat, for trying it out.</td></tr>
+              <tr><td class="group" colspan="4">Filtering</td></tr>
+              <tr><td>Show first-time chatters</td><td><code>firsttime</code></td><td>off</td><td>Twitch flags these; spam bots usually show up this way.</td></tr>
+              <tr><td>Hide known bots</td><td><code>botlist</code></td><td>on</td><td>Uses the public TwitchInsights bot list.</td></tr>
+              <tr><td>Always hide these users</td><td><code>ignore</code></td><td>the usual bots</td><td>Comma or line separated. Starts with Nightbot, StreamElements, Streamlabs, Moobot, Fossabot, WizeBot, SoundAlerts, Sery_Bot, Ko-fi Stream Bot, BotRix and CommanderRoot.</td></tr>
               <tr><td class="group" colspan="4">Fish</td></tr>
               <tr><td>Swims off after (minutes quiet)</td><td><code>stay</code></td><td>20</td><td>A chatter's fish swims off once they've been quiet this long. <code>0</code> keeps every fish until the source reloads.</td></tr>
               <tr><td>Most fish at once</td><td><code>max</code></td><td>40</td><td>When the tank's full, the fish whose chatter has been quiet longest swims off to make room.</td></tr>
               <tr><td>Names</td><td><code>names</code></td><td><code>always</code></td><td><code>always</code> over every fish, <code>chat</code> for a few seconds when they chat, or <code>never</code>.</td></tr>
               <tr><td>Chat in speech bubbles</td><td><code>say</code></td><td>on</td><td>What they say pops up over their fish for a few seconds. Commands (<code>!…</code>) don't.</td></tr>
-              <tr><td>No fish for</td><td><code>skip</code></td><td>the usual bots</td><td>Names that never get a fish, comma separated. Starts with Nightbot, StreamElements, Streamlabs, Moobot, Fossabot, WizeBot, Sery_Bot, Botrix, Ko-fi's bot and SoundAlerts.</td></tr>
               <tr><td class="group" colspan="4">Feeding</td></tr>
               <tr><td>Feed command</td><td><code>feed</code></td><td><code>!feed</code></td><td>Sprinkles fish food in. Leave it empty to turn feeding off.</td></tr>
               <tr><td>Feeding cooldown (s)</td><td><code>feedcd</code></td><td>30</td><td>How long until the next feeding. The broadcaster and mods skip it.</td></tr>
