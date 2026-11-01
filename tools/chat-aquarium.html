@@ -234,6 +234,7 @@
                 <label>Tank height (% of the screen) <input name="height" type="number" min="5" max="60" step="1" value="10" /></label>
                 <label>Tank width (% of the screen) <input name="width" type="number" min="20" max="100" step="1" value="100" /></label>
                 <label>Pixel size <input name="pixel" type="number" min="0" max="16" step="1" value="0" /></label>
+                <label>Detail <select name="detail"><option value="1" selected>1× — chunky pixels</option><option value="2">2× — smoother, finer pixels</option><option value="3">3× — smoothest</option></select></label>
                 <label>Water tint <input name="water" type="number" min="0" max="90" step="5" value="35" /></label>
                 <label>Sound effects volume <input name="volume" type="number" min="0" max="100" step="5" value="30" /></label>
               </div>
@@ -290,6 +291,7 @@
               <tr><td>Tank height (% of the screen)</td><td><code>height</code></td><td>10</td><td>How much of the bottom of the screen is water. A taller tank gives the fish more room.</td></tr>
               <tr><td>Tank width (% of the screen)</td><td><code>width</code></td><td>100</td><td>A narrower tank sits in the middle.</td></tr>
               <tr><td>Pixel size</td><td><code>pixel</code></td><td>0</td><td>Screen pixels per art pixel: bigger is chunkier. <code>0</code> picks one from the source's height (5 at 1080p).</td></tr>
+              <tr><td>Detail</td><td><code>detail</code></td><td>1</td><td><code>2</code> or <code>3</code> draws everything two or three times finer at the same size, with the edges of the fish, fins, stripes, rocks and seaweed rounded off. The pixel size then rounds to a multiple of it (6 at 1080p).</td></tr>
               <tr><td>Water tint</td><td><code>water</code></td><td>35</td><td>0 to 90: <code>0</code> is clear water, higher is bluer.</td></tr>
               <tr><td>Sound effects volume</td><td><code>volume</code></td><td>30</td><td>0 to 100; 0 is silent.</td></tr>
               <tr><td>Background (testing)</td><td><code>bg</code></td><td>auto</td><td>In a normal browser the overlay shows a dark background so you can see it. <code>bg=none</code> makes it transparent anyway, or give a color like <code>bg=black</code>. In OBS it's always transparent unless you set a color.</td></tr>
