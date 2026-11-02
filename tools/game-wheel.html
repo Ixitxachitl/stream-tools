@@ -6,7 +6,7 @@
     <title>Game Wheel · Ixitxachitl's Stream Tools</title>
     <meta
       name="description"
-      content="Set up the Game Wheel: a spin-to-pick wheel for deciding what to play on stream, with a transparent background for OBS."
+      content="Set up the Game Wheel: a spin-to-pick wheel for deciding what to play on stream, or a prize wheel your chatters join with !join. Transparent background for OBS."
     />
     <meta property="og:image" content="../assets/img/game-wheel.webp" />
     <meta name="theme-color" content="#1a0f33" />
@@ -55,7 +55,8 @@
               <h1>Game Wheel</h1>
               <p class="lead">
                 Can't decide what to play? Load the wheel with your games, give it a spin in front of chat, and let
-                fate pick. "Tonight we're playing…" — no take-backs. Watch out for surprise visitors drifting past.
+                fate pick. "Tonight we're playing…" — no take-backs. Or flip it to <b>Prize wheel</b>: chatters type
+                <code>!join</code>, you spin, and someone wins. Watch out for surprise visitors drifting past.
               </p>
               <div class="url-box">
                 <label class="sr-only" for="url">Wheel URL</label>
@@ -67,6 +68,7 @@
                   >Spin it now ↗</a
                 >
                 <a class="btn" href="#setup">Setup guide</a>
+                <a class="btn" href="#prize">Prize wheel</a>
                 <a class="btn" href="#keys">Shortcuts</a>
               </div>
             </div>
@@ -160,10 +162,96 @@
               <div class="panel-head"><h3>After the spin</h3></div>
               <div class="panel-body">
                 <ul class="feature-list">
-                  <li><b>Remove and close</b> takes the winner off the wheel, so it can't come up again.</li>
+                  <li>
+                    <b>Remove and close</b> takes the winner off the wheel, so it can't come up again. On the prize
+                    wheel that's how you hand out a second prize: remove the winner, spin again.
+                  </li>
                   <li><b>Spin again</b> if chat demands a re-roll.</li>
                   <li><b>Close</b> keeps the game on the wheel for next time.</li>
                   <li>Every pick is saved under <em>Recent picks</em> in the control panel.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="prize" aria-labelledby="prize-title">
+        <h2 class="burst-title" id="prize-title">Prize wheel</h2>
+        <div class="grid-2">
+          <div class="panel">
+            <div class="panel-head"><h3>Giveaways from chat</h3></div>
+            <div class="panel-body">
+              <ol class="steps">
+                <li>
+                  <strong>Switch to Prize wheel</strong>
+                  At the top of the control panel pick <em>Prize wheel</em>. Your games list is kept safe for when
+                  you switch back.
+                </li>
+                <li>
+                  <strong>Type your channel</strong>
+                  Under <em>Chat</em>, enter your Twitch and/or Kick channel name. Chat is read anonymously, so
+                  there's no login, bot account or app to authorize.
+                </li>
+                <li>
+                  <strong>Open entries</strong>
+                  Leave <em>Taking entries</em> ticked and tell chat to type <code>!join</code>. Each name lands
+                  on the wheel as its own slice; the count at the top keeps score.
+                </li>
+                <li>
+                  <strong>Close entries and spin</strong>
+                  Untick <em>Taking entries</em> when you're ready (or don't, and let latecomers in), then spin.
+                  "And the winner is…"
+                </li>
+                <li>
+                  <strong>More prizes?</strong>
+                  <em>Remove and close</em> takes the winner off the wheel. Spin again for the next one. When the
+                  giveaway is over, <em>Clear entries</em> empties the wheel for next time.
+                </li>
+              </ol>
+              <div class="callout tip">
+                Prefer another word? Change the <em>Join command</em> to anything you like, such as
+                <code>!enter</code> or <code>!raffle</code>.
+              </div>
+            </div>
+          </div>
+
+          <div class="stack">
+            <div class="panel cyan">
+              <div class="panel-head"><h3>What chat can type</h3></div>
+              <div class="panel-body">
+                <div class="table-wrap">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th scope="col">Command</th>
+                        <th scope="col">Does</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr><td><code>!join</code></td><td>Puts them on the wheel (once; a second <code>!join</code> does nothing)</td></tr>
+                      <tr><td><code>!leave</code></td><td>Takes them off again</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p style="margin: 12px 0 0; font-size: 15px">
+                  Someone who gets timed out or banned while entries are open is taken off the wheel too. Joins
+                  that arrive mid-spin wait until the wheel has stopped and the winner card is closed.
+                </p>
+              </div>
+            </div>
+
+            <div class="panel pink">
+              <div class="panel-head"><h3>Good to know</h3></div>
+              <div class="panel-body">
+                <ul class="feature-list">
+                  <li>Entries, your channel and the winners list are saved in that browser source, so an OBS restart doesn't lose them.</li>
+                  <li>Add names by hand, too: type them into <em>Chatters on the wheel</em> and press <em>Update wheel</em>. Anyone who joins from chat while you're typing is kept.</li>
+                  <li>Lots of entries? The wheel takes hundreds of names; the slices just get thinner. The winner card always shows the name big.</li>
+                  <li>
+                    From Streamer.bot or another tool: <code>window.gameWheel.join("name")</code>,
+                    <code>.leave("name")</code>, <code>.spin()</code> and <code>.mode("prize")</code>.
+                  </li>
                 </ul>
               </div>
             </div>
@@ -179,8 +267,9 @@
             <div class="panel-body">
               <ul class="feature-list">
                 <li><b>Tick sounds</b> play while the wheel spins. Untick it for a silent wheel.</li>
-                <li><b>Shuffle order</b> mixes up where the games sit on the wheel.</li>
-                <li><b>Reset to full list</b> puts the starting list back (it asks first).</li>
+                <li><b>Surprise visitors</b> turns the little friends drifting past on or off.</li>
+                <li><b>Shuffle</b> mixes up where the games sit on the wheel.</li>
+                <li><b>Reset</b> puts the starting games list back (it asks first). On the prize wheel the same button is <b>Clear entries</b>.</li>
                 <li>
                   Hid the controls and can't find them? Press <kbd>H</kbd>, or click the <em>Show controls</em>
                   button.
@@ -195,8 +284,18 @@
                 <summary>What are the surprise visitors?</summary>
                 <div>
                   <p>
-                    Every so often a little friend (an astronaut cat, a UFO and more) drifts across the screen.
-                    Click one for hearts, or press <kbd>E</kbd> to call one in right away.
+                    Every so often a little friend (an astronaut cat, a UFO, a bunny and more) drifts across the
+                    screen. Click one for hearts, or press <kbd>E</kbd> to call one in right away. Don't want them?
+                    Switch off <em>Surprise visitors</em> under <em>Options</em>. <kbd>E</kbd> still works.
+                  </p>
+                </div>
+              </details>
+              <details>
+                <summary>Do I need to log in for the prize wheel?</summary>
+                <div>
+                  <p>
+                    No. Just type the channel name. Chat is read the same way a lurker reads it, so there's no
+                    login, no bot account and nothing to authorize. Twitch and Kick are supported.
                   </p>
                 </div>
               </details>
