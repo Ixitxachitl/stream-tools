@@ -611,6 +611,35 @@ kbd {
     object-position: left center;
   }
 }
+/* my game: one wide card, the cover art on the left and the pitch on the right */
+.tools.game {
+  grid-template-columns: 1fr;
+}
+.tool.game {
+  flex-direction: row;
+}
+.tool.game .shot {
+  flex: 0 0 52%;
+  min-height: 300px;
+  border-bottom: 0;
+  border-right: 4px solid var(--ink);
+}
+.tool.game .shot img:not(.badge-icon) {
+  object-position: center;
+  image-rendering: pixelated;
+}
+@media (max-width: 900px) {
+  .tool.game {
+    flex-direction: column;
+  }
+  .tool.game .shot {
+    flex: none;
+    min-height: 0;
+    aspect-ratio: 12 / 5;
+    border-right: 0;
+    border-bottom: 4px solid var(--ink);
+  }
+}
 .tool h4 small {
   font: 700 15px/1 "Comic Neue", sans-serif;
   letter-spacing: 0;
